@@ -1,0 +1,19 @@
+<?php
+class categoryProduct Extends Eloquent{
+	protected $table 		= "product_category";
+	protected $primaryKey 	= "id_pc";
+	protected $fillable 	= ['category_id,product_id'];
+	function add($data){
+		// return categoryProduct::create($data);
+		return DB::table($this->table)->InsertGetId($data);
+	}
+	function get_idproduct($id_product){
+		return DB::table($this->table)->where('product_id',$id_product)
+				->join('category',$this->table.'.category_id','=','category.id_category')
+				->join('product',$this->table.'.product_id','=','product.id_product')
+				->get();
+	}
+	function delete_idproduct($id_product){
+		return DB::table($this->table)->where('product_id',$id_product)->delete();
+	}
+}
