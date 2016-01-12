@@ -7,9 +7,8 @@
     List Data
     <small>Product</small>
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">List Data</li>
+  <ol class="breadcrumb" style="padding-top:0px;margin-top:-5px">
+    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/product/create"><i class="fa fa-plus"></i> Add Data</a></li>
   </ol>
 </section>
 {{$notip}}

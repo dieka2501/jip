@@ -105,103 +105,59 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-tag"></i> <span>Master Kategori</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="{{Config::get('app.url')}}public/admin/category">
+                <i class="fa fa-tag"></i> <span>Master Kategori</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="{{Config::get('app.url')}}public/admin/category"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="{{Config::get('app.url')}}public/admin/category/create"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-leaf"></i> <span>Master Brand</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="{{Config::get('app.url')}}public/admin/brand">
+                <i class="fa fa-leaf"></i> <span>Master Brand</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="{{Config::get('app.url')}}public/admin/brand"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="{{Config::get('app.url')}}public/admin/brand/create"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-smile-o"></i> <span>Master Pelanggan</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_pelanggan">
+                <i class="fa fa-smile-o"></i> <span>Master Pelanggan</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_pelanggan"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_pelanggan"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i> <span>Master Produk</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="{{Config::get('app.url')}}public/admin/product">
+                <i class="fa fa-shopping-cart"></i> <span>Master Produk</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="{{Config::get('app.url')}}public/admin/product"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="{{Config::get('app.url')}}public/admin/product/create"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-users"></i> <span>Group Pelanggan</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_group_pelanggan">
+                <i class="fa fa-users"></i> <span>Group Pelanggan</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_group_pelanggan"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_group_pelanggan"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-money"></i> <span>Sales</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_sales">
+                <i class="fa fa-money"></i> <span>Sales</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_sales"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_sales"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-bookmark"></i> <span>News &amp; Events</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_news_events">
+                <i class="fa fa-bookmark"></i> <span>News &amp; Events</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_news_events"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_news_events"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-gift"></i> <span>Promo</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_promo">
+                <i class="fa fa-gift"></i> <span>Promo</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_promo"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_promo"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-list-alt"></i> <span>Voucher</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_voucher">
+                <i class="fa fa-list-alt"></i> <span>Voucher</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_voucher"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_voucher"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-list"></i> <span>Group</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="<?php echo Config::get('app.url');?>public/adm_group">
+                <i class="fa fa-list"></i> <span>Group</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_group"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_group"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i> <span>User</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href=" echo Config::get('app.url');?>public/adm_user">
+                <i class="fa fa-user"></i> <span>User</span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo Config::get('app.url');?>public/adm_user"><i class="fa fa-table"></i> List Data</a></li>
-                <li><a href="<?php echo Config::get('app.url');?>public/form_user"><i class="fa fa-plus"></i> Add Data</a></li>
-              </ul>
             </li>
           </ul>
           <div class="user-panel" style="border-top:1px solid #1A2226;">

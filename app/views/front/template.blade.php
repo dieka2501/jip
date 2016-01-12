@@ -55,6 +55,10 @@
       max-width: 100%;
       height: 70px;
     }
+    .owl-item .item.client img {
+      max-width: 100%;
+      height: 100%!important;
+    }
     </style>
 </head>
 <!-- // end:head // -->
@@ -74,31 +78,21 @@
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="icon-basket icons">&nbsp;</i> Shopping Cart  <span class="caret"></span></a>
                               <ul class="dropdown-menu dropdown-cart" role="menu">
-                                  <?php 
-
-                                  $carttemplate = DB::table('cart')
-                                                ->join('product','cart.product_id','=','product.id_product')
-                                                ->join('brand','product.brand_id','=','brand.id_brand')
-                                                ->where('cart.session',Session::get('_token'))
-                                                ->get();
-                                ?>
-                                  @foreach($carttemplate as $carttemplates)
                                   <li>
                                       <span class="item">
                                         <span class="item-left">
-                                            <img src="<?php echo Config::get('app.url');?>aset/upload/{{$carttemplates->main_image}}" alt="" style="width: 40px; height: 40px;" />
+                                            <img src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" alt="" />
                                             <span class="item-info">
-                                                <span>{{$carttemplates->name_product}}</span>
-                                                <span>Rp. {{number_format($carttemplates->price_product)}}</span>
+                                                <span>Item name</span>
+                                                <span>23$</span>
                                             </span>
                                         </span>
                                         <span class="item-right">
-                                            <a href="{{Config::get('app.url')}}public/cart/delete?id={{$carttemplates->id_cart}}" class="btn btn-xs btn-danger pull-right">x</a>
+                                            <button class="btn btn-xs btn-danger pull-right">x</button>
                                         </span>
                                     </span>
                                   </li>
-                                  @endforeach
-                                  <!-- <li>
+                                  <li>
                                       <span class="item">
                                         <span class="item-left">
                                             <img src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" alt="" />
@@ -139,11 +133,11 @@
                                             <button class="btn btn-xs btn-danger pull-right">x</button>
                                         </span>
                                     </span>
-                                  </li>-->
+                                  </li>
                                   <li class="divider"></li>
                                   <li><a class="btn btn-warning col-md-12" href="<?php echo Config::get('app.url');?>public/check_out">View Cart</a></li>
                               </ul>
-                            </li> 
+                            </li>
                         </ul>
                     </div>
                     <div class="clearfix"></div>
