@@ -5,9 +5,9 @@
 <div class="container">
 Check Out
 <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Sample</a></li>
-  <li class="active">Breadcrumb</li>
+  <li><a href="{{config::get('app.url')}}public">Home</a></li>
+  <li><a href="{{config::get('app.url')}}public/product">Product</a></li>
+  <li class="active">Cart</li>
 </ol>
 </div>
 </div>
@@ -16,6 +16,7 @@ Check Out
 	<div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-12">
+            {{Form::open(array('url'=>'cart/update','method'=>'POST'))}}
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -27,73 +28,63 @@ Check Out
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $subtotal = 0; ?>
+                    @foreach($cart as $carts)
+                    
                     <tr>
                         <td class="col-sm-8 col-md-6">
                         <div class="media list-check">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" style="width: 72px; height: 72px;"> </a>
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<?php echo Config::get('app.url');?>aset/upload/{{$carts->main_image}}" style="width: 72px; height: 72px;"> </a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                <h4 class="media-heading"><a href="#">{{$carts->name_product}}</a></h4>
+                                <h5 class="media-heading"> by <a href="#">{{$carts->brand_name}}</a></h5>
+                                <?php $instock = $carts->stock_product -$carts->qty;?>
+                                <span>Stock: </span><span class="text-success"><strong>{{$instock}}</strong></span>
                             </div>
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                        <input type="hidden" name='idproduct[]' class="form-control" id="idproduct" value="{{$carts->product_id}}">
+                        <input type="text" name='qtycart[]' class="form-control" id="qtycart" value="{{$carts->qty}}">
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>Rp. {{number_format($carts->price_product)}}</strong></td>
+                        <?php $totalharga = $carts->price_product * $carts->qty;
+                             $subtotal += $totalharga; 
+                        ?>
+                        <td class="col-sm-1 col-md-1 text-center" id="totaleach"><strong>Rp. {{number_format($totalharga)}}</strong></td>
                         <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
+                        <a href="{{Config::get('app.url')}}public/cart/delete?id={{$carts->id_cart}}" class="btn btn-danger">
                             <span class="glyphicon glyphicon-remove"></span> Remove
                         </button></td>
                     </tr>
-                    <tr>
-                        <td class="col-md-6">
-                        <div class="media list-check">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-warning"><strong>Leaves warehouse in 2 - 3 weeks</strong></span>
-                            </div>
-                        </div></td>
-                        <td class="col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="2">
-                        </td>
-                        <td class="col-md-1 text-center"><strong>$4.99</strong></td>
-                        <td class="col-md-1 text-center"><strong>$9.98</strong></td>
-                        <td class="col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
+                    @endforeach
+                
                     <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
+                        <td class="text-right"><h5><strong>Rp. {{number_format($subtotal)}}</strong></h5></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h5>Estimated shipping</h5></td>
                         <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <td>   </td>
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
                         <td class="text-right"><h3><strong>$31.53</strong></h3></td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                        <td>   </td>
+                        <td> <button class="btn btn-primary">Update Cart</button>  </td>
                         <td>   </td>
                         <td>   </td>
                         <td>
-                        <button type="button" class="btn btn-default">
+                        <a href="{{Config::get('app.url')}}public/product" class="btn btn-default">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></td>
                         <td>
@@ -103,6 +94,7 @@ Check Out
                     </tr>
                 </tbody>
             </table>
+            {{Form::close()}}
         </div>
     </div>
 </div>
