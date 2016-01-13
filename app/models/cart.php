@@ -13,8 +13,7 @@ Class cart extends Eloquent{
 			->get();
 	}
 	function del($id){
-		$cart = cart::find($id);
-		return $cart->delete();
+		return cart::where('id_cart',$id)->delete();
 	}
 	function delete_token($token){
 		return DB::table($this->table)->where('session',$token)->delete();

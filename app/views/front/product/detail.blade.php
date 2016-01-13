@@ -48,9 +48,8 @@ Detail Products
 						</div>
 						<hr>
 						<div class="btn-group cart">
-							<button type="button" class="btn btn-warning">
-								<i class="fa fa-shopping-cart"></i> Add to cart
-							</button>
+							<a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct={{$product->id_product}}" class="btn btn-warning cart-btn">Add To Cart</a>
+
 						</div>
 						<div class="btn-group wishlist">
 							<button type="button" class="btn">
