@@ -123,30 +123,6 @@ Check Out
                                             </div>
                                         </div>
 
-                                        <div class="row field-row ">
-                                            <div class="col-xs-12">
-                                                <input class="form-control" placeholder="security question">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="row field-row ">
-                                            <div class="col-xs-12">
-                                                <input class="required form-control" placeholder="answer">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="row field-row ">
-                                            <div class="col-xs-6">
-                                                <input class="form-control " placeholder="date of birth yyyy/mm/dd">
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <input class="form-control" placeholder="preffered language">
-                                            </div>
-                                        </div>
-
-
                                         <div class="row field-row checkout-button-row">
                                             <div class="col-xs-12 col-sm-6  ">
                                                 <div class="checkbox-holder">

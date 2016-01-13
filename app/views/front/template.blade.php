@@ -113,50 +113,9 @@
                                     </span>
                                   </li>
                                   @endforeach
-                                  <!-- <li>
-                                      <span class="item">
-                                        <span class="item-left">
-                                            <img src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" alt="" />
-                                            <span class="item-info">
-                                                <span>Item name</span>
-                                                <span>23$</span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
-                                  </li>
-                                  <li>
-                                      <span class="item">
-                                        <span class="item-left">
-                                            <img src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" alt="" />
-                                            <span class="item-info">
-                                                <span>Item name</span>
-                                                <span>23$</span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
-                                  </li>
-                                  <li>
-                                      <span class="item">
-                                        <span class="item-left">
-                                            <img src="<?php echo Config::get('app.url');?>aset/main/img/no-img.jpg" alt="" />
-                                            <span class="item-info">
-                                                <span>Item name</span>
-                                                <span>23$</span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right">
-                                            <button class="btn btn-xs btn-danger pull-right">x</button>
-                                        </span>
-                                    </span>
-                                  </li>-->
+                                  
                                   <li class="divider"></li>
-                                  <li><a class="btn btn-warning col-md-12" href="<?php echo Config::get('app.url');?>public/check_out">View Cart</a></li>
+                                  <li><a class="btn btn-warning col-md-12" href="<?php echo Config::get('app.url');?>public/cart">View Cart</a></li>
                               </ul>
                             </li>
                         </ul>

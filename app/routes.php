@@ -25,6 +25,7 @@ Route::get('/cart/do','cartController@do_add');
 Route::get('/cart/delete','cartController@do_delete');
 Route::post('/cart/update','cartController@do_update');
 Route::get('/community','communityController@index');
+Route::get('/checkout','checkoutController@index');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){
