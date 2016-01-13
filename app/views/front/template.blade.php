@@ -51,13 +51,24 @@
     .product-desc p, .product-info p {
       color: #777777;
     }
-    .owl-item .item img {
+    #sync1 .owl-item .item img {
+        max-width: 100%;
+    }
+    #sync1 .item {
+      padding: 0px!important;
+      border: 1px solid #eeeeee;
+    }
+    #sync2 .owl-item .item img {
       max-width: 100%;
       height: 70px;
     }
     .owl-item .item.client img {
       max-width: 100%;
       height: 100%!important;
+    }
+    #sync2 .item {
+      padding: 0px!important;
+      border:1px solid #eeeeee;
     }
     </style>
 </head>
