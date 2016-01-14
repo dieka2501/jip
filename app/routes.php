@@ -95,3 +95,6 @@ Route::post('/admin/room/create',array('before'=>'userAuth','uses'=>'roomControl
 Route::get('/admin/room/edit/{id}',array('before'=>'userAuth','uses'=>'roomController@edit'));
 Route::post('/admin/room/edit',array('before'=>'userAuth','uses'=>'roomController@do_edit'));
 Route::get('/admin/room/delete/{id}',array('before'=>'userAuth','uses'=>'roomController@del'));
+
+//Sales
+Route::get('/admin/sales',array('before'=>'userAuth','uses'=>'salesController@index'));

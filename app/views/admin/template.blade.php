@@ -130,7 +130,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo Config::get('app.url');?>public/adm_sales">
+              <a href="<?php echo Config::get('app.url');?>public/admin/sales">
                 <i class="fa fa-money"></i> <span>Sales</span>
               </a>
             </li>

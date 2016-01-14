@@ -291,12 +291,15 @@ Check Out
                                         </tr>
                                         <tr><td></td><td></td><td></td></tr>
                                         <tr class="summary">
-                                            <td></td>
+                                            <td>
+                                                
+                                                {{Form::hidden('total_order',$total_cart)}}
+                                            </td>
 
                                             <td>
 
                                             </td>
-                                            <td><button class="btn btn-success large">Submit</button></td>
+                                            <td><button class="btn btn-success large" type='submit'>Submit</button></td>
 
 
                                         </tr>

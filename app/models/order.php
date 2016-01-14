@@ -5,4 +5,7 @@ class order Extends Eloquent{
 	function add($data){
 		return DB::table($this->table)->InsertGetId($data);
 	}
+	function get_page(){
+		return order::paginate(20);
+	}
 }
