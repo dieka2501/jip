@@ -83,7 +83,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="{{Config::get('app.url')}}public/admin/logout" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -139,7 +139,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo Config::get('app.url');?>public/adm_sales">
+              <a href="<?php echo Config::get('app.url');?>public/admin/sales">
                 <i class="fa fa-money"></i> <span>Sales</span>
               </a>
             </li>

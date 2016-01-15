@@ -14,6 +14,9 @@ class category Extends Eloquent{
 	function get_parent(){
 		return DB::table($this->table)->where('category_parent',0)->get();
 	}
+	function get_parent_edit($ids){
+		return DB::table($this->table)->where('category_parent',0)->where('id_category','!=',$ids)->get();
+	}
 	function get_child(){
 		return DB::table($this->table)->where('category_parent','!=',0)->get();
 	}

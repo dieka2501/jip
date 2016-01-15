@@ -6,7 +6,18 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
     <ul class="dropdown-menu main-menu efek multi-level">
         @foreach($menucat as $keys => $menucats)
-        <li><a href="#">{{$menucats}}</a></li>
+            @if(isset($childcat[$keys]) == false)
+                <li><a href="{{Config::get('app.url')}}public/product">{{$menucats}}</a></li>
+            @else 
+                <li class="dropdown-submenu">
+                    <a href="{{Config::get('app.url')}}public/product" class="dropdown-toggle" data-toggle="dropdown">{{$menucats}}</a>
+                    <ul class="dropdown-menu main-menu">
+                        @foreach($childcat[$keys] as $childkey => $menuchild)
+                            <li><a href="{{Config::get('app.url')}}public/product">{{$menuchild}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>    
+            @endif
         @endforeach
         <!-- <li class="dropdown-submenu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category 6</a>
@@ -34,11 +45,11 @@
 
     </ul>
     </li>
-  <li id='aboutus'><a href="<?php echo Config::get('app.url');?>public/about">About Us</a></li> 
+  <li id='aboutus'><a href="<?php echo Config::get('app.url');?>public/aboutus">About Us</a></li> 
   <li id='product'><a href="<?php echo Config::get('app.url');?>public/product">Our Products</a></li> 
   <li id='community'><a href="#">JSI Community</a></li>
   <li id='event'><a href="<?php echo Config::get('app.url');?>public/news">News &amp; Events</a></li>
-  <li id='contactus'><a href="<?php echo Config::get('app.url');?>public/contact_us">Contact Us</a></li>  
+  <li id='contactus'><a href="<?php echo Config::get('app.url');?>public/contact">Contact Us</a></li>  
 </ul>
 <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">

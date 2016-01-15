@@ -25,6 +25,8 @@ Route::get('/cart/do','cartController@do_add');
 Route::get('/cart/delete','cartController@do_delete');
 Route::post('/cart/update','cartController@do_update');
 Route::get('/community','communityController@index');
+Route::get('/checkout','checkoutController@index');
+Route::post('/checkout/do','checkoutController@do_checkout');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){
@@ -93,3 +95,6 @@ Route::post('/admin/room/create',array('before'=>'userAuth','uses'=>'roomControl
 Route::get('/admin/room/edit/{id}',array('before'=>'userAuth','uses'=>'roomController@edit'));
 Route::post('/admin/room/edit',array('before'=>'userAuth','uses'=>'roomController@do_edit'));
 Route::get('/admin/room/delete/{id}',array('before'=>'userAuth','uses'=>'roomController@del'));
+
+//Sales
+Route::get('/admin/sales',array('before'=>'userAuth','uses'=>'salesController@index'));

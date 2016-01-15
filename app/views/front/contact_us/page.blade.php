@@ -1,4 +1,4 @@
-@extends('main.template')
+@extends('front.template')
 @section('content')
 <div class="jsi-bg">
 <div class="lead">

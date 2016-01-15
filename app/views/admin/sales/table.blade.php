@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    List Data
+    {{$big_title}}
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb" style="padding-top:0px;margin-top:-5px">
-    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/sales/create"><i class="fa fa-plus"></i> Add Data</a></li>
+    <!-- <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/sales/create"><i class="fa fa-plus"></i> Add Data</a></li> -->
   </ol>
 </section>
 
@@ -32,25 +32,26 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tbody><tr>
-              <th>ID</th>
-              <th>Sample</th>
-              <th>Sample</th>
-              <th>Sample</th>
-              <th>Sample</th>
+              <th>ID Order</th>
+              <th>Nama Customer</th>
+              <th>Tanggal</th>
+              <th>Total</th>
+    
               <th>Action</th>
             </tr>
+            @foreach($order as $orders)
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>{{$orders->id_order}}</td>
+              <td>{{$orders->order_first_name}} {{$orders->order_last_name}}</td>
+              <td>{{$orders->created_at}}</td>
+              <td>Rp. {{number_format($orders->order_total)}}</td>
               <td>
               <a class="btn btn-sm btn-success" href="#">Edit</a> 
               <a class="btn btn-sm btn-danger" href="">Delete</a>
               </td>
             </tr>
-            <tr>
+            @endforeach
+            <!-- <tr>
               <td>219</td>
               <td>Alexander Pierce</td>
               <td>11-7-2014</td>
@@ -60,29 +61,7 @@
               <a class="btn btn-sm btn-success" href="#">Edit</a> 
               <a class="btn btn-sm btn-danger" href="">Delete</a>
               </td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="">Delete</a>
-              </td>
-            </tr>
+            </tr> -->
           </tbody></table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->

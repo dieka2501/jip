@@ -90,7 +90,7 @@ class categoryController Extends BaseController{
 
 	function edit($ids){
 		
-		$get_parent 		= $this->category->get_parent();
+		$get_parent 		= $this->category->get_parent_edit($ids);
 		$arr_parent[0] 		= "-- Choose Parent --";
 		foreach ($get_parent as $parents) {
 			$arr_parent[$parents->id_category] = $parents->category_name;
@@ -117,8 +117,8 @@ class categoryController Extends BaseController{
 			$ids 		= Input::get('ids');
 			$status 	= Input::get('status');
 			$parent 	= Input::get('parent');
-			$get_name  	= $this->category->get_name($name);
-			if(count($get_name) == 0){
+			// $get_name  	= $this->category->get_name($name);
+			if(true){
 				if(Input::hasFile('image')){
 					$image 		= Input::file('image');
 					$filename 	= $image->getClientOriginalName();
