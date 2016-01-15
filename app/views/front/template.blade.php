@@ -56,7 +56,7 @@
     }
     #sync1 .item {
       padding: 0px!important;
-      border: 1px solid #eeeeee;
+      border: 1px solid #dddddd;
     }
     #sync2 .owl-item .item img {
       max-width: 100%;
@@ -68,7 +68,12 @@
     }
     #sync2 .item {
       padding: 0px!important;
-      border:1px solid #eeeeee;
+      border:1px solid #dddddd;
+      background: #ffffff!important
+    }
+    #sync2 .synced .item {
+      background: #ffffff!important;
+      border-color: #999!important;
     }
     </style>
 </head>

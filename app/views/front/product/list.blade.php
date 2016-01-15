@@ -60,7 +60,7 @@ Our Products
             <div class="product">
 				<a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" width='859' height="567" class="center-block img-responsive"></a>
 				<div class="thumb-content">
-					<h3><a href="<?php echo Config::get('app.url');?>public/detail_product">{{$products->name_product}}</a></h3>
+					<h3><a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}">{{$products->name_product}}</a></h3>
 					
 					<p><i class="fa fa-tag"></i> 
 						@foreach($cp[$products->id_product] as $cps)

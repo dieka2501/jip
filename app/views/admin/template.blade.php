@@ -29,6 +29,15 @@
     .kat-height {
       height: 105px!important;
     }
+    @media (max-width: 991px) {
+      .content-header > .breadcrumb {
+        float: right!important;
+        background: transparent!important;
+      }
+      .content-header > h1 {
+        float: right!important;
+      }
+    }
     </style>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">

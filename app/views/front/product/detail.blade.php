@@ -39,7 +39,6 @@ Detail Products
 					<div class="col-md-6 desc-product">
 						<div class="product-title">{{strtoupper($product->name_product)}}</div>
 						<div class="product-desc">{{str_limit($product->description_product,100,"....")}}</div>
-						<!-- <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div> -->
 						<hr>
 						<div class="product-price">Rp. {{number_format($product->price_product)}}</div>
 						<div class="product-stock">
@@ -47,47 +46,46 @@ Detail Products
 							
 						</div>
 						<hr>
-						<div class="btn-group cart">
+						<div class="btn-group cart" style="margin-bottom:10px;">
 							<button type="button" class="btn btn-warning">
 								<i class="fa fa-shopping-cart"></i> Add to cart
 							</button>
 						</div>
-						<div class="btn-group wishlist">
+						<div class="btn-group wishlist" style="margin-bottom:10px;">
 							<button type="button" class="btn">
 								<i class="fa fa-check"></i> Add to wishlist 
 							</button>
 						</div>
+						<hr/>
+						<div class="row">
+							<div class="col-md-12 product-infos">
+									<ul id="myTab" class="nav nav-tabs nav_tabs">
+										<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+										<!-- <li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
+										<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li> -->
+									</ul>
+								<div id="myTabContent" class="tab-content">
+									<div class="tab-pane fade in active" id="service-one">
+									 
+										<section class="container product-info">
+											{{$product->description_product}}
+										</section>
+													  
+									</div>
+									<div class="tab-pane fade" id="service-two">
+										<section class="container">
+												
+										</section>
+									</div>
+									<div class="tab-pane fade" id="service-three">
+																
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				</div> 
-			</div>
-			<div class="container">
-			<div class="row">
-				<div class="col-md-12 product-infos">
-						<ul id="myTab" class="nav nav-tabs nav_tabs">
-							<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
-							<!-- <li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
-							<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li> -->
-						</ul>
-					<div id="myTabContent" class="tab-content">
-						<div class="tab-pane fade in active" id="service-one">
-						 
-							<section class="container product-info">
-								{{$product->description_product}}
-							</section>
-										  
-						</div>
-						<div class="tab-pane fade" id="service-two">
-							<section class="container">
-									
-							</section>
-						</div>
-						<div class="tab-pane fade" id="service-three">
-													
-						</div>
-					</div>
-				</div>
-			</div>
 			</div>
 		</div>
 	</div>
