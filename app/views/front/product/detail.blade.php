@@ -27,33 +27,6 @@ Detail Products
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
 						  
 						</div>
-
-						<div class="row">
-							<div class="col-md-12" style="margin-top:10px;">
-									<ul id="myTab" class="nav nav-tabs nav_tabs">
-										<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
-										<!-- <li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
-										<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li> -->
-									</ul>
-								<div id="myTabContent" class="tab-content">
-									<div class="tab-pane fade in active" id="service-one">
-									 
-										<section class="product-info">
-											{{$product->description_product}}
-										</section>
-													  
-									</div>
-									<!-- <div class="tab-pane fade" id="service-two">
-										<section class="container">
-												
-										</section>
-									</div>
-									<div class="tab-pane fade" id="service-three">
-																
-									</div> -->
-								</div>
-							</div>
-						</div>
 					</div>
 						
 					<div class="col-md-6 desc-product">
@@ -80,6 +53,32 @@ Detail Products
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image2}}"></div>
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image3}}"></div>
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" style="margin-top:10px;">
+							<ul id="myTab" class="nav nav-tabs nav_tabs">
+								<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+								<!-- <li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
+								<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li> -->
+							</ul>
+						<div id="myTabContent" class="tab-content">
+							<div class="tab-pane fade in active" id="service-one">
+							 
+								<section class="product-info">
+									{{$product->description_product}}
+								</section>
+											  
+							</div>
+							<!-- <div class="tab-pane fade" id="service-two">
+								<section class="container">
+										
+								</section>
+							</div>
+							<div class="tab-pane fade" id="service-three">
+														
+							</div> -->
 						</div>
 					</div>
 				</div>
