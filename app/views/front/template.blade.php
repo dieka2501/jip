@@ -64,8 +64,9 @@
         max-width: 100%;
     }
     #sync1 .item {
+      background: #ffffff!important;
       padding: 0px!important;
-      border: 1px solid #dddddd;
+      border: 0px solid #dddddd;
     }
     #sync2 .owl-item .item img {
       max-width: 100%;
