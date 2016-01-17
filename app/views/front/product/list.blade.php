@@ -31,7 +31,7 @@ Our Products
 				$cat5 = (isset($cat_all[$n]->category_name))? $cat_all[$n]->category_name : "";
 				// var_dump($cat1);die;
 			?>
-			<div class="col-md-4">
+			<div class="col-md-3">
 			<div class="list-group">
 			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">
 			    {{$cat1}}
@@ -56,7 +56,7 @@ Our Products
 				<div class="thumb-content">
 					<h3><a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}">{{$products->name_product}}</a></h3>
 					
-					<p><i class="fa fa-tag"></i> 
+					<p class="pro-tags"><i class="fa fa-tag"></i> 
 						@foreach($cp[$products->id_product] as $cps)
 							@foreach($cps as $cpss)
 								<a href="{{Config::get('app.url')}}public/category/product">{{$cpss->category_name}}</a>,

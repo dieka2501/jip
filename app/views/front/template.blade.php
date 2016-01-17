@@ -33,6 +33,15 @@
       background: #303030;
       border-color: #303030;
     }
+    .product {
+      margin-bottom: 40px!important;
+    }
+    .product h3 {
+      height: 40px;
+    }
+    .pro-tags a {
+      color: #999999!important;
+    }
     .product img {
       height: 200px;
     }
@@ -74,6 +83,10 @@
     #sync2 .synced .item {
       background: #ffffff!important;
       border-color: #999!important;
+    }
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+      background-color: #FF9500!important;
+      border-color: #FF9500!important;
     }
     </style>
 </head>

@@ -57,7 +57,7 @@ Detail Products
 						</div>
 						<hr/>
 						<div class="row">
-							<div class="col-md-12 product-infos">
+							<div class="col-md-12" style="margin-top:10px;">
 									<ul id="myTab" class="nav nav-tabs nav_tabs">
 										<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
 										<!-- <li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
@@ -66,19 +66,19 @@ Detail Products
 								<div id="myTabContent" class="tab-content">
 									<div class="tab-pane fade in active" id="service-one">
 									 
-										<section class="container product-info">
+										<section class="product-info">
 											{{$product->description_product}}
 										</section>
 													  
 									</div>
-									<div class="tab-pane fade" id="service-two">
+									<!-- <div class="tab-pane fade" id="service-two">
 										<section class="container">
 												
 										</section>
 									</div>
 									<div class="tab-pane fade" id="service-three">
 																
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
