@@ -15,7 +15,7 @@ class product extends Eloquent{
 		return DB::table($this->table)->where($this->primaryKey,$ids)->delete();
 	}
 	function get_page(){
-		return DB::table($this->table)->paginate(20);
+		return DB::table($this->table)->orderBy('id_product','DESC')->paginate(20);
 	}
 	function get_search($q){
 		return DB::table($this->table)->where('name_product',$q)->paginate(20);

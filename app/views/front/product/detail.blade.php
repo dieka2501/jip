@@ -49,10 +49,18 @@ Detail Products
 						</div>
 						<hr/>
 						<div id="sync2" class="owl-carousel">
+						@if($product->main_image != "")
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->main_image}}"></div>
+						@endif
+						@if($product->image2 != "")
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image2}}"></div>
+						@endif
+						@if($product->image3 != "")
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image3}}"></div>
+						@endif
+						@if($product->image4 != "")
 						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
+						@endif
 						</div>
 					</div>
 				</div>

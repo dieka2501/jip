@@ -76,6 +76,7 @@
               </td>
             </tr> -->
           </tbody></table>
+          {{$list->links()}}
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div>
