@@ -6,13 +6,13 @@ class news Extends Eloquent{
 		return DB::table($this->table)->insertGetId($data);
 	}
 	function get_title($title){
-		return DB::table($this->table)->where('title',$title)->first();
+		return DB::table($this->table)->where('news_title',$title)->first();
 	}
 	function get_page(){
 		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(20);
 	}
 	function get_search($cari){
-		return DB::table($this->table)->where('title','like','%'.$cari.'%')->orderBy('id_news',"DESC")->paginate(20);
+		return DB::table($this->table)->where('news_title','like','%'.$cari.'%')->orderBy('id_news',"DESC")->paginate(20);
 	}
 	function get_id($id){
 		return news::find($id);

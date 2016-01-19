@@ -5,6 +5,7 @@ class cartController Extends BaseController{
 		date_default_timezone_set('Asia/Jakarta');
 		$this->cart 		= new cart;
 		$this->category 	= new category;
+		$arr_cat 			= [];
 		$get_parent 		= $this->category->get_parent();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;

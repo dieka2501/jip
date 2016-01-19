@@ -144,7 +144,7 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo Config::get('app.url');?>public/adm_news_events">
+              <a href="<?php echo Config::get('app.url');?>public/admin/news">
                 <i class="fa fa-bookmark"></i> <span>News &amp; Events</span>
               </a>
             </li>

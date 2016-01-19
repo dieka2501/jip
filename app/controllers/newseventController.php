@@ -6,6 +6,8 @@ class newseventController Extends BaseController{
 		$this->file = new newsfile;
 		$this->category 	= new category;
 		$this->cp 			= new categoryProduct;
+		$arr_child 			= array();
+		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;

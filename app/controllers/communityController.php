@@ -3,6 +3,8 @@ class communityController Extends BaseController{
 	protected $layout = 'front.template';
 	function __construct(){
 		$this->category 	= new category;
+		$arr_child 			= array();
+		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;

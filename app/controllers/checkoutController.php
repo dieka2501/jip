@@ -7,12 +7,20 @@ class checkoutController Extends BaseController{
 		$this->order 		= new order;
 		$this->od 			= new orderDetail;
 		$this->category 	= new category;
+		$arr_child 			= array();
+		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;
+			$get_child 		= $this->category->get_idparent($categories->id_category);
+			
+			foreach ($get_child as $childs) {
+				$arr_child[$categories->id_category][$childs->id_category] = $childs->category_name;
+			}
 		}
-		$this->arr_menu_cat = $arr_cat;
+
 		View::share('menucat',$arr_cat);
+		View::share('childcat',$arr_child);
 		View::share('active','product');
 	}
 	function index(){

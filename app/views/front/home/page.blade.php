@@ -145,16 +145,9 @@
 	<h1 class="heading-title">Our Brands</h1>
 	<div class="container">
 		<div id="owl-brands" class="owl-carousel owl-theme">
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-1.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-2.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-3.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-4.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-5.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-1.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-2.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-3.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-4.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/brands-5.png" alt="Jeep Station Indonesia"></a></div>
+			@foreach($brand as $brands)
+			<div class="item client"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$brands->brand_image}}" alt="{{$brands->brand_name}}" width='175' height='176'></a></div>
+			@endforeach()
 		</div>
 	</div>
 </section>

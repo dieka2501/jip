@@ -3,8 +3,11 @@
 class HomeController extends BaseController {
 	protected $layout = 'front.template';
 	function __construct(){
-		$this->news 		= new news;
+		$this->brand 		= new brand;
 		$this->category 	= new category;
+
+		$arr_child 			= array();
+		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;
@@ -39,9 +42,9 @@ class HomeController extends BaseController {
 	}
 	Public function index(){
 		// $menus['menucat'] 		= $this->arr_menu_cat;
-		// $view['newsevent'] = $this->news->get_front();
+		$view['brand'] 			= $this->brand->get();
 		$this->layout->menu 	= View::make('front.menu');
-		$this->layout->content  = View::make('front.home.page');
+		$this->layout->content  = View::make('front.home.page',$view);
 	}
 
 }

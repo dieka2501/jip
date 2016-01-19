@@ -6,6 +6,8 @@ class productController Extends BaseController{
 		$this->category 	= new category;
 		$this->cp 			= new categoryProduct;
 		$get_parent 		= $this->category->get_parent();
+		$arr_child 			= array();
+		$arr_cat 			= array();
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;
 			$get_child 		= $this->category->get_idparent($categories->id_category);

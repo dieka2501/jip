@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    List Data
+    {{$big_title}}
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb" style="padding-top:0px;margin-top:-5px">
-    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/event/create"><i class="fa fa-plus"></i> Add Data</a></li>
+    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/news/create"><i class="fa fa-plus"></i> Create News</a></li>
   </ol>
 </section>
 
@@ -19,7 +19,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">List Data</h3>
+          <h3 class="box-title">{{$big_title}}</h3>
           <div class="box-tools">
             <div class="input-group" style="width: 150px;">
               <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
@@ -29,61 +29,36 @@
             </div>
           </div>
         </div><!-- /.box-header -->
+        {{$notip}}
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tbody><tr>
               <th>ID</th>
-              <th>Sample</th>
-              <th>Sample</th>
-              <th>Sample</th>
-              <th>Sample</th>
+              <th>Title</th>
+              <th>Content</th>
+              <th>Date</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
+            @foreach($get_data as $datas)
+            <?php 
+                $stat = ($datas->news_status == 1)?'Active':'Not Active';
+                $statcss = ($datas->news_status == 1)?'label-primary':'label-warning';
+            ?>
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>{{$datas->id_news}}</td>
+              <td>{{$datas->news_title}}</td>
+              <td>{{str_limit(strip_tags($datas->news_content),100,'...')}}</td>
+              <td>{{$datas->date_insert}}</td>
+              <td><span class="label {{$statcss}}">{{$stat}}</span></td>
               <td>
               <a class="btn btn-sm btn-success" href="#">Edit</a> 
               <a class="btn btn-sm btn-danger" href="">Delete</a>
               </td>
             </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-              <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="">Delete</a>
-              </td>
-            </tr>
+            @endforeach
           </tbody></table>
+          {{$get_data->links()}}
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div>

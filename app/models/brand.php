@@ -3,10 +3,10 @@ class brand Extends Eloquent{
 	protected $table = 'brand';
 
 	function get_all(){
-		return DB::table($this->table)->get();
+		return DB::table($this->table)->orderBy('id_brand','DESC')->get();
 	}
 	function get_page(){
-		return DB::table($this->table)->paginate(20);
+		return DB::table($this->table)->orderBy('id_brand','DESC')->paginate(20);
 	}
 	function get_search($cari){
 		return DB::table($this->table)->where('brand_name','like',$cari)->paginate(20);
