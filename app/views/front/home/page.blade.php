@@ -110,10 +110,12 @@
 	</div>
 </div>
 <section id="featured" class="section">
-	<a href="news.php"><h1 class="heading-title">news &amp; events</h1>
+	<a href="{{Config::get('app.url')}}public/news"><h1 class="heading-title">news &amp; events</h1></a>
 	<div class="container">
 		<div class="row">
+      @if(count($news)>0)
 			<div class="col-md-6 news">
+
         <?php 
             // var_dump($newsfile[$news[0]->id_news]);
            $filenews1  = (isset($newsfile[$news[0]->id_news]))? $newsfile[$news[0]->id_news]->file: ""; 
@@ -132,6 +134,11 @@
         <h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}">{{$news[1]->news_title}}</a></h3>
         <p><?php echo str_limit(strip_tags($news[1]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[1]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
 			</div>
+      @else
+        <div class="col-md-6 news">
+            Belum Ada Berita
+        </div>
+      @endif
 			<div class="clearfix"></div>
 		</div>
 	</div>
