@@ -109,14 +109,14 @@ class newsController Extends BaseController{
 	function edit($id){
 		View::share('big_title','Create News');
 		$get_data 				= $this->news->get_id($id);
-		$view['title'] 			= $get_data->title;
-		$view['content'] 		= $get_data->content;
+		$view['title'] 			= $get_data->news_title;
+		$view['content'] 		= $get_data->news_content;
 		$view['ids']	 		= $id;
 		$view['status']	 		= $get_data->news_status;
-		$view['status']	 		= $get_data->news_type;
+		$view['type']	 		= $get_data->news_type;
 		$view['notip']	 		= Session::get('notip');
 		$view['url']			= Config::get('app.url').'public/admin/news/edit';
-		$this->layout->content 	= View::make('admin.news.form',$view); 	
+		$this->layout->content 	= View::make('admin.news_events.form',$view); 	
 	}
 
 	function do_edit(){
@@ -125,6 +125,7 @@ class newsController Extends BaseController{
 			$title 		= Input::get('title');
 			$content 	= Input::get('content');
 			$status 	= Input::get('status');
+			$type 		= Input::get('type');
 			$ids 		= Input::get('ids');
 			if(true){
 				if(Input::hasFile('image')){
@@ -133,20 +134,19 @@ class newsController Extends BaseController{
 					$count 		= count($image);
 					// var_dump($image[0]->getClientOriginalName());die();
 					// foreach ($image as $images) {
-					if(!is_null($image[0])){
-						$featured['image'] 	= $image[0]->getClientOriginalName();
-						$this->news->edit($ids,$featured);	
-					}
+					// if(!is_null($image[0])){
+					// 	$featured['image'] 	= $image[0]->getClientOriginalName();
+					// 	$this->news->edit($ids,$featured);	
+					// }
 					for($i=0;$count > $i;$i++){
 						if(!is_null($image[$i])){
 							$filename 	= $image[$i]->getClientOriginalName();
 							$image[$i]->move($path,$filename);
 							$file['news_id'] 		= $ids;
 							$file['file'] 	 		= $filename;
-							$file['date_insert'] 	= date('Y-m-d H:i:s');
+							$file['created_at'] 	= date('Y-m-d H:i:s');
 							$this->file->add($file);		
 						}
-						
 					}
 					// $image 		= Input::file('image');
 					// $filename 	= $image->getClientOriginalName();
@@ -155,9 +155,10 @@ class newsController Extends BaseController{
 				}else{
 					$filename = '';
 				}
-				$data['title'] 			= $title;	
-				$data['content'] 		= $content;
+				$data['news_title'] 	= $title;	
+				$data['news_content'] 	= $content;
 				$data['news_status'] 	= $status;
+				$data['news_type'] 		= $status;
 				$data['date_update']	= date('Y-m-d H:i:s');	
 				
 				if($this->news->edit($ids,$data)){
@@ -168,7 +169,7 @@ class newsController Extends BaseController{
 					Session::flash('content',$content);
 					Session::flash('status',$status);
 					Session::flash('notip','<div class="alert alert-danger" role="alert">Title & Content Cannot Leave blank</div>');
-					return Redirect::to('admin/news/create');
+					return Redirect::to('admin/news/edit/'.$ids);
 				}	
 			}else{
 				Session::flash('title',$title);

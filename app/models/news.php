@@ -30,4 +30,10 @@ class news Extends Eloquent{
 	function get_front_news(){
 		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(9);
 	}
+	function get_last(){
+		return news::orderBy('id_news','DESC')->first();
+	}
+	function get_last2(){
+		return news::orderBy('id_news','DESC')->take(2)->get();
+	}
 }

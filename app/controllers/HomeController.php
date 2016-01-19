@@ -5,7 +5,8 @@ class HomeController extends BaseController {
 	function __construct(){
 		$this->brand 		= new brand;
 		$this->category 	= new category;
-
+		$this->news 		= new news;
+		$this->file 		= new newsfile;
 		$arr_child 			= array();
 		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
@@ -41,10 +42,21 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 	Public function index(){
-		// $menus['menucat'] 		= $this->arr_menu_cat;
-		$view['brand'] 			= $this->brand->get();
-		$this->layout->menu 	= View::make('front.menu');
-		$this->layout->content  = View::make('front.home.page',$view);
+		
+		$get_news 			= $this->news->get_last2();
+		$filesnews 			= [];
+		foreach ($get_news as $news) {
+			$getfile 		= $this->file->get_idnews_first($news->id_news);
+			if(count($getfile) > 0){
+				$filesnews[$news->id_news] = $getfile;	
+			}
+			
+		}
+		$view['news'] 				= $get_news;
+		$view['newsfile']			= $filesnews;
+		$view['brand'] 				= $this->brand->get();
+		$this->layout->menu 		= View::make('front.menu');
+		$this->layout->content  	= View::make('front.home.page',$view);
 	}
 
 }

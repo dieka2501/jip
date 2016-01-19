@@ -32,14 +32,16 @@
         <div class="col-md-12">
           <div class="form-group">
             <label>Nama News / Events</label>
-            <input type="text" class="form-control" id='title' name='title'>
+            <input type="text" class="form-control" id='title' name='title' value='{{$title}}'>
+            <input type="hidden" class="form-control" id='ids' name='ids' value='{{$ids}}'>
           </div><!-- /.form-group -->
           <div class="form-group">
             <label>Type</label>
-            <select class="form-control" name='type' id='type'>
+            {{Form::select('type',array('news'=>'News','events'=>'Events'),$type,array('class'=>'form-control'))}}
+            <!-- <select class="form-control" name='type' id='type'>
               <option value='news'>News</option>
               <option value='event'>Events</option>
-            </select>
+            </select> -->
           </div><!-- /.form-group -->
           <div class="form-group" id='divfile'>
             <label>Image</label>
@@ -50,20 +52,22 @@
         </div>
           <div class="form-group">
             <label>Content</label>
-            <textarea class="textarea form-control" name='content'></textarea>
+            <textarea class="textarea form-control" name='content'>{{$content}}</textarea>
           </div><!-- /.form-group -->
           <div class="form-group">
             <label>Status</label>
-            <select class="form-control" name='status' id='status'>
+            {{Form::select('status',array(1=>'Publish',0=>'Unpublish'),$status,array('class'=>'form-control'))}}
+            <!-- <select class="form-control" name='status' id='status'>
               <option value='1'>Publish</option>
               <option value='0'>Unpublish</option>
-            </select>
+            </select> -->
           </div>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.box-body -->
     <div class="box-footer">
       <button style="submit" class="btn btn-success">Submit</button>
+      <a href="{{Config::get('app.url')}}public/admin/news" class="btn btn-danger">Back</a>
     </div>
   </div><!-- /.box -->
 {{Form::close()}}

@@ -18,7 +18,7 @@
       	<div class="carousel-caption">
       		<h1>Explore Our Products</h1>
       		<p>The most complete spareparts for your Jeep Lover.</p>
-      		<a href="#" class="btn-white">Find Out More</a>
+      		<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
       	<div class="carousel-caption">
       	<h1>Explore Our Products</h1>
       	<p>The most complete spareparts for your Jeep Lover.</p>
-      	<a href="#" class="btn-white">Find Out More</a>
+      	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
       	<div class="carousel-caption">
       	<h1>Jeep Renegade</h1>
       	<p>The most complete spareparts for your Jeep Lover.</p>
-      	<a href="#" class="btn-white">Find Out More</a>
+      	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       	</div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       	<div class="carousel-caption">
       	<h1>Explore Our Products</h1>
       	<p>The most complete spareparts for your Jeep Lover.</p>
-      	<a href="#" class="btn-white">Find Out More</a>
+      	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
     </div>
@@ -58,7 +58,7 @@
       <div class="carousel-caption">
       	<h1>Jeep Renegade</h1>
       	<p>The most complete spareparts for your Jeep Lover.</p>
-      	<a href="#" class="btn-white">Find Out More</a>
+      	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
     </div>
@@ -114,16 +114,23 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 news">
-				<a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/JSI-Baksos.jpg" class="center-block img-responsive"></a>
-				<h3><a href="<?php echo Config::get('app.url');?>public/news_detail">Libur Panjang, Komunitas JSI Baksos Korban Longsor Pangalengan</a></h3>
-				<p>MerahPutih Nasional - Peduli terhadap kondisi musibah ledakan gas yang menyebabkan longsor di Pangalengan, Jawa Barat, mendorong Jeep Station Indonesia (JSI) yang dipimpin oleh JHL AUTO </p>
-				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+        <?php 
+            // var_dump($newsfile[$news[0]->id_news]);
+           $filenews1  = (isset($newsfile[$news[0]->id_news]))? $newsfile[$news[0]->id_news]->file: ""; 
+        ?>
+				<a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[0]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews1}}" class="center-block img-responsive"></a>
+				<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[0]->id_news}}">{{$news[0]->news_title}}</a></h3>
+				<p><?php echo str_limit(strip_tags($news[0]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[0]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				
 			</div>
 			<div class="col-md-6 news">
-				<a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big2.jpg" class="center-block img-responsive"></a>
-				<h3><a href="<?php echo Config::get('app.url');?>public/news_detail">SILHOUETTE IN THE SAND</a></h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+				<?php 
+            // var_dump($newsfile[$news[0]->id_news]);
+           $filenews2  = (isset($newsfile[$news[1]->id_news]))? $newsfile[$news[1]->id_news]->file: ""; 
+        ?>
+        <a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews2}}" class="center-block img-responsive"></a>
+        <h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}">{{$news[1]->news_title}}</a></h3>
+        <p><?php echo str_limit(strip_tags($news[1]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[1]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -135,7 +142,7 @@
 			<div class="col-md-6 col-md-offset-3">
 				<h1>FIND YOUR SPAREPARTS</h1>
 				<p>Find our products by brands or by categories</p>
-				<a href="#" class="btn-white">see all products</a>
+				<a href="{{Config::get('app.url')}}public/product" class="btn-white">see all products</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>

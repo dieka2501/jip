@@ -10,5 +10,8 @@ class newsfile extends Eloquent{
 	function get_idnews($idnews){
 		return DB::table($this->table)->where('news_id',$idnews)->get();
 	}
+	function get_idnews_first($idnews){
+		return DB::table($this->table)->where('news_id',$idnews)->first();	
+	}
 	
 }
