@@ -60,7 +60,7 @@
               <td class="status">{{$stat}}</td>
               <td>
               <a class="btn btn-sm btn-success" href="<?php echo Config::get('app.url');?>public/admin/product/edit/{{$datas->id_product}}">Edit</a> 
-              <a class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="<?php echo Config::get('app.url');?>public/admin/product/delete/{{$datas->id_product}}">Delete</a>
+              <a class="btn btn-sm btn-danger" onclick="return confirm('Are You Sure?')" href="<?php echo Config::get('app.url');?>public/admin/product/delete/{{$datas->id_product}}">Delete</a>
               </td>
             </tr>
             @endforeach 

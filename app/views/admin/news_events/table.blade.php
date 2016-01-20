@@ -53,7 +53,7 @@
               <td><span class="label {{$statcss}}">{{$stat}}</span></td>
               <td>
               <a class="btn btn-sm btn-success" href="{{Config::get('app.url')}}public/admin/news/edit/{{$datas->id_news}}">Edit</a> 
-              <a class="btn btn-sm btn-danger" href="{{Config::get('app.url')}}public/admin/news/delete/{{$datas->id_news}}">Delete</a>
+              <a class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')" href="{{Config::get('app.url')}}public/admin/news/delete/{{$datas->id_news}}">Delete</a>
               </td>
             </tr>
             @endforeach
