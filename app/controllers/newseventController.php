@@ -23,17 +23,20 @@ class newseventController Extends BaseController{
 		View::share('active','event');
 	}
 	function index(){
-		$get_news 			= $this->news->get_last2();
+		$get_news 			= $this->news->get_page_front();
 		$filesnews 			= [];
+		$cacah 				= count($get_news);
 		foreach ($get_news as $news) {
 			$getfile 		= $this->file->get_idnews_first($news->id_news);
 			if(count($getfile)>0){
-				$filesnews[$news->id_news][] = $getfile->file;	
+				$filesnews[$news->id_news] = $getfile->file;	
 			}
 			
 		}
+		$page 						= (Input::has('page'))?Input::get('page'):1;
 		$view['news'] 				= $get_news;
 		$view['newsfile']			= $filesnews;
+		$view['page'] 				= $page;
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.news.list',$view);
 	}

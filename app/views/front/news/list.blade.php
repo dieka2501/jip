@@ -5,68 +5,114 @@
 <div class="container">
 News &amp; Events
 <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Sample</a></li>
-  <li class="active">Breadcrumb</li>
+  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
+  <li><a href="{{Config::get('app.url')}}public/news">News</a></li>
+  <li class="active">List</li>
 </ol>
 </div>
 </div>
 </div>
+<?php
+$ppage = $page-1;
+$j = ($ppage*5) ;
+$k = ($ppage*5)+1;
+$l = ($ppage*5)+2;
+$m = ($ppage*5)+3;
+$n = ($ppage*5)+4;
+$o = ($ppage*5)+5;
+?>
 <section id="featured" class="section">
 	<div class="container">
 		<div class="row">
+		@if(count($news) > 0)
+			@if(isset($news[$j]))
 			<div class="col-md-6 news">
-				<a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/jsi-baksos.jpg" class="center-block img-responsive"></a>
-				<h3><a href="<?php echo Config::get('app.url');?>public/news_detail">Libur Panjang, Komunitas JSI Baksos Korban Longsor Pangalengan</a></h3>
-				<p>MerahPutih Nasional - Peduli terhadap kondisi musibah ledakan gas yang menyebabkan longsor di Pangalengan, Jawa Barat, mendorong Jeep Station Indonesia (JSI) yang dipimpin oleh JHL AUTO </p>
-				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews1  = (isset($newsfile[$news[$j]->id_news]))? $newsfile[$news[$j]->id_news]: "news.jpg"; 
+        		?>
+				<a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$j]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews1}}" class="center-block img-responsive"></a>
+				<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$j]->id_news}}">{{$news[$j]->news_title}}</a></h3>
+				<p><?php echo str_limit(strip_tags($news[$j]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$j]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
 			</div>
+			@endif
+			@if(isset($news[$k]))
 			<div class="col-md-6 news">
-				<a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big2.jpg" class="center-block img-responsive"></a>
-				<h3><a href="<?php echo Config::get('app.url');?>public/news_detail">SILHOUETTE IN THE SAND</a></h3>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews2  = (isset($newsfile[$news[$k]->id_news]))? $newsfile[$news[$k]->id_news]: "news.jpg"; 
+        		?>
+				<a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$k]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews2}}" class="center-block img-responsive"></a>
+				
+					<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$k]->id_news}}">{{$news[$k]->news_title}}</a></h3>
+					<p><?php echo str_limit(strip_tags($news[$k]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$k]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				
 			</div>
-            
+            @endif
             <div class="clearfix"></div>
             <div class="col-md-12"><hr /></div>
+            @if(isset($news[$l]))
 			<div class="news">
-				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big2.jpg" class="center-block img-responsive"></a></div>
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews3  = (isset($newsfile[$news[$l]->id_news]))? $newsfile[$news[$l]->id_news]: "news.jpg"; 
+        		?>
+				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$l]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews3}}" class="center-block img-responsive"></a></div>
 				<div class="col-md-8">
-                    <h3><a href="<?php echo Config::get('app.url');?>public/news_detail">SILHOUETTE IN THE SAND</a></h3>
-    				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-    				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-                </div>
+					<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$l]->id_news}}">{{$news[$l]->news_title}}</a></h3>
+					<p><?php echo str_limit(strip_tags($news[$l]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$l]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				</div>
                 <div class="clearfix"></div>
 			</div>
-            <div class="news">
-				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big1.jpg" class="center-block img-responsive"></a></div>
+			@endif
+			@if(isset($news[$m]))
+			<div class="news">
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews4  = (isset($newsfile[$news[$m]->id_news]))? $newsfile[$news[$m]->id_news]: "news.jpg"; 
+        		?>
+				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$m]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews4}}" class="center-block img-responsive"></a></div>
 				<div class="col-md-8">
-                    <h3><a href="<?php echo Config::get('app.url');?>public/news_detail">SILHOUETTE IN THE SAND</a></h3>
-    				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-    				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-                </div>
+					<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$m]->id_news}}">{{$news[$m]->news_title}}</a></h3>
+					<p><?php echo str_limit(strip_tags($news[$m]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$m]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				</div>
                 <div class="clearfix"></div>
 			</div>
-            <div class="news">
-				<div class="col-md-3"><a href="news-detail.php"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big2.jpg" class="center-block img-responsive"></a></div>
+			@endif
+            @if(isset($news[$n]))
+			<div class="news">
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews5  = (isset($newsfile[$news[$n]->id_news]))? $newsfile[$news[$n]->id_news]: "news.jpg"; 
+        		?>
+				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$n]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews5}}" class="center-block img-responsive"></a></div>
 				<div class="col-md-8">
-                    <h3><a href="news-detail.php">SILHOUETTE IN THE SAND</a></h3>
-    				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-    				<a href="news-detail.php" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-                </div>
+					<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$n]->id_news}}">{{$news[$n]->news_title}}</a></h3>
+					<p><?php echo str_limit(strip_tags($news[$n]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$n]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				</div>
                 <div class="clearfix"></div>
 			</div>
-            <div class="news">
-				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news_detail"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-big1.jpg" class="center-block img-responsive"></a></div>
+			@endif
+
+            @if(isset($news[$o]))
+			<div class="news">
+				<?php 
+            		 // var_dump($news[0]);die;
+           			$filenews6  = (isset($newsfile[$news[$o]->id_news]))? $newsfile[$news[$o]->id_news]: "news.jpg"; 
+        		?>
+				<div class="col-md-3"><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$o]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews6}}" class="center-block img-responsive"></a></div>
 				<div class="col-md-8">
-                    <h3><a href="<?php echo Config::get('app.url');?>public/news_detail">SILHOUETTE IN THE SAND</a></h3>
-    				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-    				<a href="<?php echo Config::get('app.url');?>public/news_detail" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-                </div>
+					<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[$o]->id_news}}">{{$news[$o]->news_title}}</a></h3>
+					<p><?php echo str_limit(strip_tags($news[$o]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[$o]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
+				</div>
                 <div class="clearfix"></div>
 			</div>
+			@endif
+			@else
+				<div class="col-md-6 news">Tidak ada berita hari ini..</div>	
+			@endif
 			<div class="clearfix"></div>
+			<div>{{$news->links()}}</div>
 		</div>
 	</div>
 </section>

@@ -11,6 +11,9 @@ class news Extends Eloquent{
 	function get_page(){
 		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(20);
 	}
+	function get_page_front(){
+		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(6);
+	}
 	function get_search($cari){
 		return DB::table($this->table)->where('news_title','like','%'.$cari.'%')->orderBy('id_news',"DESC")->paginate(20);
 	}
