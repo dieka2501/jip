@@ -25,6 +25,7 @@ class productController Extends BaseController{
 		$category_all 				= $this->category->get_all();
 		$cacah_cat 					= ceil(count($category_all)/5);
 		$view['product']  			= $this->product->get_page();
+		$get_cp 					= [];
 		foreach ($view['product'] as $products) {
 			$get_cp[$products->id_product][] = $this->cp->get_idproduct($products->id_product);
 		}
@@ -39,5 +40,20 @@ class productController Extends BaseController{
 		$view['product'] 			= $get_product;
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.product.detail',$view);
+	}
+	function category($idcat){
+		$getcatprod 				= $this->cp->get_idcat($idcat);
+		$category_all 				= $this->category->get_all();
+		$cacah_cat 					= ceil(count($category_all)/5);
+		$view['product']  			= $getcatprod;
+		$get_cp 					= [];
+		foreach ($view['product'] as $products) {
+			$get_cp[$products->id_product][] = $this->cp->get_idproduct($products->id_product);
+		}
+		$view['cp'] 		 		= $get_cp;
+		$view['cat_all'] 		 	= $category_all;
+		$view['cacah_cat'] 		 	= $cacah_cat;
+		$this->layout->menu 		= View::make('front.menu');
+		$this->layout->content 		= View::make('front.product.list',$view);	
 	}
 }

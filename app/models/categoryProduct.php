@@ -14,6 +14,12 @@ class categoryProduct Extends Eloquent{
 				->get();
 	}
 	function delete_idproduct($id_product){
-		return DB::table($this->table)->where('product_id',$id_product)->delete();
+		return B::table($this->table)->where('product_id',$id_product)->delete();
+	}
+	function get_idcat($idcat){
+		return categoryProduct::where($this->table.'.category_id',$idcat)
+				->join('category',$this->table.'.category_id','=','category.id_category')
+				->join('product',$this->table.'.product_id','=','product.id_product')
+				->paginate(20);
 	}
 }

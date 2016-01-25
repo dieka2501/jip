@@ -13,8 +13,9 @@
 Route::get('/','HomeController@index');
 Route::get('/product','productController@index');
 Route::get('/product/detail/{id}','productController@detail');
+Route::get('/product/category/{id}','productController@category');
 Route::get('/news','newseventController@index');
-Route::get('/news/detail','newseventController@detail');
+Route::get('/news/detail/{id}','newseventController@detail');
 Route::get('/special','specialofferController@index');
 Route::get('/facilities','fasilitiesController@index');
 Route::get('/contact','contactController@index');
@@ -27,6 +28,7 @@ Route::post('/cart/update','cartController@do_update');
 Route::get('/community','communityController@index');
 Route::get('/checkout','checkoutController@index');
 Route::post('/checkout/do','checkoutController@do_checkout');
+Route::get('/register','registerController@index');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){

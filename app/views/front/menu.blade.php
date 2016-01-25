@@ -7,13 +7,13 @@
     <ul class="dropdown-menu main-menu efek multi-level">
         @foreach($menucat as $keys => $menucats)
             @if(isset($childcat[$keys]) == false)
-                <li><a href="{{Config::get('app.url')}}public/product">{{$menucats}}</a></li>
+                <li><a href="{{Config::get('app.url')}}public/product/category/{{$keys}}">{{$menucats}}</a></li>
             @else 
                 <li class="dropdown-submenu">
                     <a href="{{Config::get('app.url')}}public/product" class="dropdown-toggle" data-toggle="dropdown">{{$menucats}}</a>
                     <ul class="dropdown-menu main-menu">
                         @foreach($childcat[$keys] as $childkey => $menuchild)
-                            <li><a href="{{Config::get('app.url')}}public/product">{{$menuchild}}</a></li>
+                            <li><a href="{{Config::get('app.url')}}public/product/category/{{$childkey}}">{{$menuchild}}</a></li>
                         @endforeach
                     </ul>
                 </li>    

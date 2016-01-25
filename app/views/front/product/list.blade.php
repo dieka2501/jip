@@ -5,9 +5,9 @@
 <div class="container">
 Our Products
 <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Sample</a></li>
-  <li class="active">Breadcrumb</li>
+  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
+  <li><a href="{{Config::get('app.url')}}public/product">Product</a></li>
+  <li class="active">List</li>
 </ol>
 </div>
 </div>
@@ -29,17 +29,23 @@ Our Products
 				$cat3 = (isset($cat_all[$l]->category_name))? $cat_all[$l]->category_name : "";
 				$cat4 = (isset($cat_all[$m]->category_name))? $cat_all[$m]->category_name : "";
 				$cat5 = (isset($cat_all[$n]->category_name))? $cat_all[$n]->category_name : "";
+
+				$nocat1 = (isset($cat_all[$j]->id_category))? $cat_all[$j]->id_category : "";
+				$nocat2 = (isset($cat_all[$k]->id_category))? $cat_all[$k]->id_category : "";
+				$nocat3 = (isset($cat_all[$l]->id_category))? $cat_all[$l]->id_category : "";
+				$nocat4 = (isset($cat_all[$m]->id_category))? $cat_all[$m]->id_category : "";
+				$nocat5 = (isset($cat_all[$n]->id_category))? $cat_all[$n]->id_category : "";
 				// var_dump($cat1);die;
 			?>
 			<div class="col-md-3">
 			<div class="list-group">
-			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">
+				  <a href="{{Config::get('app.url')}}public/product/category/{{$nocat1}}" class="list-group-item">
 			    {{$cat1}}
 			  </a>
-			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">{{$cat2}}</a>
-			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">{{$cat3}}</a>
-			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">{{$cat4}}</a>
-			  <a href="{{Config::get('app.url')}}public/product" class="list-group-item">{{$cat5}}</a>
+			  <a href="{{Config::get('app.url')}}public/product/category/{{$nocat2}}" class="list-group-item">{{$cat2}}</a>
+			  <a href="{{Config::get('app.url')}}public/product/category/{{$nocat3}}" class="list-group-item">{{$cat3}}</a>
+			  <a href="{{Config::get('app.url')}}public/product/category/{{$nocat4}}" class="list-group-item">{{$cat4}}</a>
+			  <a href="{{Config::get('app.url')}}public/product/category/{{$nocat5}}" class="list-group-item">{{$cat5}}</a>
 			</div>
 			</div>
 		@endfor

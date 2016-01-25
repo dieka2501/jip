@@ -40,14 +40,14 @@ class newseventController Extends BaseController{
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.news.list',$view);
 	}
-	function detail(){
-		if(Input::has('id')){
-			$id = Input::get('id');
+	function detail($id){
+		if(isset($id)){
 			$get_news = $this->news->get_id($id);
 			$get_file = $this->file->get_idnews($id);
 			$view['news'] = $get_news;
 			$view['file'] = $get_file;
-			return View::make('front.newsdetail',$view);
+			$this->layout->menu 		= View::make('front.menu');
+			$this->layout->content 		= View::make('front.news.detail',$view);
 		}else{
 			return rediect::to('/news');
 		}
