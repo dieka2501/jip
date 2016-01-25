@@ -29,6 +29,11 @@ Route::get('/community','communityController@index');
 Route::get('/checkout','checkoutController@index');
 Route::post('/checkout/do','checkoutController@do_checkout');
 Route::get('/register','registerController@index');
+Route::post('/register','registerController@do_register');
+Route::get('/login','loginController@index');
+Route::post('/login','loginController@do_login');
+Route::get('/logout','loginController@do_logout');
+
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){

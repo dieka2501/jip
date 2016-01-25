@@ -100,8 +100,13 @@
                     <div class="col-md-6 col-xs-12 slogan"><a href="<?php echo Config::get('app.url');?>public/">Jeep Station Indonesia</a></div>
                     <div class="col-md-6">
                         <ul class="topmenu">
+                            @if(Session::get('login') != true)
                             <li><a href="<?php echo Config::get('app.url');?>public/register"><i class="icon-user-follow icons">&nbsp;</i> Register</a></li>
                             <li><a href="<?php echo Config::get('app.url');?>public/login"><i class="icon-login icons">&nbsp;</i> Login</a></li>
+                            @else
+                            <li><a href="#"><i class="icon-user-follow icons">&nbsp;Hi! </i> {{Session::get('first_name')}} {{Session::get('last_name')}}</a></li>
+                            <li><a href="<?php echo Config::get('app.url');?>public/logout"><i class="icon-login icons">&nbsp;</i> Logout</a></li>
+                            @endif
                             <!-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icon-basket icons">&nbsp;</i> Shopping Cart  <span class="caret"></span></a>
                             </li> -->
