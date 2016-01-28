@@ -6,8 +6,8 @@
 Check Out
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li><a href="#">Sample</a></li>
-  <li class="active">Breadcrumb</li>
+  <li><a href="#">Checkout</a></li>
+  <li class="active">Form</li>
 </ol>
 </div>
 </div>
@@ -16,7 +16,17 @@ Check Out
 	<div class="container">
         {{Form::open(array('url'=>$url,'method'=>'POST'))}}
         <div class="panel-group checkout-accordions">
+
             <div class="panel">
+                @if(Session::get('login') != true)
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseOne">
+                            You can <a href="{{Config::get('app.url')}}public/register" style="color:#ED6F00;">Register</a> or <a href="{{Config::get('app.url')}}public/login" style="color:#EF7E21;">Login</a>
+                        </a>
+                    </h4>
+                </div>
+                @endif
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseOne">
@@ -31,12 +41,12 @@ Check Out
 
                             <div class="row field-row">
                                 <div class="col-xs-6">
-                                    <input class="required form-control  " placeholder="first name*" name='first_name'>
+                                    <input class="required form-control  " placeholder="first name*" name='first_name' value='{{$first_name}}'>
                                 </div>
 
                                 <div class="col-xs-6">
 
-                                    <input class="required form-control" placeholder="last name*" name='last_name'>
+                                    <input class="required form-control" placeholder="last name*" name='last_name' value='{{$last_name}}'>
 
                                 </div>
                             </div>
@@ -44,38 +54,38 @@ Check Out
 
                             <div class="row field-row ">
                                 <div class="col-xs-12">
-                                    <input class="form-control" placeholder="company name (optional)" name='company'>
+                                    <input class="form-control" placeholder="company name (optional)" name='company' value='{{$company}}'>
                                 </div>
                             </div>
 
                             <div class="row field-row ">
                                 <div class="col-xs-12">
-                                    <input class="required form-control" placeholder="street address*" name='address'>
+                                    <input class="required form-control" placeholder="street address*" name='address' value='{{$address}}'>
 
                                 </div>
                             </div>
 
                             <div class="row field-row ">
                                 <div class="col-xs-12">
-                                    <input class="required form-control col-xs-12" placeholder="town*" name='town'>
+                                    <input class="required form-control col-xs-12" placeholder="town*" name='town' value='{{$town}}'>
 
                                 </div>
                             </div>
 
                             <div class="row field-row ">
                                 <div class="col-xs-2">
-                                    <input class="required form-control " placeholder="postcode/zip*" name='zip'>
+                                    <input class="required form-control " placeholder="postcode/zip*" name='zip' value='{{$zip}}'>
                                 </div>
                                 <div class="col-xs-10">
-                                    <input class="form-control" placeholder="state/country" name='state'>
+                                    <input class="form-control" placeholder="state/country" name='state' value='{{$country}}'>
                                 </div>
                             </div>
                             <div class="row field-row ">
                                 <div class="col-xs-6">
-                                    <input class="required form-control" placeholder="email address*" name='email'>
+                                    <input class="required form-control" placeholder="email address*" name='email' value='{{$email}}'>
                                 </div>
                                 <div class="col-xs-6">
-                                    <input class="form-control" placeholder="phone number" name='phone_number'>
+                                    <input class="form-control" placeholder="phone number" name='phone_number' value='{{$phone}}'>
                                 </div>
                             </div>
 

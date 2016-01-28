@@ -27,12 +27,22 @@ class checkoutController Extends BaseController{
 		$token 					= Session::get('_token');
 		$get_cart 			 	= $this->cart->get_session($token);
 		$view['cart'] 			= $get_cart;
+		$view['first_name'] 	= Session::get('first_name');
+		$view['last_name'] 		= Session::get('last_name');
+		$view['company'] 		= Session::get('company');
+		$view['address'] 		= Session::get('address');
+		$view['town'] 			= Session::get('town');
+		$view['zip'] 			= Session::get('zip');
+		$view['email'] 			= Session::get('email');
+		$view['country']		= Session::get('country');
+		$view['phone']			= Session::get('phone');
 		$view['url'] 			= Config::get('app.url')."public/checkout/do";
+		
 		$this->layout->menu 	= View::make('front.menu');
 		$this->layout->content 	= View::make('front.checkout.page',$view);
 	}
 	function do_checkout(){
-		if(Input::has('first_name') && Input::has('last_name') && Input::has('address')){
+		if(Input::has('first_name') && Input::has('last_name') && Input::has('address') && Input::has('email')){
 			$first_name 		= Input::get('first_name');
 			$last_name	 		= Input::get('last_name');
 			$company	 		= Input::get('company');
@@ -52,6 +62,7 @@ class checkoutController Extends BaseController{
 			$insorder['order_town'] 			= $town;
 			$insorder['order_zip']	 			= $zip;
 			$insorder['order_country']	 		= $state;
+			$insorder['order_status']	 		= 0;
 			$insorder['order_email']	 		= $email;
 			$insorder['order_phone']	 		= $phone_number;
 			$insorder['order_total']	 		= $total_order;
@@ -65,10 +76,21 @@ class checkoutController Extends BaseController{
 				$detailorder['created_at'] 		= date('Y-m-d H:i:s');
 				$this->od->add($detailorder);
 			}
-			$view['noorder'] = $idorder;
+			
+			$get_order 				= $this->order->get_id($idorder);
+			$get_detail 			= $this->od->get_idorder($idorder);
+			$view['noorder'] 		= $idorder;
+			$view['order']			= $get_order;
+			$view['detail']			= $get_detail;
 			$this->layout->menu 	= View::make('front.menu');
 			$this->layout->content 	= View::make('front.checkout.result',$view);
 			$this->cart->delete_token($token);	
+			$detail['email'] = $email;
+			Mail::send('front.checkout.result',$view,function($message) use ($detail){
+				$message->from('admin@jsi.co.id','Admin');
+				$message->to($detail['email']);
+				$message->subject('Pemesanan Barang JSI');
+			});
 		}else{
 			Redirect::to('/cart');
 		}

@@ -8,4 +8,7 @@ class order Extends Eloquent{
 	function get_page(){
 		return order::paginate(20);
 	}
+	function get_id($id){
+		return order::find($id);
+	}
 }

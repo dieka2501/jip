@@ -88,9 +88,12 @@ Check Out
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></td>
                         <td>
+                        @if(count($cart) > 0)
                         <a href="{{Config::get('app.url')}}public/checkout" class="btn btn-success">
                             Checkout <span class="glyphicon glyphicon-play"></span>
-                        </a></td>
+                        </a>
+                        @endif
+                        </td>
                     </tr>
                 </tbody>
             </table>

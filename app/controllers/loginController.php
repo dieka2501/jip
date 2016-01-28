@@ -36,6 +36,7 @@ class loginController Extends BaseController{
 			Session::put('last_name',$getlogin->customer_last_name);
 			Session::put('company',$getlogin->customer_company);
 			Session::put('address',$getlogin->customer_address);
+			Session::put('email',$getlogin->customer_email);
 			Session::put('town',$getlogin->customer_town);
 			Session::put('zip',$getlogin->customer_zip);
 			Session::put('country',$getlogin->customer_country);
