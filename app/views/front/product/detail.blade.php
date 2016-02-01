@@ -33,7 +33,11 @@ Detail Products
 						<div class="product-title">{{strtoupper($product->name_product)}}</div>
 						<div class="product-desc">{{str_limit($product->description_product,100,"....")}}</div>
 						<hr>
+						@if($product->price_product == 0)
+						<div class="product-price">Call For price</div>
+						@else
 						<div class="product-price">Rp. {{number_format($product->price_product)}}</div>
+						@endif
 						<div class="product-stock">
 							<?php echo ($product->stock_product > 0)? "In Stock":"Out Of Stock"?>
 						</div>

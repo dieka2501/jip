@@ -105,3 +105,5 @@ Route::get('/admin/room/delete/{id}',array('before'=>'userAuth','uses'=>'roomCon
 
 //Sales
 Route::get('/admin/sales',array('before'=>'userAuth','uses'=>'salesController@index'));
+Route::get('/admin/sales/detail/{id}',array('before'=>'userAuth','uses'=>'salesController@detail'));
+Route::post('/admin/sales/edit/status',array('before'=>'userAuth','uses'=>'salesController@change_status'));

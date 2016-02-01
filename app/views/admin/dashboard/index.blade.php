@@ -88,40 +88,29 @@
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tbody><tr>
-              <th>ID</th>
-              <th>User</th>
+              <th>No Order</th>
+              <th>Nama Lengkap</th>
               <th>Date</th>
               <th>Status</th>
-              <th>Reason</th>
+              <th>Order Total</th>
             </tr>
+            @foreach($order as $orders)
+            <?php //var_dump($orders) ?>
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+              <td>{{$orders->id_order}}</td>
+              <td>{{$orders->order_first_name}} {{$orders->order_last_name}}</td>
+              <td>{{$orders->created_at}}</td>
+              @if($orders->order_status == 0)
+                <td><span class="label label-danger">Order</span></td>
+              @elseif($orders->order_status == 1)
+                <td><span class="label label-warning">Payment</span></td>
+              @else
+                <td><span class="label label-success">Done</span></td>
+              @endif
+              <td>{{number_format($orders->order_total)}}</td>
             </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
+            @endforeach
+            
           </tbody></table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->

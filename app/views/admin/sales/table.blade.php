@@ -46,7 +46,7 @@
               <td>{{$orders->created_at}}</td>
               <td>Rp. {{number_format($orders->order_total)}}</td>
               <td>
-              <a class="btn btn-sm btn-success" href="#">Edit</a> 
+              <a class="btn btn-sm btn-success" href="{{Config::get('app.url')}}public/admin/sales/detail/{{$orders->id_order}}">Detail</a> 
               <a class="btn btn-sm btn-danger" href="">Delete</a>
               </td>
             </tr>
