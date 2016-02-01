@@ -66,7 +66,7 @@
   <div class="clearfix"></div>
 </div>
 </section>
-<section id="partner">
+<!-- <section id="partner">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 partners"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" alt="Jeep Station Indonesia"></a></div>
@@ -76,7 +76,7 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
-</section>
+</section> -->
 <div id="news-info" class="section">
 	<h1 class="heading-title">featured products</h1>
 	<div class="container">
