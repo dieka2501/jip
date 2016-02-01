@@ -62,24 +62,35 @@
             <label>Kategori Produk</label>
             {{Form::select('kategori[]',$arr_kategori,$kategori,array('class'=>'form-control kat-height','multiple','required'=>'required'))}}
           </div><!-- /.form-group -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Main Image</label>
             <input type="file" class="form-control" name='main_image'>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label>Image 2</label>
             <input type="file" class="form-control" name='image2'>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label>Image 3</label>
             <input type="file" class="form-control" name='image3'>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label>Image 4</label>
             <input type="file" class="form-control" name='image4'>
-          </div>
+          </div> -->
         </div><!-- /.col -->
       </div><!-- /.row -->
+      <div class="row"> 
+          <div class="col-md-12">
+              <div class="form-group" id='divfile'>
+                  <label>Image</label>
+                  <input type="file" class="form-control" name='image[]' >
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                  <button class="btn btn-primary" id='clone_file' type="button">Add File</button>
+              </div>
+          </div>
+      </div>
       <div class="row">
       <div class="col-md-12">
       <div class="form-group">
@@ -114,4 +125,17 @@
     
  });
 </script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#clone_file').click(function(){
+            var form_file = "<div class='form-group'>"+
+                            "<label>Image</label>"+
+                            "<input type='file' class='form-control' name='image[]' >"+
+                            "</div>";
+            // console.log(form_file);
+            // alert(form_file);
+            $('#divfile').append(form_file);
+        });
+    });
+</script>
 @stop

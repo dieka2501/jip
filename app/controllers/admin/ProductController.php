@@ -7,6 +7,7 @@ class ProductController Extends BaseController{
 		$this->category 			= new category;
 		$this->brand 				= new brand;
 		$this->categoryProduct 		= new categoryProduct;
+		$this->pf 					= new productFile;
 		$this->path 				= base_path().'/aset/upload/';
 	}
 	function index(){
@@ -34,6 +35,7 @@ class ProductController Extends BaseController{
 		foreach ($get_brand as $brands) {
 			$arr_brand[$brands->id_brand] = $brands->brand_name;
 		}
+		$view['action'] 			= 'create';
 		$view['page_name'] 			= Session::get('page_name');
 		$view['notip'] 				= Session::get('notip');
 		$view['url'] 				= Config::get('app.url').'public/admin/product/create';
@@ -74,35 +76,50 @@ class ProductController Extends BaseController{
 				$insert['brand_id'] 	 		= $brand;
 				$insert['status_product'] 		= $status_product;
 				$insert['created_at'] 			= date('Y-m-d H:i:s');
-				if(Input::hasFile('main_image')){
-					$main_image 			= Input::file('main_image');
-					$ext_main_image 		= $main_image->getClientOriginalExtension();
-					$filename_main_image	= "main_image".date('YmdHis').'.'.$ext_main_image;
-					$main_image->move($this->path,$filename_main_image);
-					$insert['main_image'] 	= $filename_main_image;
-				}
-				if(Input::hasFile('image2')){
-					$image2 			= Input::file('image2');
-					$ext_image2 		= $image2->getClientOriginalExtension();
-					$filename_image2	= "image2".date('YmdHis').'.'.$ext_image2;
-					$image2->move($this->path,$filename_image2);
-					$insert['image2'] 	= $filename_image2;
-				}
-				if(Input::hasFile('image3')){
-					$image3 			= Input::file('image3');
-					$ext_image3 		= $image3->getClientOriginalExtension();
-					$filename_image3	= "image3".date('YmdHis').'.'.$ext_image3;
-					$image3->move($this->path,$filename_image3);
-					$insert['image3'] 	= $filename_image3;
-				}
-				if(Input::hasFile('image4')){
-					$image4 			= Input::file('image4');
-					$ext_image4 		= $image4->getClientOriginalExtension();
-					$filename_image4	= "image4".date('YmdHis').'.'.$ext_image4;
-					$image4->move($this->path,$filename_image4);
-					$insert['image4'] 	= $filename_image4;
-				}
+
+				// if(Input::hasFile('image2')){
+				// 	$image2 			= Input::file('image2');
+				// 	$ext_image2 		= $image2->getClientOriginalExtension();
+				// 	$filename_image2	= "image2".date('YmdHis').'.'.$ext_image2;
+				// 	$image2->move($this->path,$filename_image2);
+				// 	$insert['image2'] 	= $filename_image2;
+				// }
+				// if(Input::hasFile('image3')){
+				// 	$image3 			= Input::file('image3');
+				// 	$ext_image3 		= $image3->getClientOriginalExtension();
+				// 	$filename_image3	= "image3".date('YmdHis').'.'.$ext_image3;
+				// 	$image3->move($this->path,$filename_image3);
+				// 	$insert['image3'] 	= $filename_image3;
+				// }
+				// if(Input::hasFile('image4')){
+				// 	$image4 			= Input::file('image4');
+				// 	$ext_image4 		= $image4->getClientOriginalExtension();
+				// 	$filename_image4	= "image4".date('YmdHis').'.'.$ext_image4;
+				// 	$image4->move($this->path,$filename_image4);
+				// 	$insert['image4'] 	= $filename_image4;
+				// }
 				$getids 	= $this->product->add($insert);
+				if(Input::hasFile('image')){
+					$image 					= Input::file('image');
+					$count 					= count($image);
+					// var_dump($image[0]->getClientOriginalExtension());die;
+					
+					for ($i=0; $i < $count; $i++) {
+
+						$ext_main_image 		= $image[$i]->getClientOriginalExtension();
+						$filename_main_image	= "main_image".date('YmdHis').'.'.$ext_main_image;
+						$image[$i]->move($this->path,$filename_main_image);
+						$insertimg['image_url'] 	= $filename_main_image;
+						$insertimg['product_id'] 	= $getids;
+						$insertimg['created_at'] 	= date('Y-m-d H:i:s');
+						$this->pf->add($insertimg);
+						if($i == 0){
+							$updatefeatured['main_image'] = $filename_main_image;
+							$this->product->edit($getids,$updatefeatured);
+						}
+					}	
+					
+				}
 				if($getids > 0){
 					foreach ($kategori as $kategoris) {
 						$cp['category_id'] = $kategoris;
