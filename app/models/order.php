@@ -11,6 +11,9 @@ class order Extends Eloquent{
 	function get_id($id){
 		return order::find($id);
 	}
+	function get_id_order($id){
+		return order::where('order_status',0)->where('id_order',$id)->first();
+	}
 	function edit($id,$data){
 		return order::where('id_order',$id)->update($data);	
 	}

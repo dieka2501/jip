@@ -50,6 +50,7 @@
   
   <li id='event'><a href="<?php echo Config::get('app.url');?>public/news">News &amp; Events</a></li>
   <li id='contactus'><a href="<?php echo Config::get('app.url');?>public/contact">Contact Us</a></li>  
+  <li id='payment'><a href="<?php echo Config::get('app.url');?>public/payment">Confirm Payment</a></li>  
 </ul>
 <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">

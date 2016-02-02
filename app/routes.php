@@ -33,7 +33,8 @@ Route::post('/register','registerController@do_register');
 Route::get('/login','loginController@index');
 Route::post('/login','loginController@do_login');
 Route::get('/logout','loginController@do_logout');
-
+Route::get('/payment','paymentController@index');
+Route::post('/payment/search/orderid','paymentController@json_order');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){
