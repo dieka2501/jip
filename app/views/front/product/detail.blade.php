@@ -31,7 +31,7 @@ Detail Products
 						
 					<div class="col-md-6 desc-product">
 						<div class="product-title">{{strtoupper($product->name_product)}}</div>
-						<div class="product-desc">{{str_limit($product->description_product,100,"....")}}</div>
+						<div class="product-desc">{{$product->model_product}}</div>
 						<hr>
 						@if($product->price_product == 0)
 						<div class="product-price">Call For price</div>

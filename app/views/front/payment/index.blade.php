@@ -3,6 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 text-left">
+			<div>{{$notip}}</div>
 			<form class="form-inline">
 				<div class="form-group">
 					<label>Search Order ID</label>
@@ -10,7 +11,8 @@
 					<button class="btn btn-default" id='btn-order' type="button">Cari</button>
 				</div>			
 			</form>
-			<form>
+			{{Form::open(array('url'=>Config::get('app.url')."public/payment/do","method"=>"POST",'files'=>true,'id'=>'frm-payment'))}}
+			
 				<div class="form-group">
 					<label>Order ID</label>
 					<input name='order_id_pembelian' id='order_id_pembelian' class="form-control" readonly="readonly">
@@ -63,6 +65,30 @@
 					$('#order_id_pembelian').val(data.alert);
 				}
 			});
+		});
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#btn-bayar').click(function(){
+			var nama_order 		= $('#nama').val();
+			var nama_pembayaran = $('#nama_pembayaran').val();
+			var total_order 	= $('#total_pembelian').val();
+			var total_bayar 	= $('#total_pembayaran').val();
+			if(nama != ""){
+				if(total_order == total_bayar){
+					if(nama_pembayaran !=""){
+						$('#frm-payment').submit();	
+					}else{
+						alert('Nama pembayaran harus diisi.');		
+					}
+					
+				}else{
+					alert('Total pembayaran harus sama dengan total pembelian');	
+				}
+			}else{
+				alert('Nomor Order Wajib Dicari Terlebih Dahulu');
+			}	
 		});
 	});
 </script>

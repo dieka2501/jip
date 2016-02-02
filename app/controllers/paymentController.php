@@ -3,6 +3,7 @@ class paymentController Extends BaseController{
 	protected $layout = 'front.template';
 	function __construct(){
 		date_default_timezone_set('Asia/jakarta');
+		$this->path 		= base_path().'/aset/payment/';
 		$this->category 	= new category;
 		$this->order 		= new order;
 		$this->payment 		= new payment;
@@ -24,8 +25,9 @@ class paymentController Extends BaseController{
 		
 	}
 	function index(){
+		$view['notip'] 				= Session::get('notip');
 		$this->layout->menu 		= View::make('front.menu');
-		$this->layout->content 		= View::make('front.payment.index');
+		$this->layout->content 		= View::make('front.payment.index',$view);
 	}
 	function json_order(){
 		$id_order 		= Input::get('id_order');
@@ -40,6 +42,35 @@ class paymentController Extends BaseController{
 			$status = false;
 		}
 		return Response::json(['status'=>$status,'data'=>$data,'alert'=>$alert]);
+	}
+	function do_payment(){
+		$order_id 				= Input::get('order_id_pembelian');
+		$total_pembayaran 		= Input::get('total_pembayaran');
+		$nama_pembayaran 		= Input::get('nama_pembayaran');
+		$catatan_pembayaran		= Input::get('catatan_pembayaran');
+		if(Input::hasFile('bukti_pembayaran')){
+			$image 		= Input::file('bukti_pembayaran');
+			$getext 	= $image->getClientOriginalExtension();
+			$filename 	= date('YmdHis').'.'.$getext;
+			$image->move($this->path,$filename);
+			$insert['payment_image'] = $filename;
+		}
+		$insert['order_id'] 		= $order_id;
+		$insert['payment_paid'] 	= $total_pembayaran;
+		$insert['payment_name'] 	= $nama_pembayaran;
+		$insert['payment_note'] 	= $catatan_pembayaran;
+		$insert['created_at'] 		= date('Y-m-d H:i:s');
+		$ids = $this->payment->add($insert);
+		if($ids > 0){
+			Session::flash('notip',"<div class='alert alert-success'>Pembayaran telah diterima.</div>");
+			$update['order_status'] = 1;
+			$this->order->edit($order_id,$update);
+
+		}else{
+			Session::flash('notip',"<div class='alert alert-danger'>Pembayaran gagal dicatat, silakan ulangi.</div>");
+		}
+		return Redirect::to('/payment');
+
 	}
 
 }
