@@ -3,6 +3,7 @@ class productController Extends BaseController{
 	protected $layout = 'front.template';
 	function __construct(){
 		$this->product 		= new product;
+		$this->pf 			= new productFile;
 		$this->category 	= new category;
 		$this->cp 			= new categoryProduct;
 		$get_parent 		= $this->category->get_parent();
@@ -37,6 +38,8 @@ class productController Extends BaseController{
 	}
 	function detail($id){
 		$get_product 				= $this->product->get_id($id);
+		$get_file 					= $this->pf->get_idproduct($id);
+		$view['file'] 				= $get_file;
 		$view['product'] 			= $get_product;
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.product.detail',$view);

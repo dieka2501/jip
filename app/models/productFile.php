@@ -5,4 +5,11 @@ class productFile Extends Eloquent{
 	function add($data){
 		return productFile::insertGetId($data);
 	}
+	function get_idproduct($idproduct){
+		return productFile::where('product_id',$idproduct)->get();
+	}
+	function del($id){
+		$file = productFile::find($id);
+		return $file->delete();
+	}
 }

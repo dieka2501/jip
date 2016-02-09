@@ -20,6 +20,7 @@
 
   <!-- SELECT2 EXAMPLE -->
   <div class="box box-default">
+  {{Form::open(array('url'=>$url,'files'=>true))}}
     <div class="box-header with-border">
       <h3 class="box-title">{{$page_name}}</h3>
       <div class="box-tools pull-right">
@@ -27,7 +28,7 @@
         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
       </div>
     </div><!-- /.box-header -->
-    {{Form::open(array('url'=>$url,'files'=>true))}}
+    
     <div class="box-body">
       <div class="row">
         <div class="col-md-6">
@@ -100,6 +101,26 @@
       </div>
       </div>
     </div><!-- /.box-body -->
+    @if($action == 'edit')
+    <div class="box-body">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+             @foreach($pf as $pfs)
+              <tr>
+                <td><img src="{{Config::get('app.url')}}aset/upload/{{$pfs->image_url}}" width="50px" height="50px"></td>
+                <td class="text-left" align="left"><a href="{{Config::get('app.url')}}public/admin/product/file/delete/{{$pfs->id_pi}}?id={{$ids}}" class="btn btn-danger text-left" onclick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
+              </tr>
+            @endforeach 
+            </tbody>
+        </table>
+    </div>
+    @endif
     <div class="box-footer">
       <a href="{{Config::get('app.url')}}public/admin/product" class="btn btn-warning">Back</a>
       <button style="submit" class="btn btn-success">Submit</button>

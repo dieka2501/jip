@@ -64,6 +64,7 @@ Route::post('/admin/product/create',array('before'=>'userAuth','uses'=>'ProductC
 Route::get('/admin/product/edit/{id}',array('before'=>'userAuth','uses'=>'ProductController@edit'));
 Route::post('/admin/product/edit',array('before'=>'userAuth','uses'=>'ProductController@do_edit'));
 Route::get('/admin/product/delete/{id}',array('before'=>'userAuth','uses'=>'ProductController@del'));
+Route::get('/admin/product/file/delete/{id}',array('before'=>'userAuth','uses'=>'ProductController@delete_file'));
 
 //Category
 Route::get('/admin/category',array('before'=>'userAuth','uses'=>'categoryController@index'));

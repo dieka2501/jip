@@ -14,7 +14,7 @@ class categoryProduct Extends Eloquent{
 				->get();
 	}
 	function delete_idproduct($id_product){
-		return B::table($this->table)->where('product_id',$id_product)->delete();
+		return DB::table($this->table)->where('product_id',$id_product)->delete();
 	}
 	function get_idcat($idcat){
 		return categoryProduct::where($this->table.'.category_id',$idcat)

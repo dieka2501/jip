@@ -107,7 +107,7 @@ class ProductController Extends BaseController{
 					for ($i=0; $i < $count; $i++) {
 
 						$ext_main_image 		= $image[$i]->getClientOriginalExtension();
-						$filename_main_image	= "main_image".date('YmdHis').'.'.$ext_main_image;
+						$filename_main_image	= "main_image".date('YmdHis').$i.'.'.$ext_main_image;
 						$image[$i]->move($this->path,$filename_main_image);
 						$insertimg['image_url'] 	= $filename_main_image;
 						$insertimg['product_id'] 	= $getids;
@@ -171,6 +171,7 @@ class ProductController Extends BaseController{
 			$get_data 					= $this->product->get_id($id);
 			$get_cp 					= $this->categoryProduct->get_idproduct($id);
 			$get_category 				= $this->category->get_all();
+			$get_file 					= $this->pf->get_idproduct($id);
 			foreach ($get_category as $category) {
 				$arr_category[$category->id_category] = $category->category_name;
 			}
@@ -182,6 +183,7 @@ class ProductController Extends BaseController{
 			foreach ($get_cp as $cps) {
 				$arr_cp[] = $cps->category_id; 	
 			}
+			$view['action'] 			= 'edit';
 			$view['page_name'] 			= "Edit Product";
 			$view['notip'] 				= Session::get('notip');
 			$view['url'] 				= Config::get('app.url').'public/admin/product/edit';
@@ -196,7 +198,7 @@ class ProductController Extends BaseController{
 			$view['status_product'] 	= $get_data->status_product;
 			$view['arr_kategori']		= $arr_category;
 			$view['arr_brand']			= $arr_brand;
-
+			$view['pf']					= $get_file;
 			$this->layout->content = View::make('admin.produk.form',$view);
 		}else{
 			Session::flash('notip','<div class="alert alert-danger" role="alert">Opps... ada kesalahan.. </div>');
@@ -226,33 +228,53 @@ class ProductController Extends BaseController{
 				$insert['model_product'] 		= $model_produk;
 				$insert['status_product'] 		= $status_product;
 				$insert['created_at'] 			= date('Y-m-d H:i:s');
-				if(Input::hasFile('main_image')){
-					$main_image 			= Input::file('main_image');
-					$ext_main_image 		= $main_image->getClientOriginalExtension();
-					$filename_main_image	= "main_image".date('YmdHis').'.'.$ext_main_image;
-					$main_image->move($this->path,$filename_main_image);
-					$insert['main_image'] 	= $filename_main_image;
-				}
-				if(Input::hasFile('image2')){
-					$image2 			= Input::file('image2');
-					$ext_image2 		= $image2->getClientOriginalExtension();
-					$filename_image2	= "image2".date('YmdHis').'.'.$ext_image2;
-					$image2->move($this->path,$filename_image2);
-					$insert['image2'] 	= $filename_image2;
-				}
-				if(Input::hasFile('image3')){
-					$image3 			= Input::file('image3');
-					$ext_image3 		= $image3->getClientOriginalExtension();
-					$filename_image3	= "image3".date('YmdHis').'.'.$ext_image3;
-					$image3->move($this->path,$filename_image3);
-					$insert['image3'] 	= $filename_image3;
-				}
-				if(Input::hasFile('image4')){
-					$image4 			= Input::file('image4');
-					$ext_image4 		= $image4->getClientOriginalExtension();
-					$filename_image4	= "image4".date('YmdHis').'.'.$ext_image4;
-					$image4->move($this->path,$filename_image4);
-					$insert['image4'] 	= $filename_image4;
+				// if(Input::hasFile('main_image')){
+				// 	$main_image 			= Input::file('main_image');
+				// 	$ext_main_image 		= $main_image->getClientOriginalExtension();
+				// 	$filename_main_image	= "main_image".date('YmdHis').'.'.$ext_main_image;
+				// 	$main_image->move($this->path,$filename_main_image);
+				// 	$insert['main_image'] 	= $filename_main_image;
+				// }
+				// if(Input::hasFile('image2')){
+				// 	$image2 			= Input::file('image2');
+				// 	$ext_image2 		= $image2->getClientOriginalExtension();
+				// 	$filename_image2	= "image2".date('YmdHis').'.'.$ext_image2;
+				// 	$image2->move($this->path,$filename_image2);
+				// 	$insert['image2'] 	= $filename_image2;
+				// }
+				// if(Input::hasFile('image3')){
+				// 	$image3 			= Input::file('image3');
+				// 	$ext_image3 		= $image3->getClientOriginalExtension();
+				// 	$filename_image3	= "image3".date('YmdHis').'.'.$ext_image3;
+				// 	$image3->move($this->path,$filename_image3);
+				// 	$insert['image3'] 	= $filename_image3;
+				// }
+				// if(Input::hasFile('image4')){
+				// 	$image4 			= Input::file('image4');
+				// 	$ext_image4 		= $image4->getClientOriginalExtension();
+				// 	$filename_image4	= "image4".date('YmdHis').'.'.$ext_image4;
+				// 	$image4->move($this->path,$filename_image4);
+				// 	$insert['image4'] 	= $filename_image4;
+				// }
+				if(Input::hasFile('image')){
+					$image 					= Input::file('image');
+					$count 					= count($image);
+					// var_dump($image[0]->getClientOriginalExtension());die;
+					
+					for ($i=0; $i < $count; $i++) {
+
+						$ext_main_image 		= $image[$i]->getClientOriginalExtension();
+						$filename_main_image	= "main_image".date('YmdHis').$i.'.'.$ext_main_image;
+						$image[$i]->move($this->path,$filename_main_image);
+						$insertimg['image_url'] 	= $filename_main_image;
+						$insertimg['product_id'] 	= $ids;
+						$insertimg['created_at'] 	= date('Y-m-d H:i:s');
+						$this->pf->add($insertimg);
+						if($i == 0){
+							$insert['main_image'] = $filename_main_image;
+						}
+					}	
+					
 				}
 				$update_product = $this->product->edit($ids,$insert);
 				if($update_product){
@@ -310,5 +332,11 @@ class ProductController Extends BaseController{
 				Session::flash('notip','<div class="alert alert-danger" role="alert">Delete failed</div>');
 				return Redirect::to('admin/product');
 			}
+	}
+	function delete_file($id){
+		$ids = Input::get('id');			
+		$this->pf->del($id);
+		return Redirect::to('admin/product/edit/'.$ids);
+		
 	}
 }

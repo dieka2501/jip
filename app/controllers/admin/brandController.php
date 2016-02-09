@@ -59,7 +59,7 @@ class brandController Extends BaseController{
 					Session::flash('content',$content);		
 					Session::flash('name',$name);	
 					Session::flash('status',$status);
-					Session::flash('parent',$parent);
+					
 					Session::flash('notip','<div class="alert alert-danger" role="alert">Insert Failed</div>');
 					return Redirect::to('admin/brand/create');
 				}
@@ -68,7 +68,7 @@ class brandController Extends BaseController{
 				Session::flash('content',$content);		
 				Session::flash('name',$name);	
 				Session::flash('status',$status);
-				Session::flash('parent',$parent);
+				
 				Session::flash('notip','<div class="alert alert-danger" role="alert">Duplicate Brand Name</div>');
 				return Redirect::to('admin/brand/create');	
 			}
@@ -100,7 +100,7 @@ class brandController Extends BaseController{
 			$ids 		= Input::get('ids');
 			$status 	= Input::get('status');
 			$get_name  	= $this->brand->get_name($name);
-			if(count($get_name) == 0){
+			if(true){
 				if(Input::hasFile('image')){
 					$image 		= Input::file('image');
 					$filename 	= $image->getClientOriginalName();
@@ -118,7 +118,7 @@ class brandController Extends BaseController{
 					Session::flash('content',$content);		
 					Session::flash('name',$name);	
 					Session::flash('status',$status);
-					Session::flash('parent',$parent);
+					
 					Session::flash('notip','<div class="alert alert-danger" role="alert">Update Failed</div>');
 					return Redirect::to('admin/brand/edit/'.$ids);
 				}
@@ -127,7 +127,7 @@ class brandController Extends BaseController{
 				Session::flash('content',$content);		
 				Session::flash('name',$name);	
 				Session::flash('status',$status);
-				Session::flash('parent',$parent);
+				
 				Session::flash('notip','<div class="alert alert-danger" role="alert">Duplicate brand Name</div>');
 				return Redirect::to('admin/brand/edit/'.$ids);	
 			}
