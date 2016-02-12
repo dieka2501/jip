@@ -70,6 +70,28 @@
       <a href="{{Config::get('app.url')}}public/admin/news" class="btn btn-danger">Back</a>
     </div>
   </div><!-- /.box -->
+  @if($action == 'edit')
+    <div class="box-body">
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            @if(count($get_file) > 0)
+              @foreach($get_file as $files)
+                <tr>
+                  <td><img src="{{Config::get('app.url')}}aset/upload/{{$files->file}}" width="50px" height="50px"></td>
+                  <td class="text-left" align="left"><a href="{{Config::get('app.url')}}public/admin/news/file/delete/{{$files->id_news_file}}?id={{$ids}}" class="btn btn-danger text-left" onclick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
+                </tr>
+              @endforeach 
+            @endif
+            </tbody>
+        </table>
+    </div>
+    @endif
 {{Form::close()}}
 </section><!-- /.content -->
 <script src="<?php echo Config::get('app.url');?>aset/js/jquery.js" type="text/javascript"></script>
