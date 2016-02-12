@@ -10,6 +10,7 @@ class HomeController extends BaseController {
 		$arr_child 			= array();
 		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
+		// $count_parent 		= count($get_parent/2);
 		foreach ($get_parent as $categories) {
 			$arr_cat[$categories->id_category] = $categories->category_name;
 			$get_child 		= $this->category->get_idparent($categories->id_category);
