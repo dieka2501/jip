@@ -13,5 +13,8 @@ class newsfile extends Eloquent{
 	function get_idnews_first($idnews){
 		return DB::table($this->table)->where('news_id',$idnews)->first();	
 	}
+	function del_id($id){
+		return newsfile::where('id_news_file',$id)->delete();
+	}
 	
 }

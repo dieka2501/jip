@@ -23,6 +23,7 @@ class newsController Extends BaseController{
 	function create(){
 		View::share('big_title','Create News');
 		$view['title'] 			= Session::get('title');
+		$view['action']			= "create";
 		$view['content'] 		= Session::get('content');
 		$view['ids']	 		= Session::get('ids');
 		$view['status']	 		= Session::get('status');
@@ -109,11 +110,14 @@ class newsController Extends BaseController{
 	function edit($id){
 		View::share('big_title','Create News');
 		$get_data 				= $this->news->get_id($id);
+		$get_file 				= $this->file->get_idnews($id);
+		$view['action']			= "edit";
 		$view['title'] 			= $get_data->news_title;
 		$view['content'] 		= $get_data->news_content;
 		$view['ids']	 		= $id;
 		$view['status']	 		= $get_data->news_status;
 		$view['type']	 		= $get_data->news_type;
+		$view['get_file'] 		= $get_file;
 		$view['notip']	 		= Session::get('notip');
 		$view['url']			= Config::get('app.url').'public/admin/news/edit';
 		$this->layout->content 	= View::make('admin.news_events.form',$view); 	
@@ -129,7 +133,7 @@ class newsController Extends BaseController{
 			$ids 		= Input::get('ids');
 			if(true){
 				if(Input::hasFile('image')){
-					$this->file->delete_newsid($ids);
+					// $this->file->delete_newsid($ids);
 					$image 		= Input::file('image');
 					$count 		= count($image);
 					// var_dump($image[0]->getClientOriginalName());die();
@@ -198,5 +202,11 @@ class newsController Extends BaseController{
 				Session::flash('notip','<div class="alert alert-danger" role="alert">Delete failed</div>');
 				return Redirect::to('admin/news');
 			}
+	}
+	function delete_file($id){
+		$ids = Input::get('id');			
+		$this->file->del_id($id);
+		return Redirect::to('admin/news/edit/'.$ids);
+		
 	}
 }

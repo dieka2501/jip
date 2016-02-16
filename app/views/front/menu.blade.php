@@ -4,23 +4,30 @@
     <li  id='dashboard'><a href="<?php echo Config::get('app.url');?>public/"><i class="icon-home icon"></i></a></li>
     <!-- megamenu -->
     <li class="dropdown menu-large">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mega <b class="caret"></b></a>       
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>       
       <ul class="dropdown-menu megamenu">
+      @foreach($menucat as $keys => $menucats)
         <li class="col-sm-3">
+        
           <ul>
-            <li class="dropdown-header">Glyphicons</li>
-            <li><a href="#">Available glyphs</a></li>
-            <li class="disabled"><a href="#">How to use</a></li>
+            <li class="dropdown-header">{{$menucats}}</li>
+            @if(isset($childcat[$keys]))
+                @foreach($childcat[$keys] as $childkey => $menuchild)
+                    <li><a href="#">{{$menuchild}}</a></li>
+                @endforeach
+            @endif
+            <!-- <li class="disabled"><a href="#">How to use</a></li>
             <li><a href="#">Examples</a></li>
             <li class="divider"></li>
             <li class="dropdown-header">Dropdowns</li>
             <li><a href="#">Example</a></li>
             <li><a href="#">Aligninment options</a></li>
             <li><a href="#">Headers</a></li>
-            <li><a href="#">Disabled menu items</a></li>
-          </ul>
+            <li><a href="#">Disabled menu items</a></li> -->
+        </ul>
         </li>
-        <li class="col-sm-3">
+        @endforeach
+        <!-- <li class="col-sm-3">
           <ul>
             <li class="dropdown-header">Button groups</li>
             <li><a href="#">Basic example</a></li>
@@ -32,8 +39,8 @@
             <li class="dropdown-header">Button dropdowns</li>
             <li><a href="#">Single button dropdowns</a></li>
           </ul>
-        </li>
-        <li class="col-sm-3">
+        </li> -->
+        <!-- <li class="col-sm-3">
           <ul>
             <li class="dropdown-header">Input groups</li>
             <li><a href="#">Basic example</a></li>
@@ -45,8 +52,8 @@
             <li><a href="#">Pills</a></li>
             <li><a href="#">Justified</a></li>
           </ul>
-        </li>
-        <li class="col-sm-3">
+        </li> -->
+        <!-- <li class="col-sm-3">
           <ul>
             <li class="dropdown-header">Navbar</li>
             <li><a href="#">Default navbar</a></li>
@@ -59,12 +66,12 @@
             <li><a href="#">Static top</a></li>
             <li><a href="#">Inverted navbar</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
 
     </li>
     <!-- end megamenu -->
-    <li class="dropdown" id='category'>
+    <!-- <li class="dropdown" id='category'>
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
     <ul class="dropdown-menu main-menu efek multi-level">
         @foreach($menucat as $keys => $menucats)
@@ -81,7 +88,7 @@
                 </li>    
             @endif
         @endforeach
-        <!-- <li class="dropdown-submenu">
+        <li class="dropdown-submenu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category 6</a>
             <ul class="dropdown-menu main-menu">
                 <li><a href="#">Action</a></li>
@@ -103,10 +110,10 @@
                     </ul>
                 </li>
             </ul>
-        </li> -->
+        </li>
 
     </ul>
-    </li>
+    </li> -->
   <li id='aboutus'><a href="<?php echo Config::get('app.url');?>public/aboutus">About Us</a></li> 
   <li id='product'><a href="<?php echo Config::get('app.url');?>public/product">Our Products</a></li> 
   

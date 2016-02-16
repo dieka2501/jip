@@ -89,6 +89,7 @@ Route::post('/admin/news/create',array('before'=>'userAuth','uses'=>'newsControl
 Route::get('/admin/news/edit/{id}',array('before'=>'userAuth','uses'=>'newsController@edit'));
 Route::post('/admin/news/edit',array('before'=>'userAuth','uses'=>'newsController@do_edit'));
 Route::get('/admin/news/delete/{id}',array('before'=>'userAuth','uses'=>'newsController@del'));
+Route::get('/admin/news/file/delete/{id}',array('before'=>'userAuth','uses'=>'newsController@delete_file'));
 
 //Event
 Route::get('/admin/event',array('before'=>'userAuth','uses'=>'eventController@index'));
