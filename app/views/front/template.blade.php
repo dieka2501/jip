@@ -128,7 +128,8 @@
                   <li><a href="<?php echo Config::get('app.url');?>public/product"><i class="fa fa-angle-right">&nbsp;</i> Our Products</a></li> 
                   <!-- <li><a href="#"><i class="fa fa-angle-right">&nbsp;</i> JSI Community</a></li> -->
                   <li><a href="<?php echo Config::get('app.url');?>public/news"><i class="fa fa-angle-right">&nbsp;</i> News &amp; Events</a></li>
-                  <li><a href="<?php echo Config::get('app.url');?>public/contact_us"><i class="fa fa-angle-right">&nbsp;</i> Contact Us</a></li>  
+                  <li><a href="<?php echo Config::get('app.url');?>public/contact"><i class="fa fa-angle-right">&nbsp;</i> Contact Us</a></li>  
+                  <li><a href="<?php echo Config::get('app.url');?>public/payment"><i class="fa fa-angle-right">&nbsp;</i> Confirm Payment</a></li>  
                   <li class="divider"></li>          
                 </ul>
               </div>
