@@ -6,7 +6,7 @@ class category Extends Eloquent{
 		return DB::table($this->table)->get();
 	}
 	function get_page(){
-		return DB::table($this->table)->paginate(20);
+		return DB::table($this->table)->orderBy('id_category','DESC')->paginate(20);
 	}
 	function get_search($cari){
 		return DB::table($this->table)->where('category_name','like',$cari)->paginate(20);

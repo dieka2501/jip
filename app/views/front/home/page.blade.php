@@ -66,22 +66,20 @@
   <div class="clearfix"></div>
 </div>
 </section>
-<!-- <section id="partner">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 partners"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="col-md-3 partners"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="col-md-3 partners"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" alt="Jeep Station Indonesia"></a></div>
-			<div class="col-md-3 partners"><a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" alt="Jeep Station Indonesia"></a></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</section> -->
+
 <div id="news-info" class="section">
 	<h1 class="heading-title">featured products</h1>
 	<div class="container">
 		<div class="row">
+      @foreach($product as $products)
 			<div class="col-md-3 news">
+				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" class="center-block img-responsive" width='500' height='500'></a>
+				<h3><a href="#">{{$products->name_product}}</a></h3>
+                <p>{{str_limit(strip_tags($products->description_product))}}</p>
+				<a href="{{Config::get('app.url')}}public/product" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+			</div>
+      @endforeach
+        <!-- <div class="col-md-3 news">
 				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
 				<h3><a href="#">Special Vehicle</a></h3>
                 <p>Renowned globally for rugged capability and iconic design</p>
@@ -98,13 +96,7 @@
 				<h3><a href="#">Special Vehicle</a></h3>
                 <p>Renowned globally for rugged capability and iconic design</p>
 				<a href="#" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-			</div>
-            <div class="col-md-3 news">
-				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
-				<h3><a href="#">Special Vehicle</a></h3>
-                <p>Renowned globally for rugged capability and iconic design</p>
-				<a href="#" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
-			</div>
+			</div> -->
 			<div class="clearfix"></div>
 		</div>
 	</div>

@@ -42,7 +42,7 @@ Detail Products
 							<?php echo ($product->stock_product > 0)? "In Stock":"Out Of Stock"?>
 						</div>
 						<hr>
-						<div class="btn-group cart" style="margin-bottom:10px;">
+						<!-- <div class="btn-group cart" style="margin-bottom:10px;">
 							<a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct={{$product->id_product}}" class="btn btn-warning cart-btn">Add To Cart</a>
 
 						</div>
@@ -50,7 +50,7 @@ Detail Products
 							<button type="button" class="btn">
 								<i class="fa fa-check"></i> Add to wishlist 
 							</button>
-						</div>
+						</div> -->
 						<hr/>
 						<div id="sync2" class="owl-carousel">
 						@foreach($file as $files)

@@ -26,4 +26,7 @@ class product extends Eloquent{
 	function get_id($id){
 		return product::find($id);
 	}
+	function featured(){
+		return product::OrderBy('id_product','DESC')->take(4)->get();
+	}
 }
