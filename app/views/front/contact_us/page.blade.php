@@ -6,8 +6,8 @@
 Contact Us
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
-  <li><a href="#">Sample</a></li>
-  <li class="active">Breadcrumb</li>
+  <li><a href="#">Contact Us</a></li>
+  <li class="active">Page</li>
 </ol>
 </div>
 </div>

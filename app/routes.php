@@ -66,6 +66,14 @@ Route::post('/admin/product/edit',array('before'=>'userAuth','uses'=>'ProductCon
 Route::get('/admin/product/delete/{id}',array('before'=>'userAuth','uses'=>'ProductController@del'));
 Route::get('/admin/product/file/delete/{id}',array('before'=>'userAuth','uses'=>'ProductController@delete_file'));
 
+//cars
+Route::get('/admin/cars',array('before'=>'userAuth','uses'=>'carsController@index'));
+Route::get('/admin/cars/create',array('before'=>'userAuth','uses'=>'carsController@create'));
+Route::post('/admin/cars/create',array('before'=>'userAuth','uses'=>'carsController@do_create'));
+Route::get('/admin/cars/edit/{id}',array('before'=>'userAuth','uses'=>'carsController@edit'));
+Route::post('/admin/cars/edit',array('before'=>'userAuth','uses'=>'carsController@do_edit'));
+Route::get('/admin/cars/delete/{id}',array('before'=>'userAuth','uses'=>'carsController@del'));
+
 //Category
 Route::get('/admin/category',array('before'=>'userAuth','uses'=>'categoryController@index'));
 Route::get('/admin/category/create',array('before'=>'userAuth','uses'=>'categoryController@create'));

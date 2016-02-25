@@ -134,6 +134,11 @@
               </a>
             </li>
             <li class="treeview">
+              <a href="{{Config::get('app.url')}}public/admin/cars">
+                <i class="fa fa-shopping-cart"></i> <span>Master Mobil</span>
+              </a>
+            </li>
+            <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/adm_group_pelanggan">
                 <i class="fa fa-users"></i> <span>Group Pelanggan</span>
               </a>

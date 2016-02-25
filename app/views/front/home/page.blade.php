@@ -80,19 +80,19 @@
 			</div>
       @endforeach
         <!-- <div class="col-md-3 news">
-				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
+				<a href="#"><img src="aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
 				<h3><a href="#">Special Vehicle</a></h3>
                 <p>Renowned globally for rugged capability and iconic design</p>
 				<a href="#" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
 			</div>
             <div class="col-md-3 news">
-				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
+				<a href="#"><img src="aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
 				<h3><a href="#">Special Vehicle</a></h3>
                 <p>Renowned globally for rugged capability and iconic design</p>
 				<a href="#" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
 			</div>
             <div class="col-md-3 news">
-				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
+				<a href="#"><img src="aset/main/img/img-news-1.jpg" class="center-block img-responsive"></a>
 				<h3><a href="#">Special Vehicle</a></h3>
                 <p>Renowned globally for rugged capability and iconic design</p>
 				<a href="#" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
