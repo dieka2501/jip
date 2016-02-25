@@ -8,4 +8,10 @@ class carsImage Extends Eloquent{
 	function get_idcars($idcars){
 		return carsImage::where('cars_id',$idcars)->get();
 	}
+	function del($id){
+		return carsImage::where($this->primaryKey,$id)->delete();
+	}
+	function del_idcars($idcars){
+		return carsImage::where('cars_id',$idcars)->delete();
+	}
 }

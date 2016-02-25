@@ -26,4 +26,10 @@ class cars Extends Eloquent{
 	function get_name($name){
 		return cars::where('cars_name',$name)->first();
 	}
+	function get_new_page(){
+		return cars::where('cars_category',0)->orderBy('id_cars','DESC')->paginate(20);
+	}
+	function get_used_page(){
+		return cars::where('cars_category',1)->orderBy('id_cars','DESC')->paginate(20);
+	}
 }

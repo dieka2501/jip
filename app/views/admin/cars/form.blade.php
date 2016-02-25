@@ -115,8 +115,8 @@
             <tbody>
              @foreach($pf as $pfs)
               <tr>
-                <td><img src="{{Config::get('app.url')}}aset/upload/{{$pfs->image_url}}" width="50px" height="50px"></td>
-                <td class="text-left" align="left"><a href="{{Config::get('app.url')}}public/admin/product/file/delete/{{$pfs->id_pi}}?id={{$ids}}" class="btn btn-danger text-left" onclick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
+                <td><img src="{{Config::get('app.url')}}aset/upload/{{$pfs->ci_file}}" width="50px" height="50px"></td>
+                <td class="text-left" align="left"><a href="{{Config::get('app.url')}}public/admin/cars/file/delete/{{$pfs->id_cars_image}}?id={{$ids}}" class="btn btn-danger text-left" onclick="return confirm('Apakah Anda Yakin?')">Delete</a></td>
               </tr>
             @endforeach 
             </tbody>

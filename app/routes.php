@@ -12,7 +12,11 @@
 */
 Route::get('/','HomeController@index');
 Route::get('/product','productController@index');
+Route::get('/cars/new','newCarsController@index');
+Route::get('/cars/used','usedCarsController@index');
 Route::get('/product/detail/{id}','productController@detail');
+Route::get('/cars/new/detail/{id}','newCarsController@detail');
+Route::get('/cars/used/detail/{id}','usedCarsController@detail');
 Route::get('/product/category/{id}','productController@category');
 Route::get('/news','newseventController@index');
 Route::get('/news/detail/{id}','newseventController@detail');
@@ -73,6 +77,7 @@ Route::post('/admin/cars/create',array('before'=>'userAuth','uses'=>'carsControl
 Route::get('/admin/cars/edit/{id}',array('before'=>'userAuth','uses'=>'carsController@edit'));
 Route::post('/admin/cars/edit',array('before'=>'userAuth','uses'=>'carsController@do_edit'));
 Route::get('/admin/cars/delete/{id}',array('before'=>'userAuth','uses'=>'carsController@del'));
+Route::get('/admin/cars/file/delete/{id}',array('before'=>'userAuth','uses'=>'carsController@delete_file'));
 
 //Category
 Route::get('/admin/category',array('before'=>'userAuth','uses'=>'categoryController@index'));

@@ -35,9 +35,13 @@
     
   <li id='aboutus'><a href="<?php echo Config::get('app.url');?>public/aboutus">About Us</a></li> 
   <li id='product'><a href="<?php echo Config::get('app.url');?>public/product">Our Products</a></li> 
-  
+  <li id='new_cars'><a href="<?php echo Config::get('app.url');?>public/cars/new">New Car</a></li>
+  <li id='used_cars'><a href="<?php echo Config::get('app.url');?>public/cars/used">Used Car</a></li> 
   <li id='event'><a href="<?php echo Config::get('app.url');?>public/news">News &amp; Events</a></li>
   <li id='contactus'><a href="<?php echo Config::get('app.url');?>public/contact">Contact Us</a></li>  
+  <li id="cars"> 
+      
+  </li>
   <!-- <li id='payment'><a href="public/payment">Confirm Payment</a></li>   -->
 </ul>
 <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery-1.11.2.min.js"></script>

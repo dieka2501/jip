@@ -50,12 +50,12 @@
                 }
                 $jj   = 20*$page + $i;
                 $i++;
-                $stat = ($datas->cars_status == 0)? 'Mobil Baru':'Mobil Bekas';
+                $stat = ($datas->cars_category == 0)? 'Mobil Baru':'Mobil Bekas';
               ?>
             <tr>
               <td width="5%">{{$i}}</td>
               <td>{{$datas->cars_name}}</td>
-              <td>{{$datas->cars_price}}</td>
+              <td>{{number_format($datas->cars_price)}}</td>
               <td width="30%">{{$stat}}</td>
               <td class="status">{{$datas->cars_color}}</td>
               <td>
