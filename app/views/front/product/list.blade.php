@@ -14,7 +14,7 @@ Our Products
 </div>
 <section id="featured" class="section">
 	<div class="container">
-		<div class="row">
+		<!-- <div class="row">
 		<div class="col-md-12">
 		<div class="menu-produk">
 			@for($i = 0;$i < $cacah_cat; $i++)
@@ -35,7 +35,6 @@ Our Products
 				$nocat3 = (isset($cat_all[$l]->id_category))? $cat_all[$l]->id_category : "";
 				$nocat4 = (isset($cat_all[$m]->id_category))? $cat_all[$m]->id_category : "";
 				$nocat5 = (isset($cat_all[$n]->id_category))? $cat_all[$n]->id_category : "";
-				// var_dump($cat1);die;
 			?>
 			<div class="col-md-3">
 			<div class="list-group">
@@ -53,7 +52,7 @@ Our Products
 		<div style="clear:both;"></div>
 		</div>
 		</div>
-		</div>
+		</div> -->
 		<div class="row">
 			@foreach($product as $products)
             <div class="col-md-3">

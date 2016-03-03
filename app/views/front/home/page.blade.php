@@ -73,7 +73,7 @@
 		<div class="row">
       @foreach($product as $products)
 			<div class="col-md-3 news">
-				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" class="center-block img-responsive" width='500' height='500'></a>
+				<a href="#"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" class="featured-prod center-block img-responsive" width='500' height='500'></a>
 				<h3><a href="#">{{$products->name_product}}</a></h3>
                 <p>{{str_limit(strip_tags($products->description_product))}}</p>
 				<a href="{{Config::get('app.url')}}public/product" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>

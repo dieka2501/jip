@@ -28,7 +28,21 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style type="text/css">
-.navbar,.sb-search-input{min-height:40px!important}.pagination>li>a,.pagination>li>span{color:#ccc;background:#303030;border-color:#303030}#sync1 .item,#sync2 .item,#sync2 .synced .item{background:#fff!important}.product{margin-bottom:40px!important}.product h3{height:40px}.pro-tags a{color:#999!important}.product img{height:200px}.field-row{margin-bottom:20px}.form-order p,.order-info-item p{color:#888!important}.order-info-item{margin-bottom:30px}.borderless td,.borderless th,.borderless tr{border:0!important}.product-desc p,.product-info p{color:#777}#sync1 .owl-item .item img{max-width:100%}#sync1 .item{padding:0!important;border:0 solid #ddd}#sync2 .owl-item .item img{max-width:100%;height:70px}.owl-item .item.client img{max-width:100%;height:100%!important}#sync2 .item{padding:0!important;border:1px solid #ddd}#sync2 .synced .item{border-color:#999!important}.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{background-color:#FF9500!important;border-color:#FF9500!important}.sb-search-input{height:40px!important}.nav>li>a{padding:10px 30px!important}.topbar{padding-top:35px;padding-bottom:35px}.sb-search{margin-top:2px!important;margin-bottom:2px!important;height:38px!important}.sb-icon-search,.sb-search-submit{line-height:40px!important;font-size:18px!important}.menu-large{position:static!important}.megamenu{padding:20px 0;width:auto;background:#333333;}.dropdown-menu.megamenu{left:auto}.megamenu>li>ul{padding:0;margin:0}.megamenu>li>ul>li{list-style:none}.dropdown-menu.megamenu .divider {background: #444444!important;}.megamenu>li>ul>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#bbbbbb;white-space:normal}.megamenu>li ul>li>a:focus,.megamenu>li ul>li>a:hover{text-decoration:none;color:#262626;background-color:#f5f5f5}.megamenu.disabled>a,.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{color:#999}.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);cursor:not-allowed}.megamenu.dropdown-header{color:#428bca;font-size:18px}@media (max-width:768px){.megamenu{margin-left:0;margin-right:0}.megamenu>li{margin-bottom:30px}.megamenu>li:last-child{margin-bottom:0}.megamenu.dropdown-header{padding:3px 15px!important}.navbar-nav .open .dropdown-menu .dropdown-header{color:#fff}}
+.navbar,.sb-search-input{min-height:40px!important}.pagination>li>a,.pagination>li>span{color:#ccc;background:#303030;border-color:#303030}#sync1 .item,#sync2 .item,#sync2 .synced .item{background:#fff!important}.product{margin-bottom:40px!important}.product h3{height:40px}.pro-tags a{color:#999!important}.product img{height:200px}.field-row{margin-bottom:20px}.form-order p,.order-info-item p{color:#888!important}.order-info-item{margin-bottom:30px}.borderless td,.borderless th,.borderless tr{border:0!important}.product-desc p,.product-info p{color:#777}#sync1 .owl-item .item img{width: 100%;height: 400px;object-fit: cover;}#sync1 .item{padding:0!important;border:0 solid #ddd}#sync2 .owl-item .item img{max-width:100%;height:70px}.owl-item .item.client img{max-width:100%;height:100%!important}#sync2 .item{padding:0!important;border:1px solid #ddd}#sync2 .synced .item{border-color:#999!important}.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{background-color:#FF9500!important;border-color:#FF9500!important}.sb-search-input{height:40px!important}.nav>li>a{padding:10px 30px!important}.topbar{padding-top:5px;padding-bottom:5px}.sb-search{margin-top:2px!important;margin-bottom:2px!important;height:38px!important}.sb-icon-search,.sb-search-submit{line-height:40px!important;font-size:18px!important}.menu-large{position:static!important}.megamenu{padding:20px 0;width:auto;background:#333333;}.dropdown-menu.megamenu{left:auto}.megamenu>li>ul{padding:0;margin:0}.megamenu>li>ul>li{list-style:none}.dropdown-menu.megamenu .divider {background: #444444!important;}.megamenu>li>ul>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#bbbbbb;white-space:normal}.megamenu>li ul>li>a:focus,.megamenu>li ul>li>a:hover{text-decoration:none;color:#262626;background-color:#f5f5f5}.megamenu.disabled>a,.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{color:#999}.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);cursor:not-allowed}.megamenu.dropdown-header{color:#428bca;font-size:18px}@media (max-width:768px){.megamenu{margin-left:0;margin-right:0}.megamenu>li{margin-bottom:30px}.megamenu>li:last-child{margin-bottom:0}.megamenu.dropdown-header{padding:3px 15px!important}.navbar-nav .open .dropdown-menu .dropdown-header{color:#fff}}
+  img.featured-prod.center-block.img-responsive {
+    height: 200px;
+    object-fit: cover;
+  }
+  .navbar-nav > li > .dropdown-menu {
+      border-radius: 0 !important;
+      width: 83.5%;
+  }
+  .topmenu {
+    padding-top: 35px;
+  }
+  .slogan img {
+    height: 80px;
+  }
 </style>
 </head>
 <!-- // end:head // -->
@@ -37,7 +51,7 @@
         <div class="topbar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-xs-12 slogan"><a href="<?php echo Config::get('app.url');?>public/">JHI Auto Custom</a></div>
+                    <div class="col-md-6 col-xs-12 slogan"><a href="<?php echo Config::get('app.url');?>public/"><img src="<?php echo Config::get('app.url');?>logo/jhl.png"></a></div>
                     <div class="col-md-6">
                         <ul class="topmenu">
                             @if(Session::get('login') != true)
