@@ -8,7 +8,7 @@
     <small>Control panel</small>
   </h1>
   <ol class="breadcrumb" style="padding-top:0px;margin-top:-5px">
-    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/news/create"><i class="fa fa-plus"></i> Create News</a></li>
+    <li><a class="btn btn-warning" href="{{Config::get('app.url')}}public/admin/banner/create"><i class="fa fa-plus"></i> Create Banner</a></li>
   </ol>
 </section>
 
@@ -34,26 +34,20 @@
           <table class="table table-hover">
             <tbody><tr>
               <th>ID</th>
-              <th>Title</th>
               <th>Content</th>
-              <th>Date</th>
-              <th>Status</th>
+              <th>Link</th>
+              <th>Image</th>
               <th>Action</th>
             </tr>
             @foreach($get_data as $datas)
-            <?php 
-                $stat = ($datas->news_status == 1)?'Active':'Not Active';
-                $statcss = ($datas->news_status == 1)?'label-primary':'label-warning';
-            ?>
             <tr>
-              <td>{{$datas->id_news}}</td>
-              <td>{{$datas->news_title}}</td>
-              <td>{{str_limit(strip_tags($datas->news_content),100,'...')}}</td>
-              <td>{{$datas->date_insert}}</td>
-              <td><span class="label {{$statcss}}">{{$stat}}</span></td>
+              <td>{{$datas->idbanner}}</td>
+              <td>{{str_limit(strip_tags($datas->banner_content),100,'...')}}</td>
+              <td><a href="{{$datas->banner_link}}" target="_blank"> {{$datas->banner_link}}</a></td>
+              <td><span class="label"><img src="{{Config::get('app.url')}}aset/upload/{{$datas->banner_image}}" width="100" height="100"></span></td>
               <td>
-              <a class="btn btn-sm btn-success" href="{{Config::get('app.url')}}public/admin/news/edit/{{$datas->id_news}}">Edit</a> 
-              <a class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')" href="{{Config::get('app.url')}}public/admin/news/delete/{{$datas->id_news}}">Delete</a>
+              <a class="btn btn-sm btn-success" href="{{Config::get('app.url')}}public/admin/banner/edit/{{$datas->idbanner}}">Edit</a> 
+              <a class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')" href="{{Config::get('app.url')}}public/admin/banner/delete/{{$datas->idbanner}}">Delete</a>
               </td>
             </tr>
             @endforeach

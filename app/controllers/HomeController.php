@@ -8,6 +8,7 @@ class HomeController extends BaseController {
 		$this->news 		= new news;
 		$this->file 		= new newsfile;
 		$this->product 		= new product;
+		$this->banner 		= new banner;
 		$arr_child 			= array();
 		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
@@ -47,6 +48,7 @@ class HomeController extends BaseController {
 		
 		$get_news 			= $this->news->get_last2();
 		$get_product 		= $this->product->featured();
+		$get_banner 		= $this->banner->get_all();
 		$filesnews 			= [];
 
 		foreach ($get_news as $news) {
@@ -56,6 +58,7 @@ class HomeController extends BaseController {
 			}
 			
 		}
+		$view['banner'] 			= $get_banner;
 		$view['product'] 			= $get_product;
 		$view['news'] 				= $get_news;
 		$view['newsfile']			= $filesnews;

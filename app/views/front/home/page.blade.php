@@ -12,17 +12,22 @@
   </ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="<?php echo Config::get('app.url');?>aset/main/img/banner-1.jpg" class="img-responsive center-block" alt="Jeep Station Indonesia">
+  <?php $bb =0?>
+  @foreach($banner as $banners)
+  <?php $actv = ($bb == 0)?'active':""?>
+    <div class="item {{$actv}}">
+      <img src="<?php echo Config::get('app.url');?>aset/upload/{{$banners->banner_image}}" class="img-responsive center-block" alt="Jeep Station Indonesia">
       <div class="container">
       	<div class="carousel-caption">
       		<h1>Explore Our Products</h1>
-      		<p>The most complete spareparts for your Jeep Lover.</p>
-      		<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
+      		<p>{{$banners->banner_content}}</p>
+      		<a href="{{$banners->banner_link}}" class="btn-white">Find Out More</a>
       </div>
       </div>
     </div>
-    <div class="item">
+    <?php $bb++;?>
+    @endforeach
+    <!-- <div class="item">
       <img src="<?php echo Config::get('app.url');?>aset/main/img/banner-2.jpg" class="img-responsive center-block" alt="Jeep Station Indonesia">
       <div class="container">
       	<div class="carousel-caption">
@@ -31,8 +36,8 @@
       	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
-    </div>
-    <div class="item">
+    </div> -->
+    <!-- <div class="item">
       <img src="<?php echo Config::get('app.url');?>aset/main/img/banner-3.jpg" class="img-responsive center-block" alt="Jeep Station Indonesia">
       <div class="container">
       	<div class="carousel-caption">
@@ -41,8 +46,8 @@
       	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       	</div>
       </div>
-    </div>
-    <div class="item">
+    </div> -->
+    <!-- <div class="item">
       <img src="<?php echo Config::get('app.url');?>aset/main/img/banner-1.jpg" class="img-responsive center-block" alt="Jeep Station Indonesia">
       <div class="container">
       	<div class="carousel-caption">
@@ -51,8 +56,8 @@
       	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
-    </div>
-    <div class="item">
+    </div> -->
+    <!-- <div class="item">
       <img src="<?php echo Config::get('app.url');?>aset/main/img/banner-3.jpg" class="img-responsive center-block" alt="Jeep Station Indonesia">
       <div class="container">
       <div class="carousel-caption">
@@ -61,7 +66,7 @@
       	<a href="{{Config::get('app.url')}}public/product" class="btn-white">Find Out More</a>
       </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="clearfix"></div>
 </div>

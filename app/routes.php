@@ -104,6 +104,15 @@ Route::post('/admin/news/edit',array('before'=>'userAuth','uses'=>'newsControlle
 Route::get('/admin/news/delete/{id}',array('before'=>'userAuth','uses'=>'newsController@del'));
 Route::get('/admin/news/file/delete/{id}',array('before'=>'userAuth','uses'=>'newsController@delete_file'));
 
+//BANNER
+Route::get('/admin/banner',array('before'=>'userAuth','uses'=>'bannerController@index'));
+Route::get('/admin/banner/create',array('before'=>'userAuth','uses'=>'bannerController@create'));
+Route::post('/admin/banner/create',array('before'=>'userAuth','uses'=>'bannerController@do_create'));
+Route::get('/admin/banner/edit/{id}',array('before'=>'userAuth','uses'=>'bannerController@edit'));
+Route::post('/admin/banner/edit',array('before'=>'userAuth','uses'=>'bannerController@do_edit'));
+Route::get('/admin/banner/delete/{id}',array('before'=>'userAuth','uses'=>'bannerController@del'));
+Route::get('/admin/banner/file/delete/{id}',array('before'=>'userAuth','uses'=>'bannerController@delete_file'));
+
 //Event
 Route::get('/admin/event',array('before'=>'userAuth','uses'=>'eventController@index'));
 Route::get('/admin/event/create',array('before'=>'userAuth','uses'=>'eventController@create'));
