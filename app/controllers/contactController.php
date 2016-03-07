@@ -4,6 +4,7 @@ class contactController extends BaseController{
 	function __construct(){
 		$this->category 	= new category;
 		$this->cp 			= new categoryProduct;
+		$this->contact 		= new contact;
 		$arr_child 			= array();
 		$arr_cat 			= array();
 		$get_parent 		= $this->category->get_parent();
@@ -23,5 +24,40 @@ class contactController extends BaseController{
 	function index(){
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.contact_us.page');
+	}
+	function do_contact(){
+		if(Input::has('email') && Input::has('message')){
+			$email 		= Input::get('email');
+			$message 	= Input::get('message');
+			$name 		= Input::get('name');
+			$subject 	= Input::get('subject');
+			$insert['contact_name'] 	= $name;
+			$insert['contact_email'] 	= $email;
+			$insert['contact_message'] 	= $message;
+			$insert['contact_subject'] 	= $subject;
+			$insert['created_at'] 		= date('Y-m-d H:i:s');
+			$ids = $this->contact->add($insert);
+			if($ids > 0){
+				$detail['email'] 	= $email;
+				$detail['name'] 	= $name;
+				$detail['subject'] 	= $subject;
+				$detail['content'] 	= $message;
+				$msg['email'] 		= $email;
+				$msg['name'] 		= $name;
+				$msg['subject']		= $subject;
+				Mail::send('emails.email',$detail,function($message) use ($msg){
+					$message->from($msg['email'],$msg['name'])->subject($msg['subject'])->to('dieka.koes@gmail.com');
+				});
+				$status 	= true;
+				$alert 		= "Data Insert, Successfull";	
+			}else{
+				$status 	= false;
+				$alert 		= "Data Insert, Failed";	
+			}
+		}else{
+			$status 	= false;
+			$alert 		= "Email and Content must be filled";
+		}
+		return Response::json(['status'=>$status,'alert'=>$alert]);
 	}
 }

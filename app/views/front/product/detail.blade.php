@@ -34,10 +34,11 @@ Detail Products
 						<div class="product-desc">{{$product->model_product}}</div>
 						<hr>
 						@if($product->price_product == 0)
-						<div class="product-price">Call For price</div>
+						<div class="product-price"><a href="{{Config::get('app.url')}}public/contact">Call For price</a> </div>
 						@else
 						<div class="product-price">Rp. {{number_format($product->price_product)}}</div>
 						@endif
+
 						<div class="product-stock">
 							<?php echo ($product->stock_product > 0)? "In Stock":"Out Of Stock"?>
 						</div>

@@ -23,6 +23,7 @@ Route::get('/news/detail/{id}','newseventController@detail');
 Route::get('/special','specialofferController@index');
 Route::get('/facilities','fasilitiesController@index');
 Route::get('/contact','contactController@index');
+Route::post('/contact/post','contactController@do_contact');
 Route::get('/room','roomsController@index');
 Route::get('/aboutus','aboutController@index');
 Route::get('/cart','cartController@index');
