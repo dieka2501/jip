@@ -13,13 +13,13 @@ Register
 </div>
 <section id="featured" class="section" style="background:transparent">
     <div class="container">
-        <div class="col-sm-6 col-md-8 col-md-offset-2">
+        <div class="col-sm-6 col-md-6 col-md-offset-3">
             <h1 class="text-center login-title">Create new account!</h1>
             <div class="account-wall">
                 <img class="profile-img" src="{{Config::get('app.url')}}aset/main/img/logo.png"
                     alt="">
                 <div>{{$notip}}</div>
-                <form class="form-signin" method="POST" action="{{Config::get('app.url')}}public/register">
+                <form class="form-signin" method="POST" action="{{Config::get('app.url')}}public/register" style="max-width: 100%;">
                     <input type="text" class="form-control" name='email' placeholder="Email" required autofocus value='{{$email}}'>
                     <div class="row">
                         <div class="col-md-6 form-group">
