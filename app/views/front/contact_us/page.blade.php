@@ -13,14 +13,14 @@ Contact Us
 </div>
 </div>
 <div class="overlays" onClick="style.pointerEvents='none'"></div>
-<!-- <iframe frameborder="0" scrolling="yes" scrollwheel="no" marginheight="0" marginwidth="0"width="100%" height="443" src="https://maps.google.com/maps?hl=en&q=Jakarta&ie=UTF8&t=roadmap&z=11&iwloc=B&output=embed"><div></div><div></div></iframe> -->
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1420753048806!2d106.62599931442861!3d-6.245000562887557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fc7544635c3b%3A0x80b62054b89211e7!2sBursa+Mobil+Emerald!5e0!3m2!1sid!2sid!4v1457585358322" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 <div class="contact-infos">
 <div class="container">
 <div class="col-md-12">
     <h3 class="title-normal text-center">Contact Form</h3>
     <div class="info-kontak text-center">
-        <p><i class="fa fa-map-marker"></i> BizSpeak Center, 3021 Horizon Circle Tukwila, WA 98188 <i class="fa fa-phone" style="margin-left:20px;"></i>(+62) 123-456-789 <i class="fa fa-envelope" style="margin-left:20px;"></i>mail@lorem.com</p>
+        <p><i class="fa fa-map-marker"></i>Jl. Boulevard Gading Serpong M5 No. 6 Unit C1 & F2 <i class="fa fa-phone" style="margin-left:20px;"></i>(+62)821-6333-3313 <i class="fa fa-envelope" style="margin-left:20px;"></i>henwil7676@gmail.com</p>
         <!-- <img src="<?php echo Config::get('app.url');?>aset/main/img/contact-info.png"> -->
     </div>
     <div id="notip"></div>
@@ -75,7 +75,7 @@ Contact Us
                     $('#message').val('');
                 }else{
                     var html = "<div class='alert alert-success'>"+data.alert+"</div>";
-                    $('#notip').html(html);
+                    $('#notip').html(html).fadeOut(3000);
                 }
                 
             });

@@ -37,10 +37,12 @@ class bannerController Extends BaseController{
 			$content 		= Input::get('content');
 			$link 			= Input::get('link');
 			$image 			= Input::file('image');
+			$title 			= Input::get('title');
 			$filename 		= $image->getClientOriginalName();
 			if($image->move($path,$filename)){
 				$data['banner_image'] 		= $filename;
 				$data['banner_link'] 		= $link;
+				$data['banner_title'] 		= $title;
 				$data['banner_content'] 	= $content;
 				$data['created_at']			= date('Y-m-d H:i:s');	
 				$idinsert =  $this->banner->add($data);
@@ -71,6 +73,7 @@ class bannerController Extends BaseController{
 		$get_data 				= $this->banner->get_id($id);
 		$view['action']			= "edit";
 		$view['content'] 		= $get_data->banner_content;
+		$view['title'] 			= $get_data->banner_title;
 		$view['ids']	 		= $id;
 		$view['link']	 		= $get_data->banner_link;
 		$view['notip']	 		= Session::get('notip');
@@ -84,7 +87,7 @@ class bannerController Extends BaseController{
 			$id 			= Input::get('ids');
 			$content 		= Input::get('content');
 			$link 			= Input::get('link');
-			
+			$title 			= Input::get('title');
 			if(Input::hasFile('image')){
 				$image 			= Input::file('image');
 				$filename 		= $image->getClientOriginalName();	
@@ -92,6 +95,7 @@ class bannerController Extends BaseController{
 				$data['banner_image'] 		= $filename;
 			}	
 			$data['banner_link'] 		= $link;
+			$data['banner_title'] 		= $title;
 			$data['banner_content'] 	= $content;
 			$data['updated_at']			= date('Y-m-d H:i:s');	
 			// $idinsert =  $this->banner->add($data);

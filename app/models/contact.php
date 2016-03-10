@@ -6,6 +6,12 @@ class contact extends Eloquent{
 		return contact::insertGetId($data);
 	}
 	function get_page(){
-		return contact::orderId($this->primaryKey,'DESC')->paginate(20);
+		return contact::orderBy($this->primaryKey,'DESC')->paginate(20);
+	}
+	function get_id($id){
+		return contact::find($id);
+	}
+	function edit($id,$data){
+		return contact::where($this->primaryKey,$id)->update($data);
 	}
 }

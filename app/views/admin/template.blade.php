@@ -150,12 +150,17 @@
             </li>
             <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/admin/sales">
-                <i class="fa fa-money"></i> <span>Sales</span>
+                <i class="fa fa-money"></i> <span>Order</span>
               </a>
             </li>
             <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/admin/news">
                 <i class="fa fa-bookmark"></i> <span>News &amp; Events</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="<?php echo Config::get('app.url');?>public/admin/message">
+                <i class="fa fa-bookmark"></i> <span>Message</span>
               </a>
             </li>
             <li class="treeview">

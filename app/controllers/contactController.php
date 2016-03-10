@@ -49,10 +49,10 @@ class contactController extends BaseController{
 					$message->from($msg['email'],$msg['name'])->subject($msg['subject'])->to('dieka.koes@gmail.com');
 				});
 				$status 	= true;
-				$alert 		= "Data Insert, Successfull";	
+				$alert 		= "Terima kasih telah mengirim pesan kepada kami, akan segera kamu tindaklanjuti.";	
 			}else{
 				$status 	= false;
-				$alert 		= "Data Insert, Failed";	
+				$alert 		= "Maaf, pesan anda belum kami terima, silakan coba lagi.";	
 			}
 		}else{
 			$status 	= false;

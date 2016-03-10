@@ -71,7 +71,7 @@ Our Products
 					</p>
 					<a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
 					<div class="pull-right">
-						<!-- <a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct={{$products->id_product}}" class="btn btn-warning btn-xs cart-btn">Add To Cart</a> -->
+						<a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct={{$products->id_product}}" class="btn btn-warning btn-xs cart-btn">Add To Cart</a>
 					</div>
 				</div>
 			</div>
