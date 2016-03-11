@@ -43,6 +43,48 @@
   .slogan img {
     height: 80px;
   }
+  /*modal*/
+  .modal-cont {
+    color: #666666!important;
+  }
+  .modal-cont .form-control {
+    font-size: 12px!important;
+  }
+
+  .modal-cont .form-group {
+    margin-bottom: 0px;
+  }
+
+  .modal-cont .lead {
+    background-color: #ffffff!important;
+    color: #666!important;
+    /*margin-top: 40px;*/
+  }
+  .login-or {
+    position: relative;
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+            margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background-color: #f5f5f5;
+    width: 50px;
+    text-align: center;
+  }
+  .hr-or {
+    background-color: #cdcdcd;
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
 </style>
 </head>
 <!-- // end:head // -->
@@ -55,8 +97,9 @@
                     <div class="col-md-6">
                         <ul class="topmenu">
                             @if(Session::get('login') != true)
-                            <li><a href="<?php echo Config::get('app.url');?>public/register"><i class="icon-user-follow icons">&nbsp;</i> Register</a></li>
-                            <li><a href="<?php echo Config::get('app.url');?>public/login"><i class="icon-login icons">&nbsp;</i> Login</a></li>
+                            <!-- <li><a href="<?php echo Config::get('app.url');?>public/register"><i class="icon-user-follow icons">&nbsp;</i> Register</a></li> -->
+                            <li><a href="#myModal" data-toggle="modal" data-target="#myModal"><i class="icon-user-follow icons">&nbsp;</i>Login or Register</a></li>
+                            <!-- <li><a href="<?php echo Config::get('app.url');?>public/login"><i class="icon-login icons">&nbsp;</i> Login</a></li> -->
                             @else
                             <li><a href="#"><i class="icon-user-follow icons">&nbsp;Hi! </i> {{Session::get('first_name')}} {{Session::get('last_name')}}</a></li>
                             <li><a href="<?php echo Config::get('app.url');?>public/logout"><i class="icon-login icons">&nbsp;</i> Logout</a></li>
@@ -156,7 +199,151 @@
     <!-- content -->
     @yield('content')
     <!-- /content -->
+<!-- modal -->
+<div class="modal fade modal-cont" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
+            </div>
+            <div class="modal-body">
 
+                <!-- tabs -->
+            <div>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+                <li role="presentation"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content" style="padding-top: 30px;">
+                <div role="tabpanel" class="tab-pane active" id="login">
+                  <div class="row">
+                  <div class="col-xs-7">
+                      <div class="well">
+                      <form class="form-signin" method="POST" action="http://jhlautocustom.com/public/login" style="padding:0px;">
+                      <input type="text" class="form-control" placeholder="Email" required="" name="email" autofocus="">
+                      <input type="password" class="form-control" placeholder="Password" name="password" required="">
+                      <button class="btn btn-lg btn-warning btn-block" type="submit">Sign in</button>
+                      <a href="#" class="pull-right need-help">Forgot Password!</a><span class="clearfix"></span>
+                      </form>
+
+                      <div class="login-or">
+                          <hr class="hr-or">
+                          <span class="span-or">or</span>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-xs-6 col-sm-6 col-md-6">
+                              <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
+                          </div>
+                          <div class="col-xs-6 col-sm-6 col-md-6">
+                              <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="col-xs-5">
+                  <p class="lead">Login now for <span class="text-success">FREE</span></p>
+                  <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                  <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                  <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                  <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                  <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                  </ul>
+                  </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="register">
+                  <div class="row">
+                <div class="col-xs-7">
+                    <div class="well">
+                    <form class="form-signin" method="POST" action="http://jhlautocustom.com/public/register" style="max-width: 100%;padding:0px;">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" value="">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="password" class="form-control" name="repassword" placeholder="Ulangi Password" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" value="">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="company" placeholder="Company" value="">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="address" placeholder="Address" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="town" placeholder="Town" value="">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="zip" placeholder="Zip Code" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="country" placeholder="Country" value="">
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="">
+                            </div>
+                        </div>
+                        <button class="btn btn-lg btn-warning btn-block" type="submit">Register</button>
+                    </form>
+
+                    <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or">or</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                <li><span class="fa fa-check text-success"></span> See all your orders</li>
+                <li><span class="fa fa-check text-success"></span> Fast re-order</li>
+                <li><span class="fa fa-check text-success"></span> Save your favorites</li>
+                <li><span class="fa fa-check text-success"></span> Fast checkout</li>
+                <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                </ul>
+                </div>
+                </div>
+                </div>
+              </div>
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /modal -->
     <footer>
       <div class="container">
         <div class="row clearfix">
