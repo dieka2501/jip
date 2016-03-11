@@ -31,6 +31,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
+            <label>Title Banner</label>
+            <input type="text" class="form-control" id='title' name='title' value='{{$title}}'>
+          </div><!-- /.form-group -->
+          <div class="form-group">
             <label>Content Banner</label>
             <textarea class="form-control" name='content'>{{$content}}</textarea>
           </div><!-- /.form-group -->

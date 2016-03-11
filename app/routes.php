@@ -134,3 +134,8 @@ Route::get('/admin/room/delete/{id}',array('before'=>'userAuth','uses'=>'roomCon
 Route::get('/admin/sales',array('before'=>'userAuth','uses'=>'salesController@index'));
 Route::get('/admin/sales/detail/{id}',array('before'=>'userAuth','uses'=>'salesController@detail'));
 Route::post('/admin/sales/edit/status',array('before'=>'userAuth','uses'=>'salesController@change_status'));
+
+//Contact
+Route::get('/admin/message',array('before'=>'userAuth','uses'=>'contactAdminController@index'));
+Route::get('/admin/message/reply/{id}',array('before'=>'userAuth','uses'=>'contactAdminController@reply'));
+Route::post('/admin/message/reply',array('before'=>'userAuth','uses'=>'contactAdminController@do_reply'));

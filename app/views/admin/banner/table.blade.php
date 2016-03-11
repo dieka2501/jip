@@ -34,6 +34,7 @@
           <table class="table table-hover">
             <tbody><tr>
               <th>ID</th>
+              <th>Title</th>
               <th>Content</th>
               <th>Link</th>
               <th>Image</th>
@@ -42,6 +43,7 @@
             @foreach($get_data as $datas)
             <tr>
               <td>{{$datas->idbanner}}</td>
+              <td>{{$datas->banner_title}}</td>
               <td>{{str_limit(strip_tags($datas->banner_content),100,'...')}}</td>
               <td><a href="{{$datas->banner_link}}" target="_blank"> {{$datas->banner_link}}</a></td>
               <td><span class="label"><img src="{{Config::get('app.url')}}aset/upload/{{$datas->banner_image}}" width="100" height="100"></span></td>
