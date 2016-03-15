@@ -32,6 +32,7 @@ class loginController Extends BaseController{
 		$getlogin 		= $this->customer->get_login($email,md5($password));
 		if(count($getlogin) > 0){
 			Session::put('login',true);
+			Session::put('id',$getlogin->id_customer);
 			Session::put('first_name',$getlogin->customer_first_name);
 			Session::put('last_name',$getlogin->customer_last_name);
 			Session::put('company',$getlogin->customer_company);
@@ -41,7 +42,7 @@ class loginController Extends BaseController{
 			Session::put('zip',$getlogin->customer_zip);
 			Session::put('country',$getlogin->customer_country);
 			Session::put('phone',$getlogin->customer_phone);
-			Session::put('notip','<div class="alert alert-success">Login success</div>');
+			Session::flash('notip','<div class="alert alert-success">Login success</div>');
 			return Redirect::to('/');
 		}else{
 			Session::put('notip','<div class="alert alert-danger">Email or password not found</div>');

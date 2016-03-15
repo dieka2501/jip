@@ -27,12 +27,7 @@ class registerController Extends BaseController{
 		$view['first_name'] 		= Session::get('first_name');
 		$view['last_name'] 			= Session::get('last_name');
 		$view['last_name'] 			= Session::get('last_name');
-		$view['company'] 			= Session::get('company');
-		$view['address'] 			= Session::get('address');
-		$view['town'] 				= Session::get('town');
-		$view['zip'] 				= Session::get('zip');
-		$view['country'] 			= Session::get('country');
-		$view['phone']	 			= Session::get('phone');
+		$view['date_birth'] 		= Session::get('date_birth');
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.register.page',$view);
 	}
@@ -43,27 +38,17 @@ class registerController Extends BaseController{
 			$repassword			= Input::get('repassword');
 			$first_name			= Input::get('first_name');
 			$last_name			= Input::get('last_name');
-			$company			= Input::get('company');
-			$address			= Input::get('address');
-			$town				= Input::get('town');
-			$zip				= Input::get('zip');
-			$country			= Input::get('country');
-			$phone				= Input::get('phone');
+			$date_birth			= Input::get('date_birth');
 			$key 				= substr(md5($email.date('YmdHis')), 3,5);
 			$get_email 			= $this->customer->get_email($email);
 			if(count($get_email) == 0){
 				if($password == $repassword){
 					$insert = array('customer_first_name'=>$first_name,
 									'customer_last_name'=>$last_name,
+									'customer_email'=>$email,
 									'customer_password'=>md5($password),
 									'customer_status'=>0,
-									'customer_company'=>$company,
-									'customer_address'=>$address,
-									'customer_town'=>$town,
-									'customer_zip'=>$zip,
-									'customer_country'=>$country,
-									'customer_email'=>$email,
-									'customer_phone'=>$phone,
+									'customer_datebirth'=>'0000-00-00',
 									'customer_key'=>$key,
 									'created_at'=>date('Y-m-d H:i:s'));
 					$ids = $this->customer->add($insert);
@@ -73,12 +58,6 @@ class registerController Extends BaseController{
 					}else{
 						Session::flash('first_name',$first_name);
 						Session::flash('last_name',$last_name);
-						Session::flash('company',$company);
-						Session::flash('address',$address);
-						Session::flash('town',$town);
-						Session::flash('zip',$zip);
-						Session::flash('country',$country);
-						Session::flash('phone',$phone);
 						Session::flash('notip','<div class="alert alert-danger">Register failed!</div>');
 						return Redirect::to('/register');	
 					}
@@ -86,12 +65,6 @@ class registerController Extends BaseController{
 					Session::flash('email',$email);
 					Session::flash('first_name',$first_name);
 					Session::flash('last_name',$last_name);
-					Session::flash('company',$company);
-					Session::flash('address',$address);
-					Session::flash('town',$town);
-					Session::flash('zip',$zip);
-					Session::flash('country',$country);
-					Session::flash('phone',$phone);
 					Session::flash('notip','<div class="alert alert-danger">Password must match!</div>');
 					return Redirect::to('/register');
 				}
@@ -99,12 +72,6 @@ class registerController Extends BaseController{
 				Session::flash('email',$email);
 				Session::flash('first_name',$first_name);
 				Session::flash('last_name',$last_name);
-				Session::flash('company',$company);
-				Session::flash('address',$address);
-				Session::flash('town',$town);
-				Session::flash('zip',$zip);
-				Session::flash('country',$country);
-				Session::flash('phone',$phone);
 				Session::flash('notip','<div class="alert alert-danger">Email has been registered</div>');
 				return Redirect::to('/register');
 			}
@@ -112,12 +79,6 @@ class registerController Extends BaseController{
 			Session::flash('email',$email);
 			Session::flash('first_name',$first_name);
 			Session::flash('last_name',$last_name);
-			Session::flash('company',$company);
-			Session::flash('address',$address);
-			Session::flash('town',$town);
-			Session::flash('zip',$zip);
-			Session::flash('country',$country);
-			Session::flash('phone',$phone);
 			Session::flash('notip','<div class="alert alert-danger">All field require must be filled</div>');
 			return Redirect::to('/register');
 		}

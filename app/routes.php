@@ -41,6 +41,7 @@ Route::get('/logout','loginController@do_logout');
 Route::get('/payment','paymentController@index');
 Route::post('/payment/search/orderid','paymentController@json_order');
 Route::post('/payment/do','paymentController@do_payment');
+Route::get('/member/{id}','memberController@index');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){

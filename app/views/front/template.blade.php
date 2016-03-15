@@ -101,7 +101,7 @@
                             <li><a href="#myModal" data-toggle="modal" data-target="#myModal"><i class="icon-user-follow icons">&nbsp;</i>Login or Register</a></li>
                             <!-- <li><a href="<?php echo Config::get('app.url');?>public/login"><i class="icon-login icons">&nbsp;</i> Login</a></li> -->
                             @else
-                            <li><a href="#"><i class="icon-user-follow icons">&nbsp;Hi! </i> {{Session::get('first_name')}} {{Session::get('last_name')}}</a></li>
+                            <li><a href="{{Config::get('app.url')}}public/member/{{Session::get('id')}}"><i class="icon-user-follow icons">&nbsp;Hi! </i> {{Session::get('first_name')}} {{Session::get('last_name')}}</a></li>
                             <li><a href="<?php echo Config::get('app.url');?>public/logout"><i class="icon-login icons">&nbsp;</i> Logout</a></li>
                             @endif
                             <!-- <li class="dropdown">
@@ -224,26 +224,26 @@
                   <div class="row">
                   <div class="col-xs-7">
                       <div class="well">
-                      <form class="form-signin" method="POST" action="http://jhlautocustom.com/public/login" style="padding:0px;">
+                      <form class="form-signin" method="POST" action="{{Config::get('app.url')}}public/login" style="padding:0px;">
                       <input type="text" class="form-control" placeholder="Email" required="" name="email" autofocus="">
                       <input type="password" class="form-control" placeholder="Password" name="password" required="">
                       <button class="btn btn-lg btn-warning btn-block" type="submit">Sign in</button>
                       <a href="#" class="pull-right need-help">Forgot Password!</a><span class="clearfix"></span>
                       </form>
 
-                      <div class="login-or">
+                      <!-- <div class="login-or">
                           <hr class="hr-or">
                           <span class="span-or">or</span>
-                      </div>
+                      </div> -->
 
-                      <div class="row">
+                      <!-- <div class="row">
                           <div class="col-xs-6 col-sm-6 col-md-6">
                               <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
                           </div>
                           <div class="col-xs-6 col-sm-6 col-md-6">
                               <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
                           </div>
-                      </div>
+                      </div> -->
                       </div>
                   </div>
                   <div class="col-xs-5">
@@ -262,64 +262,29 @@
                   <div class="row">
                 <div class="col-xs-7">
                     <div class="well">
-                    <form class="form-signin" method="POST" action="http://jhlautocustom.com/public/register" style="max-width: 100%;padding:0px;">
+                    <form class="form-signin" method="POST" action="{{Config::get('app.url')}}public/register" style="max-width: 100%;padding:0px;">
                         <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" value="">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password" required="">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="password" class="form-control" name="repassword" placeholder="Ulangi Password" required="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" value="">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="" value="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="company" placeholder="Company" value="">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="address" placeholder="Address" value="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="town" placeholder="Town" value="">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="zip" placeholder="Zip Code" value="">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="country" placeholder="Country" value="">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="phone" placeholder="Phone Number" value="">
-                            </div>
-                        </div>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required="">
+                        <input type="password" class="form-control" name="repassword" placeholder="Ulangi Password" required="">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required="" value="">
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required="" value="">
+                        <input type="text" class="form-control" name="date_birth" placeholder="Date Birth" value="" id='date_birth'>
                         <button class="btn btn-lg btn-warning btn-block" type="submit">Register</button>
                     </form>
 
-                    <div class="login-or">
+                    <!-- <div class="login-or">
                         <hr class="hr-or">
                         <span class="span-or">or</span>
-                    </div>
+                    </div> -->
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
                         </div>
-                    </div>
+                    </div> -->
                     </div>
                 </div>
                 <div class="col-xs-5">
@@ -410,6 +375,8 @@
     <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery.nicescroll.min.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/classie.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/uisearch.js"></script>
+    <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery-ui-1.10.3.min.js"></script>
+    
     <script type="text/javascript">
     $(document).ready(function() {
       new UISearch( document.getElementById( 'sb-search' ) );
@@ -516,6 +483,12 @@
       }
      
     });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#date_birth').datepicker();
+      });
+      
     </script>
 </body>
 </html>
