@@ -102,7 +102,6 @@
                             <!-- <li><a href="<?php echo Config::get('app.url');?>public/login"><i class="icon-login icons">&nbsp;</i> Login</a></li> -->
                             @else
                             <li><a href="{{Config::get('app.url')}}public/member/{{Session::get('id')}}"><i class="icon-user-follow icons">&nbsp;Hi! </i> {{Session::get('first_name')}} {{Session::get('last_name')}}</a></li>
-                            <li><a href="<?php echo Config::get('app.url');?>public/logout"><i class="icon-login icons">&nbsp;</i> Edit Profile</a></li>
                             <li><a href="<?php echo Config::get('app.url');?>public/logout"><i class="icon-login icons">&nbsp;</i> Logout</a></li>
                             @endif
                             <!-- <li class="dropdown">
