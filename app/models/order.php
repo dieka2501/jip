@@ -19,5 +19,9 @@ class order Extends Eloquent{
 	}
 	function get_ten(){
 		return order::orderBy('id_order','DESC')->take(10)->get();
+
+	}
+	function get_email($email){
+		return order::where('order_email',$email)->orderBy('id_order','DESC')->paginate(20);
 	}
 }
