@@ -36,7 +36,7 @@ Check Out
                         <div class="media list-check">
                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<?php echo Config::get('app.url');?>aset/upload/{{$carts->main_image}}" style="width: 72px; height: 72px;"> </a>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{$carts->name_product}}</a></h4>
+                                <h4 class="media-heading" style="margin-bottom:15px"><a href="#">{{$carts->name_product}}</a></h4>
                                 <h5 class="media-heading"> by <a href="#">{{$carts->brand_name}}</a></h5>
                                 <?php $instock = $carts->stock_product -$carts->qty;?>
                                 <span>Stock: </span><span class="text-success"><strong>{{$instock}}</strong></span>
@@ -44,7 +44,7 @@ Check Out
                         </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                         <input type="hidden" name='idproduct[]' class="form-control" id="idproduct" value="{{$carts->product_id}}">
-                        <input type="text" name='qtycart[]' class="form-control" id="qtycart" value="{{$carts->qty}}">
+                        <input type="number" name='qtycart[]' class="form-control" id="qtycart" value="{{$carts->qty}}">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>Rp. {{number_format($carts->price_product)}}</strong></td>
                         <?php $totalharga = $carts->price_product * $carts->qty;

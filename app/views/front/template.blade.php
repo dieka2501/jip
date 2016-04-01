@@ -85,6 +85,79 @@
     margin-top: 0px !important;
     margin-bottom: 0px !important;
   }
+  /*new lagi*/
+  ul.dropdown-cart {
+    right: 0;
+    left: inherit!important;
+    min-width: 310px!important;
+  }
+  .table > tbody > tr > td {
+      vertical-align: middle!important;
+  }
+    .form-pengiriman {
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      margin-bottom: 20px
+    }
+    .form-pengiriman table {
+      font-size: 12px;
+      margin-bottom: 0px;
+    }
+    .form-pengiriman h4 {
+      margin-top: 0px;
+      padding-bottom: 20px;
+      border-bottom:1px solid #e0e0e0;
+      margin-bottom: 30px;
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .form-pengiriman .alert {
+      font-family: Arial;
+    }
+    .form-pengiriman .alert input[type="radio"] {
+      margin-top: 1px;
+    }
+    .form-pengiriman .alert .radio {
+      margin-bottom: 7px;
+    }
+    .form-control {
+      border-radius: 0px!important;
+    }
+    .address_wrapper {
+      margin-bottom: 30px;
+      margin-left: 15px;
+    }
+    .address_wrapper .radio_check {
+        float: left;
+        margin-right: 15px;
+        padding-top: 1px;
+    }
+
+    .address_wrapper .address p {
+      color: #444;
+      margin-bottom: 0px;
+      font-size: 12px;
+    }
+    .address_wrapper .address p.ch-head {
+      font-weight: bold;
+      font-size: 14px;
+      font-family: arial;
+    }
+    .bayar-cod {
+      padding: 50px 20px;
+    }
+    .bayar-cod p {
+      color: #444;
+      font-family: arial;
+    }
+    .box-pengirim p {
+      color: #666666;
+      font-family: arial;
+      font-size: 12px;
+      margin-bottom: 0px;
+      line-height: 20px;
+    }
 </style>
 </head>
 <!-- // end:head // -->
@@ -120,18 +193,17 @@
                                 ?>
                                   @foreach($carttemplate as $carttemplates)
                                   <li>
-                                      <span class="item">
-                                        <span class="item-left">
-                                            <img src="<?php echo Config::get('app.url');?>aset/upload/{{$carttemplates->main_image}}" alt="" style="width: 40px; height: 40px;" />
-                                            <span class="item-info">
-                                                <span>{{$carttemplates->name_product}}</span>
-                                                <span>Rp. {{number_format($carttemplates->price_product)}}</span>
-                                            </span>
-                                        </span>
-                                        <span class="item-right">
-                                            <a href="{{Config::get('app.url')}}public/cart/delete?id={{$carttemplates->id_cart}}" class="btn btn-xs btn-danger pull-right">x</a>
-                                        </span>
-                                    </span>
+                                    <div class="media">
+                                    <div class="media-left">
+                                    <a href="#">
+                                    <img src="<?php echo Config::get('app.url');?>aset/upload/{{$carttemplates->main_image}}" alt="" style="width: 40px; height: 40px;" />
+                                    </a>
+                                    </div>
+                                    <div class="media-body">
+                                    <h5 class="media-heading">{{$carttemplates->name_product}}</h5> 
+                                    <p class="pull-left">Rp. {{number_format($carttemplates->price_product)}}</p><p class="pull-right"><a href="{{Config::get('app.url')}}public/cart/delete?id={{$carttemplates->id_cart}}"><i class="fa fa-times"></i></a></p>
+                                    </div>
+                                    </div>
                                   </li>
                                   @endforeach
                                   
