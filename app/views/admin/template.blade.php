@@ -143,11 +143,11 @@
                 <i class="fa fa-shopping-cart"></i> <span>Image Banner</span>
               </a>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/adm_group_pelanggan">
                 <i class="fa fa-users"></i> <span>Group Pelanggan</span>
               </a>
-            </li>
+            </li> -->
             <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/admin/sales">
                 <i class="fa fa-money"></i> <span>Order</span>
@@ -158,31 +158,31 @@
                 <i class="fa fa-bookmark"></i> <span>News &amp; Events</span>
               </a>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/admin/message">
                 <i class="fa fa-bookmark"></i> <span>Message</span>
               </a>
-            </li>
-            <li class="treeview">
+            </li> -->
+            <!-- <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/adm_promo">
                 <i class="fa fa-gift"></i> <span>Promo</span>
               </a>
-            </li>
-            <li class="treeview">
+            </li> -->
+            <!-- <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/adm_voucher">
                 <i class="fa fa-list-alt"></i> <span>Voucher</span>
               </a>
-            </li>
-            <li class="treeview">
+            </li> -->
+            <!-- <li class="treeview">
               <a href="<?php echo Config::get('app.url');?>public/adm_group">
                 <i class="fa fa-list"></i> <span>Group</span>
               </a>
-            </li>
-            <li class="treeview">
+            </li> -->
+            <!-- <li class="treeview">
               <a href=" echo Config::get('app.url');?>public/adm_user">
                 <i class="fa fa-user"></i> <span>User</span>
               </a>
-            </li>
+            </li> -->
           </ul>
           <div class="user-panel" style="border-top:1px solid #1A2226;">
             <div class="pull-left image">
