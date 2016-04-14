@@ -1,0 +1,428 @@
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet
+|--------------------------------------------------------------------------
+|
+| @author 		: Supatmo Agus Edi Cahyono;
+| @created 		: 25 June 2015;
+| @version 		: 1.1;
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Font Face
+|--------------------------------------------------------------------------
+|
+*/
+
+@font-face { font-family: Raleway-Light; font-weight: normal;font-style: normal; src: url('Raleway-Light.ttf'); }
+@font-face { font-family: Raleway-Regular; font-weight: normal;font-style: normal; src: url('Raleway-Regular.ttf'); }
+@font-face { font-family: Raleway-Medium; font-weight: normal;font-style: normal; src: url('Raleway-Medium.ttf'); }
+@font-face { font-family: Raleway-SemiBold; font-weight: normal;font-style: normal; src: url('Raleway-SemiBold.ttf'); }
+@font-face { font-family: Raleway-Bold; font-weight: normal;font-style: normal; src: url('Raleway-Bold.ttf'); }
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet General
+|--------------------------------------------------------------------------
+|
+*/
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+	background: #333 url(../img/pattern.png);
+	font-family: 'Raleway-Regular', Helvetica, Arial, sans-serif;
+    line-height: normal;
+    color: #fff;
+}
+
+a, a:hover, a:focus {text-decoration: none;outline: none;}
+
+.btn-white {
+    font-family: 'Raleway-SemiBold', Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    border: 2px solid transparent;    
+    color: #333;
+    text-transform: uppercase;
+    text-shadow:none;
+    text-align: center;
+    transition: all 0.2s ease 0s;
+
+}
+
+.btn-white:hover {background-color: transparent;color: #fff;border: 2px solid #fff;}
+
+.section {padding-top: 50px;padding-bottom: 50px;}
+
+.section h1.heading-title {
+    font-family: 'Raleway-Light', sans-serif;
+    font-size: 30px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.section h3 {
+    font-family: 'Raleway-SemiBold', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section h3 a {color: #fff}
+
+.section p {
+    font-size: 14px;
+    color: #ededed;
+    /*line-height: 25px;*/
+    margin-bottom: 20px;
+}
+
+.section a.btn-readmore {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.section a:hover.btn-readmore, .section a:focus.btn-readmore {opacity: 1;}
+
+.section hr {border-color: #4e4e4e;margin-bottom: 30px;margin-top: 0;}
+
+.no-pd-top {padding-top: 0 !important;}
+.no-pd-bottom {padding-bottom: 0 !important;}
+
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Header
+|--------------------------------------------------------------------------
+|
+*/
+
+#header {background-color: #151515;position: relative;}
+.topbar {padding-top: 10px;padding-bottom: 10px;border-bottom: 1px solid #222222;}
+.slogan a {color: #fff;text-transform: uppercase;font-size: 12px;}
+/* Navbar */
+
+.navbar {-webkit-border-radius: 0;-moz-border-radius: 0;border-radius: 0;min-height: 70px;margin-bottom: 0;}
+.navbar-default {
+    background-color: #151515;
+    border-color: transparent;
+}
+.navbar-brand {padding: 10px 15px;height: 56px;}
+.navbar-nav {}
+.navbar-default .navbar-nav > li > a {font-family: 'Raleway-Regular';font-size: 12px;color: #fff;text-transform: uppercase;border-bottom: 3px solid transparent;}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #333;
+    color: #fff;
+    border-bottom: 3px solid #FFB302;
+    font-family: 'Raleway-SemiBold', sans-serif;
+}
+.navbar-default .navbar-nav > .category-menu > a {background-color: #333;}
+.navbar-default .navbar-nav > li {border-right: 1px solid #222222;margin-top: -1px;} 
+.navbar-default .navbar-nav > li.active, .navbar-default .navbar-nav > li:hover {border-right:1px solid #151515;}
+.navbar-default .navbar-nav > li.active > a {padding-left: 30px;padding-right: 30px;}
+.navbar-nav > li > a {padding-top: 5px;padding-bottom: 5px;transition: all 0.5s ease 0s;}
+.navbar-default .navbar-nav > li > a:hover {color: #fff;}
+.nav > li > a {padding: 25px 41px;}
+.navbar-default .navbar-toggle {border: none;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background-color: transparent;}
+.navbar-nav > li > .dropdown-menu {border-radius: 0 !important;}
+.navbar-nav > li > .dropdown-menu > li > a {text-transform: uppercase;font-size: 12px;}
+.topmenu {list-style: none;margin: 0;padding: 0;float: right;}
+.topmenu li {float: left;margin-left: 25px;}
+.topmenu li a {color: #fff;font-size: 12px;text-transform: uppercase;}
+.topmenu li a:hover {color: #FFB302;transition: all 0.5s ease 0s;}
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Home
+|--------------------------------------------------------------------------
+|
+*/
+
+#slideshow {position: relative;}
+#slideshow .carousel-caption h1 {
+    font-family: 'Raleway-Bold', sans-serif;
+    font-size: 48px;
+    color: #fff;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#slideshow .carousel-caption p {
+    font-family: 'Raleway-Medium', sans-serif;
+    font-size: 21px;
+    color: #fff;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+
+
+.carousel .item img {
+    max-width: 100%; /*img width*/
+    height: auto;
+}
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+}
+
+.carousel-indicators li {border-radius: 0;width: 30px;height: 3px;border: none;background-color: #fff;opacity: 0.2;margin: 0 3px;}
+.carousel-indicators .active {border-radius: 0;width: 30px;height: 3px;border: none;background-color: #fff;opacity: 1;}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Content
+|--------------------------------------------------------------------------
+|
+*/
+#content {background-color: #fff;padding: 50px 0;}
+.lead {
+    font-family: 'Raleway-Light', sans-serif;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 30px;
+    padding-bottom : 25px;
+    font-size: 30px;
+    color: #fff;
+    /*text-align: center;*/
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+     font-weight: normal;
+     line-height: normal;
+     color: #333333;
+    margin: 20px 0;
+}
+
+#content p {
+    font-family: 'Raleway-Regular', sans-serif;
+    font-size: 14px;
+    /*line-height: normal;*/
+    color: #333333;
+}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Logo Partner
+|--------------------------------------------------------------------------
+|
+*/
+
+#partner {}
+#partner .partners {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-right: 1px solid #333; 
+    text-align: center;
+    
+}
+#partner .partners a {opacity: 0.5;transition: all 0.5s ease 0s;}
+#partner .partners a:hover {opacity:1;}
+#partner div:last-child.partners {border: none;}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet News
+|--------------------------------------------------------------------------
+|
+*/
+
+#news-info {
+    background-color: #272727;
+    position: relative;
+} 
+
+#featured .news, #featured .products {margin-bottom: 30px;}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Featured
+|--------------------------------------------------------------------------
+|
+*/
+
+#featured {background-color: #393939;}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Spareparts
+|--------------------------------------------------------------------------
+|
+*/
+
+
+#spareparts {
+  background: url(../img/store-offline.jpg) no-repeat top center; 
+  text-align: center;
+  overflow: hidden;
+  height: 440px;
+  padding-top: 125px;
+}
+
+#spareparts h1 {
+    font-family: 'Raleway-SemiBold', sans-serif;
+    font-size: 45px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#spareparts p {font-size: 14px;color: #fff;line-height: normal;margin-bottom: 40px;}
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Brands
+|--------------------------------------------------------------------------
+|
+*/
+
+#brands {background-color: #fff;}
+
+#brands.section h1.heading-title {
+    font-family: 'Raleway-SemiBold', sans-serif;
+    color: #151515;
+}
+
+#owl-brands .item{
+    text-align: center;
+}
+#owl-featured .item{
+    margin-right: 15px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Responsive
+|--------------------------------------------------------------------------
+|
+*/
+
+footer {
+    background-color: #e8e8e8;
+    border-top: 1px solid #bdbdbd; 
+    
+}
+
+footer .footer-block {
+    padding: 50px 30px;
+    border-right: 1px solid #bdbdbd; 
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+}
+
+footer .footer-block h5 {
+    font-size: 14px;
+    font-family: 'Raleway-SemiBold', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+footer .footer-block .icons {
+    border-radius:50%;
+    background-color: #000;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+    padding-top: 12px;
+    font-size: 27px;
+    color: #fff;
+    margin: 15px auto 15px;
+    font-weight: 300;
+}
+
+footer div:last-child.footer-block {border: none;}
+
+
+
+.copyright {
+    font-size: 11px;
+    padding: 15px 0;
+    background-color: #151515;
+    border-bottom: 1px solid #333;
+}
+
+.copyright ul {padding: 0;margin: 0;list-style: none;}
+.copyright ul li {padding-left: 10px;padding-right: 10px;text-align: center;display: inline-block;}
+.copyright ul li a {color: #fff;font-size: 11px;text-transform: uppercase;}
+.copyright .social-media ul li a {font-size: 16px;}
+/*
+|--------------------------------------------------------------------------
+| JSI Stylesheet Responsive
+|--------------------------------------------------------------------------
+|
+*/
+
+@media (min-width: 992px) {  
+}
+@media (min-width: 1200px) {
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+        border-bottom: 3px solid #FFB302;
+        background-color: #333333;
+        color: #fff;
+    }
+    .navbar-collapse {padding-left: 0;padding-right: 0;}
+    .carousel .item {
+        width: 100%; /*slider width*/
+        height: 600px; /*slider height*/
+    }
+    #slideshow {position: relative;height: 590px;}
+    #slideshow .container {position: relative;}
+    #slideshow .carousel-caption {text-align: left;padding-bottom: 0;bottom: 200px;left: 0;}
+    #slideshow .carousel-caption h1 {width: 400px;}
+    #slideshow .carousel-caption p {width: 380px;}
+    
+    .copyright .social-media {text-align: right;}
+}
+  
+@media (max-width: 767px) {
+    .topbar, .slogan, .topmenu {display: none;}
+    .navbar {min-height: inherit;}
+    .navbar-default .navbar-nav > li > a {font-family: 'Raleway-Regular', Helvetica, Arial, sans-serif;}
+    .carousel-caption {bottom:50px;}
+    #slideshow .carousel-caption h1 {font-size:21px;margin-bottom:5px;}
+    #slideshow .carousel-caption p {font-size:14px;margin-bottom:20px;}
+    #slideshow .btn-white {padding:8px 20px;font-size:10px;}
+    .jsi-spmenu .navbar-nav > li > a:hover.fusion-logout {transition: all 0.5s ease 0s;background-color: #FFB302;} 
+    /* Content */
+    
+    #partner .partners {border-right: none;border-bottom: 1px solid #333;}
+    #brands.section h1.heading-title {margin-bottom: 0;}
+    
+    /* Footer */
+    
+    footer .footer-block {border-right:none;border-bottom:1px solid #bdbdbd;padding:25px;}    
+    .copyright .footer-menu {text-align: center;}    
+    .copyright .social-media {text-align: center;margin-top: 15px;}
+}   
+
+@media (max-width: 639px) {
+@media (max-width: 479px) {
+    .carousel-caption {bottom:10px;}
+    .carousel-caption {right:5%;left:5%;}
+    #slideshow .btn-white {display:none;}
+}
