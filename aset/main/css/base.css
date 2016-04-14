@@ -1,0 +1,123 @@
+@media screen and (max-width: 767px) {
+  .navbar-fixed-top {
+    width:100%;
+  }
+  .navbar-fixed-top .navbar-collapse, 
+  .navbar-fixed-bottom .navbar-collapse {
+    max-height:none;
+  }
+  .navbar-nav {
+    margin:0;
+  }
+  .navbar-form {
+    margin:0;
+  }
+  /* General styles for all menus */
+  .jsi-spmenu {
+    background: #2C2C2E;
+    position: fixed;
+    padding:0;
+    margin:0 !important;
+    overflow-x:hidden;
+    overflow-y:visible;
+    display:block;
+    visibility:visible;
+  }
+  .jsi-spmenu-push .navbar-default .navbar-collapse, .jsi-spmenu-push .navbar-default .navbar-form {border: none;}
+  .jsi-spmenu .navbar-nav > li {padding-left: 20px;border-bottom: 1px solid #5f5f5f;height: 50px;}
+  .jsi-spmenu .navbar-nav > li > a {color: #ccc;padding: 15px 20px 10px 0;display: block;position: relative;font-weight: normal;}
+  .jsi-spmenu .navbar-nav > li > a > i.fa-angle-right {font-size: 20px;position: absolute;right: 20px;top: 15px;}
+  .jsi-spmenu .navbar-nav > li > a.fusion-logout {
+    height: 26px !important;
+    background-color: #444444;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    float: right;
+    padding: 2px 20px !important;
+    margin-right: 15px;
+    margin-top: 12px;
+  }
+  .navbar-fixed-top .jsi-spmenu {
+    bottom:0;
+  }
+  .jsi-spmenu .navbar-nav > li.divider {height: auto;}
+  /* Orientation-dependent styles for the content of the menu */
+  .jsi-spmenu-vertical {
+    width: 260px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .jsi-spmenu-horizontal {
+    width: 100%;
+    height: 150px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  .jsi-spmenu-horizontal h3 {
+    height: 100%;
+    width: 20%;
+    float: left;
+  }
+  .jsi-spmenu-horizontal a {
+    float: left;
+    width: 20%;
+    padding: 0.8em;
+    border-left: 1px solid #258ecd;
+  }
+  /* Vertical menu that slides from the left or right */
+  .jsi-spmenu-left {
+    left: -260px;
+  }
+  .jsi-spmenu-right {
+    right: 0;
+  }
+  .jsi-spmenu-right,
+  .jsi-spmenu-push-toleft .navbar-fixed-top .jsi-spmenu-right.jsi-spmenu-open {
+    right: -260px;
+  }
+  .jsi-spmenu-left.jsi-spmenu-open,
+  .jsi-spmenu-push-toright .navbar-fixed-top .jsi-spmenu-left.jsi-spmenu-open {
+    left: 0px;
+  }
+  .jsi-spmenu-right.jsi-spmenu-open {
+    right: 0px !important;
+  }
+  /* Horizontal menu that slides from the top or bottom */
+  .jsi-spmenu-top {
+    top: -150px;
+  }
+  .jsi-spmenu-bottom {
+    bottom: -150px;
+  }
+  .jsi-spmenu-top.jsi-spmenu-open {
+    top: 0px;
+  }
+  .jsi-spmenu-bottom.jsi-spmenu-open {
+    bottom: 0px;
+  }
+  /* Push classes applied to the body */
+  .jsi-spmenu-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+  }
+  .jsi-spmenu-push-toright,
+  .jsi-spmenu-push-toright .navbar-fixed-top {
+    left: 260px;
+  }
+  .jsi-spmenu-push-toleft,
+  .jsi-spmenu-push-toleft .navbar-fixed-top {
+    left: -260px;
+  }
+  /* Transitions */
+  .jsi-spmenu,
+  .jsi-spmenu-push,
+  .navbar {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
