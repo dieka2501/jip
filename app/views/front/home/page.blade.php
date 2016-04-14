@@ -118,7 +118,7 @@
             // var_dump($newsfile[$news[0]->id_news]);
            $filenews1  = (isset($newsfile[$news[0]->id_news]))? $newsfile[$news[0]->id_news]->file: ""; 
         ?>
-				<a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[0]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews1}}" class="center-block img-responsive"></a>
+				<a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[0]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews1}}" class="center-block img-responsive" style="max-height: 300px;width: 100%;object-fit: cover;"></a>
 				<h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[0]->id_news}}">{{$news[0]->news_title}}</a></h3>
 				<p><?php echo str_limit(strip_tags($news[0]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[0]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
 			   @endif	
@@ -129,7 +129,7 @@
             // var_dump($newsfile[$news[0]->id_news]);
            $filenews2  = (isset($newsfile[$news[1]->id_news]))? $newsfile[$news[1]->id_news]->file: ""; 
         ?>
-        <a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews2}}" class="center-block img-responsive"></a>
+        <a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$filenews2}}" class="center-block img-responsive" style="max-height: 300px;width: 100%;object-fit: cover;"></a>
         <h3><a href="<?php echo Config::get('app.url');?>public/news/detail/{{$news[1]->id_news}}">{{$news[1]->news_title}}</a></h3>
 
         <p><?php echo str_limit(strip_tags($news[1]->news_content),200,'.... <br><a href="'.Config::get('app.url').'public/news/detail/'.$news[1]->id_news.'" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>')?> </p>
