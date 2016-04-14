@@ -44,6 +44,9 @@
     height: 80px;
   }
   /*modal*/
+  .product-price {
+    font-family: Arial!important;
+  }
   .modal-cont {
     color: #666666!important;
   }
