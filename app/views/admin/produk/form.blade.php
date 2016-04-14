@@ -143,6 +143,12 @@
         "undo | redo | styleselect | bold | italic | link | fullscreen | alignleft | aligncenter |  alignright | insertdatetime | link | removeformat | cut | copy | paste | bullist | numlist | outdent | indent |"
     ],
     insertdatetime_formats: ["%Y.%m.%d", "%H:%M"],
+    setup : function(ed) {
+        ed.onInit.add(function(ed) {
+            ed.execCommand("fontName", false, "Arial");
+            ed.execCommand("fontSize", false, "12px");
+        });
+    }
     
  });
 </script> 
