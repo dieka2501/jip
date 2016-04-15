@@ -229,7 +229,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-lg visible-xs" href="index.php"><img height="30" src="<?php echo Config::get('app.url');?>aset/main/img/logo.png" /></a>
+            <a class="navbar-brand hidden-lg visible-xs" href="index.php"><img height="30"> src="<?php echo Config::get('app.url');?>logo/jhl.png"></a>
           </div> 
           <div class="hidden-xs visible-lg">
               <div id="navbar" class="navbar-collapse collapse">
