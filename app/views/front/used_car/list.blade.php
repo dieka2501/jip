@@ -1,16 +1,13 @@
 @extends('front.template')
 @section('content')
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-Used Car
-<ol class="breadcrumb">
-  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
-  <li><a href="{{Config::get('app.url')}}public/cars/used">Used Car</a></li>
-  <li class="active">List</li>
-</ol>
-</div>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>Used Car</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/cars/used">Used Car</a></li>
+		</ol>
+	</div>
 </div>
 <section id="featured" class="section">
 	<div class="container">

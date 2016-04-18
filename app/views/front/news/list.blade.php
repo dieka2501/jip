@@ -1,16 +1,14 @@
 @extends('front.template')
 @section('content')
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-News &amp; Events
-<ol class="breadcrumb">
-  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
-  <li><a href="{{Config::get('app.url')}}public/news">News</a></li>
-  <li class="active">List</li>
-</ol>
-</div>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>News</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/news">News</a></li>
+		  <li class="active">List</li>
+		</ol>
+	</div>
 </div>
 <?php
 $ppage = $page-1;

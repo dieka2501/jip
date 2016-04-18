@@ -27,141 +27,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style type="text/css">
-.navbar,.sb-search-input{min-height:40px!important}.pagination>li>a,.pagination>li>span{color:#ccc;background:#303030;border-color:#303030}#sync1 .item,#sync2 .item,#sync2 .synced .item{background:#fff!important}.product{margin-bottom:40px!important}.product h3{height:40px}.pro-tags a{color:#999!important}.product img{height:200px}.field-row{margin-bottom:20px}.form-order p,.order-info-item p{color:#888!important}.order-info-item{margin-bottom:30px}.borderless td,.borderless th,.borderless tr{border:0!important}.product-desc p,.product-info p{color:#777}#sync1 .owl-item .item img{width: 100%;height: 400px;object-fit: cover;}#sync1 .item{padding:0!important;border:0 solid #ddd}#sync2 .owl-item .item img{max-width:100%;height:70px}.owl-item .item.client img{max-width:100%;height:100%!important}#sync2 .item{padding:0!important;border:1px solid #ddd}#sync2 .synced .item{border-color:#999!important}.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{background-color:#FF9500!important;border-color:#FF9500!important}.sb-search-input{height:40px!important}.nav>li>a{padding:10px 30px!important}.topbar{padding-top:5px;padding-bottom:5px}.sb-search{margin-top:2px!important;margin-bottom:2px!important;height:38px!important}.sb-icon-search,.sb-search-submit{line-height:40px!important;font-size:18px!important}.menu-large{position:static!important}.megamenu{padding:20px 0;width:auto;background:#333333;}.dropdown-menu.megamenu{left:auto}.megamenu>li>ul{padding:0;margin:0}.megamenu>li>ul>li{list-style:none}.dropdown-menu.megamenu .divider {background: #444444!important;}.megamenu>li>ul>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.428571429;color:#bbbbbb;white-space:normal}.megamenu>li ul>li>a:focus,.megamenu>li ul>li>a:hover{text-decoration:none;color:#262626;background-color:#f5f5f5}.megamenu.disabled>a,.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{color:#999}.megamenu.disabled>a:focus,.megamenu.disabled>a:hover{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);cursor:not-allowed}.megamenu.dropdown-header{color:#428bca;font-size:18px}@media (max-width:768px){.megamenu{margin-left:0;margin-right:0}.megamenu>li{margin-bottom:30px}.megamenu>li:last-child{margin-bottom:0}.megamenu.dropdown-header{padding:3px 15px!important}.navbar-nav .open .dropdown-menu .dropdown-header{color:#fff}}
-  img.featured-prod.center-block.img-responsive {
-    height: 200px;
-    object-fit: cover;
-  }
-  .navbar-nav > li > .dropdown-menu {
-      border-radius: 0 !important;
-      width: 83.5%;
-  }
-  .topmenu {
-    padding-top: 35px;
-  }
-  .slogan img {
-    height: 80px;
-  }
-  /*modal*/
-  .product-price {
-    font-family: Arial!important;
-  }
-  .modal-cont {
-    color: #666666!important;
-  }
-  .modal-cont .form-control {
-    font-size: 12px!important;
-  }
-
-  .modal-cont .form-group {
-    margin-bottom: 0px;
-  }
-
-  .modal-cont .lead {
-    background-color: #ffffff!important;
-    color: #666!important;
-    /*margin-top: 40px;*/
-  }
-  .login-or {
-    position: relative;
-    font-size: 18px;
-    color: #666;
-    margin-top: 15px;
-            margin-bottom: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .span-or {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: -2px;
-    margin-left: -25px;
-    background-color: #f5f5f5;
-    width: 50px;
-    text-align: center;
-  }
-  .hr-or {
-    background-color: #cdcdcd;
-    height: 1px;
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
-  }
-  /*new lagi*/
-  ul.dropdown-cart {
-    right: 0;
-    left: inherit!important;
-    min-width: 310px!important;
-  }
-  .table > tbody > tr > td {
-      vertical-align: middle!important;
-  }
-    .form-pengiriman {
-      border: 1px solid #e0e0e0;
-      padding: 20px;
-      margin-bottom: 20px
-    }
-    .form-pengiriman table {
-      font-size: 12px;
-      margin-bottom: 0px;
-    }
-    .form-pengiriman h4 {
-      margin-top: 0px;
-      padding-bottom: 20px;
-      border-bottom:1px solid #e0e0e0;
-      margin-bottom: 30px;
-      font-family: Arial;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    .form-pengiriman .alert {
-      font-family: Arial;
-    }
-    .form-pengiriman .alert input[type="radio"] {
-      margin-top: 1px;
-    }
-    .form-pengiriman .alert .radio {
-      margin-bottom: 7px;
-    }
-    .form-control {
-      border-radius: 0px!important;
-    }
-    .address_wrapper {
-      margin-bottom: 30px;
-      margin-left: 15px;
-    }
-    .address_wrapper .radio_check {
-        float: left;
-        margin-right: 15px;
-        padding-top: 1px;
-    }
-
-    .address_wrapper .address p {
-      color: #444;
-      margin-bottom: 0px;
-      font-size: 12px;
-    }
-    .address_wrapper .address p.ch-head {
-      font-weight: bold;
-      font-size: 14px;
-      font-family: arial;
-    }
-    .bayar-cod {
-      padding: 50px 20px;
-    }
-    .bayar-cod p {
-      color: #444;
-      font-family: arial;
-    }
-    .box-pengirim p {
-      color: #666666;
-      font-family: arial;
-      font-size: 12px;
-      margin-bottom: 0px;
-      line-height: 20px;
-    }
-</style>
 </head>
 <!-- // end:head // -->
 <body>
@@ -169,7 +34,7 @@
         <div class="topbar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 col-xs-12 slogan"><a href="<?php echo Config::get('app.url');?>public/"><img src="<?php echo Config::get('app.url');?>logo/jhl.png"></a></div>
+                    <div class="col-md-6 col-xs-12 slogan"><a href="<?php echo Config::get('app.url');?>public/"><img src="<?php echo Config::get('app.url');?>/aset/img/logo.png" /></a></div>
                     <div class="col-md-6">
                         <ul class="topmenu">
                             @if(Session::get('login') != true)
@@ -229,7 +94,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand hidden-lg visible-xs" href="index.php"><img height="30"> src="<?php echo Config::get('app.url');?>logo/jhl.png"></a>
+            <a class="navbar-brand hidden-lg visible-xs" href="index.php"><img height="30" src="<?php echo Config::get('app.url');?>logo/jhl.png"></a>
           </div> 
           <div class="hidden-xs visible-lg">
               <div id="navbar" class="navbar-collapse collapse">
@@ -255,13 +120,12 @@
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="<?php echo Config::get('app.url');?>public/product"><i class="fa fa-angle-right">&nbsp;</i> Categories</a></li>
-                  <li><a href="<?php echo Config::get('app.url');?>public/about"><i class="fa fa-angle-right">&nbsp;</i> About Us</a></li> 
-                  <li><a href="<?php echo Config::get('app.url');?>public/product"><i class="fa fa-angle-right">&nbsp;</i> Our Products</a></li> 
-                  <!-- <li><a href="#"><i class="fa fa-angle-right">&nbsp;</i> JSI Community</a></li> -->
-                  <li><a href="<?php echo Config::get('app.url');?>public/news"><i class="fa fa-angle-right">&nbsp;</i> News &amp; Events</a></li>
-                  <li><a href="<?php echo Config::get('app.url');?>public/contact"><i class="fa fa-angle-right">&nbsp;</i> Contact Us</a></li>  
-                  <li><a href="<?php echo Config::get('app.url');?>public/payment"><i class="fa fa-angle-right">&nbsp;</i> Confirm Payment</a></li>  
+                  <li id='aboutus'><a href="<?php echo Config::get('app.url');?>public/aboutus">About Us</a></li> 
+                  <li id='product'><a href="<?php echo Config::get('app.url');?>public/product">Our Products</a></li> 
+                  <li id='new_cars'><a href="<?php echo Config::get('app.url');?>public/cars/new">New Car</a></li>
+                  <li id='used_cars'><a href="<?php echo Config::get('app.url');?>public/cars/used">Used Car</a></li> 
+                  <li id='event'><a href="<?php echo Config::get('app.url');?>public/news">News &amp; Events</a></li>
+                  <li id='contactus'><a href="<?php echo Config::get('app.url');?>public/contact">Contact Us</a></li>  
                   <li class="divider"></li>          
                 </ul>
               </div>
@@ -305,20 +169,6 @@
                       <button class="btn btn-lg btn-warning btn-block" type="submit">Sign in</button>
                       <a href="#" class="pull-right need-help">Forgot Password!</a><span class="clearfix"></span>
                       </form>
-
-                      <!-- <div class="login-or">
-                          <hr class="hr-or">
-                          <span class="span-or">or</span>
-                      </div> -->
-
-                      <!-- <div class="row">
-                          <div class="col-xs-6 col-sm-6 col-md-6">
-                              <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
-                          </div>
-                          <div class="col-xs-6 col-sm-6 col-md-6">
-                              <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
-                          </div>
-                      </div> -->
                       </div>
                   </div>
                   <div class="col-xs-5">
@@ -346,20 +196,6 @@
                         <input type="text" class="form-control" name="date_birth" placeholder="Date Birth" value="" id='date_birth'>
                         <button class="btn btn-lg btn-warning btn-block" type="submit">Register</button>
                     </form>
-
-                    <!-- <div class="login-or">
-                        <hr class="hr-or">
-                        <span class="span-or">or</span>
-                    </div> -->
-
-                    <!-- <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <a href="#" class="btn btn-lg btn-primary btn-sm btn-block"><i class="fa fa-facebook"></i> Facebook</a>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6">
-                            <a href="#" class="btn btn-lg btn-info btn-sm btn-block"><i class="fa fa-google-plus"></i> Google</a>
-                        </div>
-                    </div> -->
                     </div>
                 </div>
                 <div class="col-xs-5">
@@ -457,8 +293,17 @@
       new UISearch( document.getElementById( 'sb-search' ) );
       $('.toggle-menu').jPushMenu({closeOnClickLink: false});
       $('.dropdown-toggle').dropdown();   
-    });
-    $(document).ready(function() {
+      // Add slideDown animation to dropdown
+      $('.dropdown').on('show.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+      });
+
+      // Add slideUp animation to dropdown
+      $('.dropdown').on('hide.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+      });
+
+      // Owl Carousel
         var owl = $("#owl-brands");     
         owl.owlCarousel({         
           itemsCustom : [
@@ -472,9 +317,20 @@
             [1600, 5]
           ],
           navigation : false     
-      });     
-    });
-    $(document).ready(function() {
+      });    
+      var owl = $("#news-slider");     
+      owl.owlCarousel({
+        autoPlay : 6000,
+        paginationSpeed : 3000,
+        navigation : false,
+        pagination : true,
+        navigationText: [
+          "<i class='fa fa-angle-left'></i>",
+          "<i class='fa fa-angle-right'></i>"
+            ],
+        singleItem : true,
+        transitionStyle : "fadeUp"
+      }); 
         var owl = $("#owl-featured");     
         owl.owlCarousel({         
           items : 4, //10 items above 1000px browser width
@@ -484,8 +340,6 @@
           navigation : false,
           autoplay : true     
       });     
-    });
-    $(document).ready(function() {
  
       var sync1 = $("#sync1");
       var sync2 = $("#sync2");

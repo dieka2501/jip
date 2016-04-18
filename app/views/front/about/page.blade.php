@@ -1,17 +1,14 @@
 @extends('front.template')
 @section('content')
 
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-About Us
-<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">About</a></li>
-  <li class="active">Page</li>
-</ol>
-</div>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>About</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/aboutus">About</a></li>
+		</ol>
+	</div>
 </div>
 <section id="content">
 	<div class="container">

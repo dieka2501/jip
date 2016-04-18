@@ -1,15 +1,14 @@
 @extends('front.template')
 @section('content')
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-Detail Products
-<ol class="breadcrumb">
-  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
-  <li><a href="{{Config::get('app.url')}}public/product">Product</a></li>
-  <li class="active">Product Detail</li>
-</ol>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>Detail Products</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/product">Product</a></li>
+		  <li class="active">Product Detail</li>
+		</ol>
+	</div>
 </div>
 <section class="white-bg section">
 	<!-- sample -->
@@ -21,11 +20,10 @@ Detail Products
 				<div class="row">
 					<div class="col-md-6">
 						<div id="sync1" class="owl-carousel">
-						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->main_image}}"> </div>
-						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image2}}"></div>
-						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image3}}"></div>
-						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
-						  
+						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->main_image}}"> </div>
+						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image2}}"></div>
+						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image3}}"></div>
+						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
 						</div>
 					</div>
 						
@@ -54,7 +52,7 @@ Detail Products
 						<hr/>
 						<div id="sync2" class="owl-carousel">
 						@foreach($file as $files)
-							<div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$files->image_url}}"></div>	
+							<div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$files->image_url}}"></div>	
 						@endforeach
 						
 						</div>

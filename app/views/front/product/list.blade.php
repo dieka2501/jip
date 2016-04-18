@@ -1,16 +1,14 @@
 @extends('front.template')
 @section('content')
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-Our Products
-<ol class="breadcrumb">
-  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
-  <li><a href="{{Config::get('app.url')}}public/product">Product</a></li>
-  <li class="active">List</li>
-</ol>
-</div>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>Our Products</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/product">Product</a></li>
+		  <li class="active">List</li>
+		</ol>
+	</div>
 </div>
 <section id="featured" class="section">
 	<div class="container">
@@ -53,11 +51,15 @@ Our Products
 		</div>
 		</div>
 		</div> -->
-		<div class="row">
+		<div class="row clearfix">
 			@foreach($product as $products)
             <div class="col-md-3">
             <div class="product">
-				<a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" width='859' height="567" class="center-block img-responsive"></a>
+				<div class="img-crop-product">
+					<a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}" class="img-container">
+						<img src="<?php echo Config::get('app.url');?>aset/upload/{{$products->main_image}}" class="center-block img-responsive">
+					</a>
+				</div>
 				<div class="thumb-content">
 					<h3><a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}">{{$products->name_product}}</a></h3>
 					
@@ -69,7 +71,6 @@ Our Products
 							
 						@endforeach
 					</p>
-					<a href="<?php echo Config::get('app.url');?>public/product/detail/{{$products->id_product}}" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
 					<div class="pull-right">
 						<a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct={{$products->id_product}}" class="btn btn-warning btn-xs cart-btn">Add To Cart</a>
 					</div>
@@ -77,10 +78,8 @@ Our Products
 			</div>
 			</div>
 			@endforeach
-			
-            <div class="clearfix"></div>
 		</div>
-		<div class="row">
+		<div class="row clearfix">
 		<div class="col-md-12">
 			
 			 <nav>

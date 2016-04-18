@@ -1,43 +1,27 @@
 @extends('front.template')
 @section('content')
-<div class="jsi-bg">
-<div class="lead">
-<div class="container">
-News
-<ol class="breadcrumb">
-  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
-  <li><a href="{{Config::get('app.url')}}public/product">News</a></li>
-</ol>
-</div>
-</div>
+<div class="wrapper-breadcrumb bg-grey">
+	<div class="container">
+		<h3>News</h3>
+		<ol class="breadcrumb">
+		  <li><a href="{{Config::get('app.url')}}public/">Home</a></li>
+		  <li><a href="{{Config::get('app.url')}}public/news">News</a></li>
+		</ol>
+	</div>
 </div>
 <section id="content">
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
-			<!-- sample multiple image -->
-			<div id="sync1" class="owl-carousel">
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
+			<h4 class="news-title text-center">{{$news->news_title}}</h4>
+			<div id="news-slider" class="owl-carousel">
+				@foreach($file as $newsfiles2)
+				<div class="item">
+					<img class="img-responsive center-block" src="{{Config::get('app.url')}}aset/upload/{{$newsfiles2->file}}">
+				</div>
+				@endforeach
 			</div>
-			<div id="sync2" class="owl-carousel">
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			  <div class="item"><img src="http://jhlautocustom.com/aset/upload/JSI%20Resort%20Offroad%2001.jpg"></div>
-			</div>
-			<!-- /sample multiple image -->
-			<div class="text-center" style="color: #444444; font-size: 21px; font-family: 'Raleway-Light', sans-serif;margin-bottom:30px;font-weight:600;">{{$news->news_title}}</div>
-			<?php 
-				$imgnews = (isset($file[0])) ? $file[0]->file :"news.jpg";
-			?>
-			<img src="<?php echo Config::get('app.url');?>aset/upload/{{$imgnews}}" class="img-responsive center-block">
 			<br>
-			<br>
-				{{$news->news_content}}
+			{{$news->news_content}}
 		</div>
 	</div>
 </section>
