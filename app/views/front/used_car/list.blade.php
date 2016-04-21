@@ -18,12 +18,12 @@
             <div class="product">
 				<a href="<?php echo Config::get('app.url');?>public/cars/used/detail/{{$carss->id_cars}}"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$carss->cars_image}}" width='859' height="567" class="center-block img-responsive"></a>
 				<div class="thumb-content">
-					<h3><a href="<?php echo Config::get('app.url');?>public/cars/detail/{{$carss->id_cars}}">{{$carss->cars_name}}</a></h3>
+					<h3><a href="<?php echo Config::get('app.url');?>public/cars/used//detail/{{$carss->id_cars}}">{{$carss->cars_name}}</a></h3>
 					
 					<p class="pro-tags"><i class="fa fa-tag"></i> 
 						{{$carss->cars_model}}
 					</p>
-					<a href="<?php echo Config::get('app.url');?>public/cars/detail/{{$carss->id_cars}}" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
+					<a href="<?php echo Config::get('app.url');?>public/cars//used/detail/{{$carss->id_cars}}" class="btn-readmore"><i class="fa fa-angle-right">&nbsp;</i> read more</a>
 					<div class="pull-right">
 						<!-- <a href="<?php echo Config::get('app.url');?>public/cart/do?idproduct=" class="btn btn-warning btn-xs cart-btn">Add To Cart</a> -->
 					</div>

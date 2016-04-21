@@ -15,7 +15,7 @@ class product extends Eloquent{
 		return DB::table($this->table)->where($this->primaryKey,$ids)->delete();
 	}
 	function get_page(){
-		return DB::table($this->table)->orderBy('id_product','DESC')->paginate(20);
+		return DB::table($this->table)->orderBy('id_product','DESC')->where('status_product','1')->paginate(20);
 	}
 	function get_search($q){
 		return DB::table($this->table)->where('name_product',$q)->paginate(20);
@@ -27,6 +27,6 @@ class product extends Eloquent{
 		return product::find($id);
 	}
 	function featured(){
-		return product::OrderBy('id_product','DESC')->take(4)->get();
+		return product::OrderBy('id_product','DESC')->where('status_product','1')->take(4)->get();
 	}
 }

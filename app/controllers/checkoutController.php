@@ -36,7 +36,7 @@ class checkoutController Extends BaseController{
 		$view['email'] 			= Session::get('email');
 		$view['country']		= Session::get('country');
 		$view['phone']			= Session::get('phone');
-		$view['url'] 			= Config::get('app.url')."public/checkout/do";
+		$view['url'] 			= Config::get('app.url')."public/payment/choose";
 		
 		$this->layout->menu 	= View::make('front.menu');
 		$this->layout->content 	= View::make('front.checkout.page',$view);

@@ -12,7 +12,7 @@ class news Extends Eloquent{
 		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(20);
 	}
 	function get_page_front(){
-		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(6);
+		return DB::table($this->table)->orderBy('id_news',"DESC")->where('news_status',1)->paginate(6);
 	}
 	function get_search($cari){
 		return DB::table($this->table)->where('news_title','like','%'.$cari.'%')->orderBy('id_news',"DESC")->paginate(20);
@@ -28,7 +28,7 @@ class news Extends Eloquent{
 		return $news->delete();
 	}
 	function get_front(){
-		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(6);
+		return DB::table($this->table)->orderBy('id_news',"DESC")->where('news_status',1)->paginate(6);
 	}
 	function get_front_news(){
 		return DB::table($this->table)->orderBy('id_news',"DESC")->paginate(9);
@@ -37,6 +37,6 @@ class news Extends Eloquent{
 		return news::orderBy('id_news','DESC')->first();
 	}
 	function get_last2(){
-		return news::orderBy('id_news','DESC')->take(2)->get();
+		return news::orderBy('id_news','DESC')->take(2)->where('news_status',1)->get();
 	}
 }

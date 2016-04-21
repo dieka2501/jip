@@ -43,6 +43,7 @@ Route::post('/payment/search/orderid','paymentController@json_order');
 Route::post('/payment/do','paymentController@do_payment');
 Route::get('/member/{id}','memberController@index');
 Route::post('/member/save','memberController@do_save');
+Route::post('/payment/choose','choosePaymentController@index');
 //Auth
 Route::filter('loginAuth',function(){
 	if(Session::get('login')==true){

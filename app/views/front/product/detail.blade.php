@@ -38,7 +38,7 @@
 						@endif
 
 						<div class="product-stock">
-							<?php echo ($product->stock_product > 0)? "In Stock":"Out Of Stock"?>
+							<?php echo ($product->stock_product > 0)? $product->stock_product." Item(s)":"Out Of Stock"?>
 						</div>
 						<hr>
 						<div class="btn-group cart" style="margin-bottom:10px;">
