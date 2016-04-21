@@ -20,7 +20,7 @@
 					<div class="col-md-6">
 						<div id="sync1" class="owl-carousel">
 						@foreach($file as $files)
-						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$files->ci_file}}"> </div>
+						  <div class="item"><img src="<?php echo Config::get('app.url');?>aset/upload/{{$files->ci_file}}" class="img-responsive center-block"> </div>
 						@endforeach
 						  
 						  
