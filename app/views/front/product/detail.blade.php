@@ -21,9 +21,15 @@
 					<div class="col-md-6">
 						<div id="sync1" class="owl-carousel">
 						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->main_image}}"> </div>
+						  <?php if (isset($product->image2) && $product->image2 == true) {?>
 						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image2}}"></div>
+						  <?php } ?>
+						  <?php if (isset($product->image3) && $product->image3 == true) {?>
 						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image3}}"></div>
+						  <?php } ?>
+						  <?php if (isset($product->image4) && $product->image4 == true) {?>
 						  <div class="item"><img class="img-responsive center-block" src="<?php echo Config::get('app.url');?>aset/upload/{{$product->image4}}"></div>
+						  <?php } ?>
 						</div>
 					</div>
 						
