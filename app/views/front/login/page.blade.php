@@ -17,7 +17,7 @@ Login
             <h1 class="text-center login-title">Sign in to continue!</h1>
             <div>{{$notip}}</div>
             <div class="account-wall">
-                <img class="profile-img" src="<?php echo Config::get('app.url');?>aset/main/img/logo.png"
+                <img class="profile-img img-responsive" style="margin: 0 auto 10px;padding: 0px 20px;"> src="<?php echo Config::get('app.url');?>aset/main/img/logo.png"
                     alt="">
                 <form class="form-signin" method="POST" action="{{Config::get('app.url')}}public/login">
                 <input type="text" class="form-control" placeholder="Email" required name='email' autofocus>
