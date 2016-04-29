@@ -25,7 +25,15 @@ class productController Extends BaseController{
 	function index(){
 		$category_all 				= $this->category->get_all();
 		$cacah_cat 					= ceil(count($category_all)/5);
-		$view['product']  			= $this->product->get_page();
+		if(Input::has('cari')){
+			$cari 		= Input::get('cari');
+			$page 		= $this->product->get_search($cari);
+		}else{
+			$cari 		= "";
+			$page 		= $this->product->get_page();
+		}
+		$view['cari']				= $cari;
+		$view['product']  			= $page;
 		$get_cp 					= [];
 		foreach ($view['product'] as $products) {
 			$get_cp[$products->id_product][] = $this->cp->get_idproduct($products->id_product);

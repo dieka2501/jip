@@ -25,7 +25,15 @@ class usedCarsController Extends BaseController{
 		View::share('active','used_cars');
 	}
 	function index(){
-		$view['cars']  				= $this->cars->get_used_page();
+		if(Input::has('cari')){
+			$cari 		= Input::get('cari');
+			$car 		= $this->cars->get_used_page_search($cari);
+		}else{
+			$cari 		= Input::get('cari');
+			$car 		= $this->cars->get_used_page();
+		}
+		$view['cari'] 				= $cari;
+		$view['cars']  				= $car;
 		// $get_cp 					= [];
 		// foreach ($view['product'] as $products) {
 		// 	$get_cp[$products->id_product][] = $this->cp->get_idproduct($products->id_product);

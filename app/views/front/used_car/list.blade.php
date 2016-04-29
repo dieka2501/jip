@@ -11,7 +11,15 @@
 </div>
 <section id="featured" class="section">
 	<div class="container">
-		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="menu-produk">
+					<form method="GET" action="{{Config::get('app.url')}}public/cars/used">
+						<input name='cari' class="form-control" value="{{$cari}}"> <button class="btn btn-primary">Search</button>
+					</form>
+				</div>		
+			</div>
+		</div>
 		<div class="row">
 			@foreach($cars as $carss)
             <div class="col-md-3">

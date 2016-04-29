@@ -22,6 +22,15 @@ $o = ($ppage*5)+5;
 <section id="featured" class="section">
 	<div class="container">
 		<div class="row">
+			<div class="col-md-12">
+				<div class="menu-produk">
+					<form method="GET" action="{{Config::get('app.url')}}public/news">
+						<input name='cari' class="form-control" value="{{$cari}}"> <button class="btn btn-primary">Search</button>
+					</form>
+				</div>		
+			</div>
+		</div>
+		<div class="row">
 		@if(count($news) > 0)
 			@if(isset($news[$j]))
 			<div class="col-md-6 news">
@@ -110,7 +119,7 @@ $o = ($ppage*5)+5;
 				<div class="col-md-6 news">Tidak ada berita hari ini..</div>	
 			@endif
 			<div class="clearfix"></div>
-			<div>{{$news->links()}}</div>
+			<div>{{$news->appends(['cari'=>$cari])->links()}}</div>
 		</div>
 	</div>
 </section>
