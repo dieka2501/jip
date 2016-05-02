@@ -15,9 +15,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="menu-produk">
-					<form method="GET" action="{{Config::get('app.url')}}public/product">
+					<!-- <form method="GET" action="{{Config::get('app.url')}}public/product">
 						<input name='cari' class="form-control" value="{{$cari}}"> <button class="btn btn-primary">Search</button>
-					</form>
+					</form> -->
+					<form method="GET" action="{{Config::get('app.url')}}public/cars/used">
+			        <div class="input-group">
+			            <input type="text" class="form-control" placeholder="Search" name="cari" value="{{$cari}}">
+			            <div class="input-group-btn">
+			                <button class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			            </div>
+			        </div>
+			        </form>
 				</div>		
 			</div>
 		</div>
