@@ -315,7 +315,6 @@
     <script src="<?php echo Config::get('app.url');?>aset/main/js/owl.carousel.min.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery.nicescroll.min.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/classie.js"></script>
-    <script src="<?php echo Config::get('app.url');?>aset/main/js/uisearch.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/jquery-ui-1.10.3.min.js"></script>
     <script src="<?php echo Config::get('app.url');?>aset/main/js/jhl.js"></script>
 </body>
