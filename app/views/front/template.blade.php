@@ -226,22 +226,18 @@
           <div class="col-md-3 footer-block">
             <h5>original spareparts</h5>
             <div class="icons"><i class="icon-badge icons"></i></div>
-            <p>Lorem ipsum dolor sit amet simpledummy text and awesome</p>
           </div>
           <div class="col-md-3 footer-block">
             <h5>secured payment</h5>
             <div class="icons"><i class="icon-lock icons"></i></div>
-            <p>Lorem ipsum dolor sit amet simpledummy text and awesome</p>
           </div>
           <div class="col-md-3 footer-block">
             <h5>free to ask</h5>
             <div class="icons"><i class="icon-bubbles icons"></i></div>
-            <p>Lorem ipsum dolor sit amet simpledummy text and awesome</p>
           </div>
           <div class="col-md-3 footer-block">
             <h5>keep me informed</h5>
             <div class="icons"><i class="icon-envelope icons"></i></div>
-            <p>Lorem ipsum dolor sit amet simpledummy text and awesome</p>
           </div>
         </div>
       </div>

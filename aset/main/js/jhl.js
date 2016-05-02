@@ -1,5 +1,4 @@
 $(document).ready(function() {
-      new UISearch( document.getElementById( 'sb-search' ) );
       $('.toggle-menu').jPushMenu({closeOnClickLink: false});
       $('.dropdown-toggle').dropdown();   
     });
