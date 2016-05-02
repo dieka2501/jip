@@ -14,8 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="menu-produk">
-					<div class="menu-produk" style="padding:10px!important;">
+				<div class="menu-produk" style="padding:10px!important;">
 					<!-- <form method="GET" action="{{Config::get('app.url')}}public/cars/new">
 						<input name='cari' class="form-control" value="{{$cari}}"> <button class="btn btn-primary">Search</button>
 					</form> -->
@@ -27,7 +26,6 @@
 			            </div>
 			        </div>
 			        </form>
-				</div>
 				</div>		
 			</div>
 		</div>
