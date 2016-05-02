@@ -37,30 +37,30 @@ Register
                             <input type="text" class="form-control" name='last_name' placeholder="Last Name" required value='{{$last_name}}'>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='company' placeholder="Company" value='{{$company}}'>
+                            <input type="text" class="form-control" name='company' placeholder="Company" value=''>
                         </div>
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='address' placeholder="Address" value='{{$address}}'>
+                            <input type="text" class="form-control" name='address' placeholder="Address" value=''>
                         </div>
-                    </div>
-                    <div class="row">
+                    </div> -->
+                    <!-- <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='town' placeholder="Town" value='{{$town}}'>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='zip' placeholder="Zip Code" value='{{$zip}}'>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='country' placeholder="Country" value='{{$country}}' >
+                            <input type="text" class="form-control" name='town' placeholder="Town" value=''>
                         </div>
                         <div class="col-md-6 form-group">
-                            <input type="text" class="form-control" name='phone' placeholder="Phone Number" value='{{$phone}}'>
+                            <input type="text" class="form-control" name='zip' placeholder="Zip Code" value=''>
                         </div>
-                    </div>
+                    </div> -->
+                    <!-- <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" class="form-control" name='country' placeholder="Country" value='' >
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input type="text" class="form-control" name='phone' placeholder="Phone Number" value=''>
+                        </div>
+                    </div> -->
                     <button class="btn btn-lg btn-warning btn-block" type="submit">Register</button>
                 </form>
             </div>
