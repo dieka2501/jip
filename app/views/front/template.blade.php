@@ -114,7 +114,7 @@
             <div class="collapse navbar-collapse jsi-spmenu jsi-spmenu-vertical jsi-spmenu-right" id="primary-nav">
                 <ul class="nav navbar-nav">
                   <li>
-                    <a href="index.php" class="pull-left"><img src="<?php echo Config::get('app.url');?>aset/img/logo.png" height="23" title="Jeep Station Indonesia" /></a>
+                    <a href="" class="pull-left"><img src="<?php echo Config::get('app.url');?>aset/img/logo.png" height="23" title="Jeep Station Indonesia" /></a>
                     <a href="{{Config::get('app.url')}}public/login" class="fusion-logout">Log In</a>
                     <div class="clearfix"></div>
                   </li>

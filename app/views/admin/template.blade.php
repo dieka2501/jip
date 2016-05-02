@@ -44,7 +44,7 @@
     <div class="wrapper">
 
       <header class="main-header">
-        <a href="index2.html" class="logo">
+        <a href="{{Config::get('app.url')}}public/admin" class="logo">
           <span class="logo-mini"><img src="<?php echo Config::get('app.url');?>aset/admin/dist/img/logo.png"></span>
           <span class="logo-lg"><img src="<?php echo Config::get('app.url');?>aset/admin/dist/img/logo.png"></span>
         </a>
