@@ -12,6 +12,15 @@
 </div>
 <section id="featured" class="section">
 	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="menu-produk">
+					<form method="GET" action="{{Config::get('app.url')}}public/product">
+						<input name='cari' class="form-control" value="{{$cari}}"> <button class="btn btn-primary">Search</button>
+					</form>
+				</div>		
+			</div>
+		</div>
 		<!-- <div class="row">
 		<div class="col-md-12">
 		<div class="menu-produk">
@@ -66,7 +75,7 @@
 					<p class="pro-tags"><i class="fa fa-tag"></i> 
 						@foreach($cp[$products->id_product] as $cps)
 							@foreach($cps as $cpss)
-								<a href="{{Config::get('app.url')}}public/category/product">{{$cpss->category_name}}</a>,
+								<a href="{{Config::get('app.url')}}public/product/category/{{$cpss->id_category}}">{{$cpss->category_name}}</a>,
 							@endforeach
 							
 						@endforeach
@@ -83,7 +92,7 @@
 		<div class="col-md-12">
 			
 			 <nav>
-			 	{{$product->links()}}
+			 	{{$product->appends(['cari'=>$cari])->links()}}
 			  <!-- <ul class="pagination">
 			    <li>
 			      <a href="#" aria-label="Previous">

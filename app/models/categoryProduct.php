@@ -22,4 +22,11 @@ class categoryProduct Extends Eloquent{
 				->join('product',$this->table.'.product_id','=','product.id_product')
 				->paginate(20);
 	}
+	function get_idcat_cari($idcat,$cari){
+		return categoryProduct::where($this->table.'.category_id',$idcat)
+				->join('category',$this->table.'.category_id','=','category.id_category')
+				->join('product',$this->table.'.product_id','=','product.id_product')
+				->where('product.name_product','like','%'.$cari.'%')
+				->paginate(20);
+	}
 }

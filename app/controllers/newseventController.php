@@ -23,7 +23,14 @@ class newseventController Extends BaseController{
 		View::share('active','event');
 	}
 	function index(){
-		$get_news 			= $this->news->get_page_front();
+		if(Input::has('cari')){
+			$cari 		= Input::get('cari');
+			$get_news 	= $this->news->get_search($cari);
+		}else{
+			$cari 		= "";
+			$get_news 	= $this->news->get_page_front();	
+		}
+		
 		$filesnews 			= [];
 		$cacah 				= count($get_news);
 		foreach ($get_news as $news) {
@@ -37,6 +44,7 @@ class newseventController Extends BaseController{
 		$view['news'] 				= $get_news;
 		$view['newsfile']			= $filesnews;
 		$view['page'] 				= $page;
+		$view['cari'] 				= $cari;
 		$this->layout->menu 		= View::make('front.menu');
 		$this->layout->content 		= View::make('front.news.list',$view);
 	}

@@ -24,6 +24,7 @@ class checkoutController Extends BaseController{
 		View::share('active','product');
 	}
 	function index(){
+		// var_dump(Session::all());
 		$token 					= Session::get('_token');
 		$get_cart 			 	= $this->cart->get_session($token);
 		$view['cart'] 			= $get_cart;
@@ -36,6 +37,7 @@ class checkoutController Extends BaseController{
 		$view['email'] 			= Session::get('email');
 		$view['country']		= Session::get('country');
 		$view['phone']			= Session::get('phone');
+		$view['login']			= (Session::has('login')) ? true:false;
 		$view['url'] 			= Config::get('app.url')."public/payment/choose";
 		
 		$this->layout->menu 	= View::make('front.menu');

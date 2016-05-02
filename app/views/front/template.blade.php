@@ -115,7 +115,7 @@
                 <ul class="nav navbar-nav">
                   <li>
                     <a href="index.php" class="pull-left"><img src="<?php echo Config::get('app.url');?>aset/img/logo.png" height="23" title="Jeep Station Indonesia" /></a>
-                    <a href="#login.php" class="fusion-logout">Log In</a>
+                    <a href="{{Config::get('app.url')}}public/login" class="fusion-logout">Log In</a>
                     <div class="clearfix"></div>
                   </li>
                 </ul>
@@ -153,7 +153,7 @@
 
               <!-- Nav tabs -->
               <ul class="nav nav-tabs nav-justified" role="tablist">
-                <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+                <li role="presentation" class="active"><a href="dfkdfgjdhgfdf" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
                 <li role="presentation"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
               </ul>
 

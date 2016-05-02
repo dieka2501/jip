@@ -29,7 +29,13 @@ class cars Extends Eloquent{
 	function get_new_page(){
 		return cars::where('cars_category',0)->orderBy('id_cars','DESC')->paginate(20);
 	}
+	function get_new_page_search($cari){
+		return cars::where('cars_category',0)->where('cars_name','like','%'.$cari.'%')->orderBy('id_cars','DESC')->paginate(20);
+	}
 	function get_used_page(){
 		return cars::where('cars_category',1)->orderBy('id_cars','DESC')->paginate(20);
+	}
+	function get_used_page_search($cari){
+		return cars::where('cars_category',1)->where('cars_name','like','%'.$cari.'%')->orderBy('id_cars','DESC')->paginate(20);
 	}
 }

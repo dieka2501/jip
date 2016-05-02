@@ -24,17 +24,33 @@ class choosePaymentController Extends BaseController{
 		View::share('active','product');
 	}
 	function index(){
-		if(Input::has('first_name') && Input::has('last_name') && Input::has('address') && Input::has('email')){
-			$first_name 		= Input::get('first_name');
-			$last_name	 		= Input::get('last_name');
-			$company	 		= Input::get('company');
-			$address	 		= Input::get('address');
-			$town		 		= Input::get('town');
-			$zip		 		= Input::get('zip');
-			$state		 		= Input::get('state');
-			$email		 		= Input::get('email');
-			$total_order 		= Input::get('total_order');
-			$phone_number 		= Input::get('phone_number');
+		if((Input::has('first_name') && Input::has('last_name') && Input::has('address') && Input::has('email') )|| (Input::get('r_address') == 1)){
+			// echo "sfsdsdsd";
+			$r_address 			= Input::get('r_address');
+			if($r_address == 0){
+				$first_name 		= Input::get('first_name');
+				$last_name	 		= Input::get('last_name');
+				$company	 		= Input::get('company');
+				$address	 		= Input::get('address');
+				$town		 		= Input::get('town');
+				$zip		 		= Input::get('zip');
+				$state		 		= Input::get('state');
+				$email		 		= Input::get('email');
+				$total_order 		= Input::get('total_order');
+				$phone_number 		= Input::get('phone_number');	
+			}else{
+				$first_name 		= Session::get('first_name');
+				$last_name	 		= Session::get('last_name');
+				$company	 		= Session::get('company');
+				$address	 		= Session::get('address');
+				$town		 		= Session::get('town');
+				$zip		 		= Session::get('zip');
+				$state		 		= Session::get('state');
+				$email		 		= Session::get('email');
+				$total_order 		= Input::get('total_order');
+				$phone_number 		= Session::get('phone');	
+			}
+			
 			$token 				= Session::get('_token');
 			$get_cart 			= $this->cart->get_session($token);
 			$view['order_first_name'] 		= $first_name;
@@ -49,6 +65,7 @@ class choosePaymentController Extends BaseController{
 			$view['order_phone']	 		= $phone_number;
 			$view['order_total']	 		= $total_order;
 			$view['url'] 					= Config::get('app.url')."public/checkout/do";
+			// Redirect::to('/cart');
 			// $idorder = $this->order->add($insorder);
 			// foreach ($get_cart as $carts) {
 			// 	$detailorder['order_id'] 		= $idorder;
@@ -73,7 +90,7 @@ class choosePaymentController Extends BaseController{
 			// 	$message->subject('Pemesanan Barang JSI');
 			// });
 		}else{
-			Redirect::to('/cart');
+			return Redirect::to('/cart');
 		}
 
 		

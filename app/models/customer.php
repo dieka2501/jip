@@ -11,6 +11,9 @@ class customer Extends Eloquent{
 	function get_login($email,$password){
 		return customer::where('customer_status',1)->where('customer_email',$email)->where('customer_password',$password)->first();
 	}
+	function get_login_temp($email,$password){
+		return customer::where('customer_email',$email)->where('customer_password',$password)->first();
+	}
 	function get_id($id){
 		return customer::find($id);
 	}
