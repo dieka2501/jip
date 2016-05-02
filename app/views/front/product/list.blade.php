@@ -75,7 +75,7 @@
 					<p class="pro-tags"><i class="fa fa-tag"></i> 
 						@foreach($cp[$products->id_product] as $cps)
 							@foreach($cps as $cpss)
-								<a href="{{Config::get('app.url')}}public/category/product/{{$cpss->id_category}}">{{$cpss->category_name}}</a>,
+								<a href="{{Config::get('app.url')}}public/product/category/{{$cpss->id_category}}">{{$cpss->category_name}}</a>,
 							@endforeach
 							
 						@endforeach

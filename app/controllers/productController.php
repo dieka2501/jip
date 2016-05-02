@@ -53,10 +53,20 @@ class productController Extends BaseController{
 		$this->layout->content 		= View::make('front.product.detail',$view);
 	}
 	function category($idcat){
-		$getcatprod 				= $this->cp->get_idcat($idcat);
+		if(Input::has('cari')){
+			$cari 				= Input::get('cari');
+			$getcatprod 		= $this->cp->get_idcat($idcat);
+		}else{
+			$cari 				= "";
+			$getcatprod 		= $this->cp->get_idcat_cari($idcat,$cari);
+		}
+		
 		$category_all 				= $this->category->get_all();
 		$cacah_cat 					= ceil(count($category_all)/5);
+
 		$view['product']  			= $getcatprod;
+		$view['cari'] 	 			= $cari;
+
 		$get_cp 					= [];
 		foreach ($view['product'] as $products) {
 			$get_cp[$products->id_product][] = $this->cp->get_idproduct($products->id_product);
