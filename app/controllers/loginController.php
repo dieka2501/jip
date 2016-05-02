@@ -29,7 +29,7 @@ class loginController Extends BaseController{
 	function do_login(){
 		$email 			= Input::get('email');
 		$password 		= Input::get('password');
-		$getlogin 		= $this->customer->get_login($email,md5($password));
+		$getlogin 		= $this->customer->get_login_temp($email,md5($password));
 		if(count($getlogin) > 0){
 			Session::put('login',true);
 			Session::put('id',$getlogin->id_customer);
