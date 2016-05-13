@@ -3,7 +3,7 @@
 
 <!-- Content Header (Page header) -->
 <p>{{$notip}}</p>
-<section class="content-header">
+<section class="content-header clearfix">
   <h1>
     List Data
     <small>Category</small>

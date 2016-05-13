@@ -35,7 +35,7 @@
         background: transparent!important;
       }
       .content-header > h1 {
-        float: right!important;
+        float: left!important;
       }
     }
     </style>

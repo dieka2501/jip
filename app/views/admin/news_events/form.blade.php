@@ -2,7 +2,7 @@
 @section('content')
 <?php //var_dump(Session::all())?>
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header clearfix">
   <h1>
     {{$big_title}}
     <small>Preview</small>

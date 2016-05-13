@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header clearfix">
   <h1>
     Advanced Form Elements
     <small>Preview</small>
