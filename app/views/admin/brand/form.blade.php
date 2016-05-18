@@ -69,7 +69,7 @@
 <script src="<?php echo Config::get('app.url');?>aset/js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/jquery.tinymce.min.js"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script> 
+<!-- <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script>  -->
 <script type="text/javascript">
   tinymce.init({
     selector: "textarea",
@@ -83,7 +83,7 @@
     insertdatetime_formats: ["%Y.%m.%d", "%H:%M"],
     external_filemanager_path:"/filemanager/",
     filemanager_title:"Responsive Filemanager",
-    external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
+    external_plugins: { "filemanager" : "/aset/tinymce/filemanager/plugin.min.js"},
     filemanager_title:"Filemanager" ,
     filemanager_access_key:"adem2o" ,
  });

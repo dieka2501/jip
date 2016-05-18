@@ -72,7 +72,7 @@
 <script src="<?php echo Config::get('app.url');?>aset/js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/jquery.tinymce.min.js"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script> 
+<!-- <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script>  -->
 <script type="text/javascript">
   tinymce.init({
     selector: "textarea",

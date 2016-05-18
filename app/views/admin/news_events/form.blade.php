@@ -95,7 +95,20 @@
 {{Form::close()}}
 </section><!-- /.content -->
 <script src="<?php echo Config::get('app.url');?>aset/js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/jquery.tinymce.min.js"></script>
+<script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        menubar:false,
+        plugins: "insertdatetime",
+        plugins: "link code fullscreen",
+        toolbar: [
+            "undo redo | styleselect | bold italic | link | fullscreen | alignleft | aligncenter |  alignright | insertdatetime | link | removeformat | cut copy paste bullist numlist outdent indent code"
+        ],
+        image_advtab: true ,
+        insertdatetime_formats: ["%Y.%m.%d", "%H:%M"],
+     });
     $(document).ready(function(){
         $('#clone_file').click(function(){
             var form_file = "<div class='form-group'>"+

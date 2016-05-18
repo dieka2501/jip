@@ -132,7 +132,7 @@
 <script src="<?php echo Config::get('app.url');?>aset/js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/jquery.tinymce.min.js"></script>
 <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script> 
+<!-- <script type="text/javascript" src="{{Config::get('app.url')}}aset/tinymce/plugin.min.js"></script>  -->
 <script type="text/javascript">
   tinymce.init({
     selector: "textarea",
@@ -143,12 +143,12 @@
         "undo | redo | styleselect | bold | italic | link | fullscreen | alignleft | aligncenter |  alignright | insertdatetime | link | removeformat | cut | copy | paste | bullist | numlist | outdent | indent |"
     ],
     insertdatetime_formats: ["%Y.%m.%d", "%H:%M"],
-    setup : function(ed) {
-        ed.onInit.add(function(ed) {
-            ed.execCommand("fontName", false, "Arial");
-            ed.execCommand("fontSize", false, "12px");
-        });
-    }
+    // setup : function(ed) {
+    //     ed.onInit.add(function(ed) {
+    //         ed.execCommand("fontName", false, "Arial");
+    //         ed.execCommand("fontSize", false, "12px");
+    //     });
+    // }
     
  });
 </script> 
