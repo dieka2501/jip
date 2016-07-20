@@ -155,13 +155,13 @@
 
               <!-- Nav tabs -->
               <ul class="nav nav-tabs nav-justified" role="tablist">
-                <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+                <li role="presentation" class="active"><a href="#logins" aria-controls="logins" role="tab" data-toggle="tab">Login</a></li>
                 <li role="presentation"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">Register</a></li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content" style="padding-top: 30px;">
-                <div role="tabpanel" class="tab-pane active" id="login">
+                <div role="tabpanel" class="tab-pane active" id="logins">
                   <div class="row">
                   <div class="col-xs-7">
                       <div class="well">
